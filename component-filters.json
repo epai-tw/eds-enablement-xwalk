@@ -37,7 +37,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "quote"
     ]
   }
 ]
