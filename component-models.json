@@ -216,7 +216,7 @@
     ]
   },
   {
-    "id": "hero",
+    "id": "quote",
     "fields": [
       {
         "component": "reference",
