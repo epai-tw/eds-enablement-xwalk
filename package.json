@@ -36,5 +36,12 @@
     "npm-run-all": "4.1.5",
     "stylelint": "16.21.1",
     "stylelint-config-standard": "38.0.0"
+  },
+  "dependencies": {
+    "a11y-dialog": "^8.1.4",
+    "handlebars-loader": "^1.7.3",
+    "lodash": "^4.17.21",
+    "nouislider": "^15.8.1",
+    "swiper": "^11.2.10"
   }
 }
