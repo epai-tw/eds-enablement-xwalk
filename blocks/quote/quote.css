@@ -1,5 +1,5 @@
 .block.quote {
-    background-color: darkred;
+    background-color: #ccc;
     padding: 0 0 24px;
     display: flex;
     flex-direction: column;
