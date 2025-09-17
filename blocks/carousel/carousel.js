@@ -1,3 +1,5 @@
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.mjs'
+
 export default function decorate(block) {
   const [wrapper] = block.children;
   const carousel = document.createElement('carousel');
@@ -73,4 +75,6 @@ export default function decorate(block) {
     </div>
   </div>`;
   wrapper.replaceChildren(carousel);
+
+  new Swiper(carousel);
 }
