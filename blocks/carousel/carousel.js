@@ -90,15 +90,6 @@ export function decorate(block) {
   `;
 
 
-  // eslint-disable-next-line import/no-extraneous-dependencies
-  import $ from 'jquery';
-
-  // 在這裡使用 jQuery
-  $(document).ready(() => {
-    console.log('jQuery 已經成功載入！');
-    $('body').css('background-color', 'lightgray');
-  });
-
   // /blocks/carousel/index.js
 
 // 定義 Swiper 初始化的函式
