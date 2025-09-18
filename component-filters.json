@@ -15,9 +15,13 @@
       "hero",
       "cards",
       "columns",
-      "fragment",
-      "quote",
-      "carousel"
+      "fragment"
+    ]
+  },
+  {
+    "id": "advantage-cards",
+    "components": [
+      "advantage-card"
     ]
   },
   {
