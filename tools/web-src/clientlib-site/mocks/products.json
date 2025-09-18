@@ -1,0 +1,75 @@
+[
+  {
+    "id": "product-1",
+    "name": "ROG G700 (2025)",
+    "model": "G700TF-XS776",
+    "image": "./clientlib-site/images/products/product-1-image-1.png",
+    "imageHover": "./clientlib-site/images/products/product-2-image-1.png",
+    "stars": 4.5,
+    "reviews": 100,
+    "benchmarkGame": "Call of Duty: Modern Warfare",
+    "fps": 235,
+    "fpsDetails": [
+      { "game": "COD: MW III", "fps1080": "337 FPS", "fps1440": "57 FPS" },
+      { "game": "Fortnite Chapter 4", "fps1080": "346 FPS", "fps1440": "45 FPS" },
+      { "game": "Red Dead Redemption 2", "fps1080": "315 FPS", "fps1440": "80 FPS" }
+    ],
+    "specs": [
+      "NVIDIA® GeForce RTX™ 5070 PRIME",
+      "Windows 11 Pro",
+      "Intel® Core™ Ultra 7 Processor 265F",
+      "32GB DDR5 4800 MHz RAM"
+    ],
+    "price": 999,
+    "originalPrice": 1099,
+    "discount": 100
+  },
+  {
+    "id": "product-2",
+    "name": "ROG G700 (2025)",
+    "model": "G700TF-XS776",
+    "image": "./clientlib-site/images/products/product-2-image-1.png",
+    "stars": 4,
+    "reviews": 150,
+    "benchmarkGame": "Cyberpunk 2077",
+    "fps": 180,
+    "fpsDetails": [
+      { "game": "COD: MW III", "fps1080": "337 FPS", "fps1440": "57 FPS" },
+      { "game": "Fortnite Chapter 4", "fps1080": "346 FPS", "fps1440": "45 FPS" },
+      { "game": "Red Dead Redemption 2", "fps1080": "315 FPS", "fps1440": "80 FPS" }
+    ],
+    "specs": [
+      "NVIDIA® GeForce RTX™ 5070 PRIME",
+      "Windows 11 Pro",
+      "Intel® Core™ Ultra 7 Processor 265F",
+      "32GB DDR5 4800 MHz RAM"
+    ],
+    "price": 1099,
+    "originalPrice": 1199,
+    "discount": 100
+  },
+  {
+    "id": "product-3",
+    "name": "ROG G700 (2025)",
+    "model": "G700TF-XS776",
+    "image": "./clientlib-site/images/products/product-3-image-1.png",
+    "stars": 4,
+    "reviews": 200,
+    "benchmarkGame": "Assassin's Creed Valhalla",
+    "fps": 220,
+    "fpsDetails": [
+      { "game": "COD: MW III", "fps1080": "337 FPS", "fps1440": "57 FPS" },
+      { "game": "Fortnite Chapter 4", "fps1080": "346 FPS", "fps1440": "45 FPS" },
+      { "game": "Red Dead Redemption 2", "fps1080": "315 FPS", "fps1440": "80 FPS" }
+    ],
+    "specs": [
+      "NVIDIA® GeForce RTX™ 5070 PRIME",
+      "Windows 11 Pro",
+      "Intel® Core™ Ultra 7 Processor 265F",
+      "32GB DDR5 4800 MHz RAM"
+    ],
+    "price": 1199,
+    "originalPrice": 1299,
+    "discount": 100
+  }
+]
