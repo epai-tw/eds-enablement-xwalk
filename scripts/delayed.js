@@ -15,5 +15,3 @@ $(document).ready(() => {
   console.log('jQuery 已經成功載入！');
   $('body').css('background-color', 'lightgray');
 });
-
-console.log('window.Swiper', window.Swiper);
