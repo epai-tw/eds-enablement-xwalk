@@ -6,4 +6,4 @@
 // eslint-disable-next-line no-debugger
 debugger
 
-console.log('jQuery', $);
+console.log('jQuery', $('body') , window.Swiper);
