@@ -4,7 +4,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
 
-  console.log('', $, $('body'));
+  console.log('jquery', $, $('body'));
 
   /* change to ul, li */
   const ul = document.createElement('ul');

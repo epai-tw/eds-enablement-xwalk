@@ -1,8 +1,8 @@
 // add delayed functionality here
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-// import $ from 'jquery';
+import $ from 'jquery';
 
+console.log('jquery', $, $('body'));
 // eslint-disable-next-line no-debugger
 console.log('Swiper >> ', window.Swiper);
 // Constants
