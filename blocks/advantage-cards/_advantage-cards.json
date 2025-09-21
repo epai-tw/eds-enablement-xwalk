@@ -48,6 +48,13 @@
           "value": "",
           "label": "Text",
           "valueType": "string"
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "CTA",
+          "valueType": "string"
         }
       ]
     }
