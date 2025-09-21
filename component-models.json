@@ -190,7 +190,7 @@
     "id": "columns",
     "fields": [
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "number",
         "name": "columns",
         "value": "",
