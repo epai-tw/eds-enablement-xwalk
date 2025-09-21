@@ -190,7 +190,7 @@
     "id": "columns",
     "fields": [
       {
-        "component": "richtext",
+        "component": "text",
         "valueType": "number",
         "name": "columns",
         "value": "",
@@ -202,13 +202,6 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
       }
     ]
   },
@@ -230,6 +223,13 @@
         "valueType": "string",
         "name": "image",
         "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "video",
+        "label": "Video",
         "multi": false
       },
       {
