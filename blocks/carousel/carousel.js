@@ -82,36 +82,4 @@ export default function decorate(block) {
     </div>
   </div>`;
   wrapper.replaceChildren(carousel);
-//
-//   import $ from 'jquery';
-//
-//   // 在這裡使用 jQuery
-//   $(document).ready(() => {
-//     console.log('jQuery 已經成功載入！');
-//     $('body').css('background-color', 'lightgray');
-//   });
-//
-//   // /blocks/carousel/index.js
-//
-// // 定義 Swiper 初始化的函式
-//   function initSwiper(block) {
-//     // 確保 Swiper 函式已經載入
-//     if (window.Swiper) {
-//       // 使用 Swiper 函式來建立一個新的實例
-//       new Swiper(block.querySelector('.swiper'), {
-//         // 在這裡設定 Swiper 的參數
-//         loop: true,
-//         pagination: {
-//           el: '.swiper-pagination',
-//         },
-//         navigation: {
-//           nextEl: '.swiper-button-next',
-//           prevEl: '.swiper-button-prev',
-//         },
-//       });
-//     } else {
-//       // 如果 Swiper 還沒載入，可以延遲執行，直到載入完成
-//       setTimeout(() => initSwiper(block), 100);
-//     }
-//   }
 }

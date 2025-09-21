@@ -1,10 +1,10 @@
-import $ from 'jquery';
 import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
 
-  console.log('jquery', $, $('body'));
+  console.log('jquery >>', window.$);
+  console.log('[...block.children] >>', window.$([...block.children]));
 
   /* change to ul, li */
   const ul = document.createElement('ul');
