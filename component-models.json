@@ -202,6 +202,13 @@
         "name": "rows",
         "value": "",
         "label": "Rows"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
