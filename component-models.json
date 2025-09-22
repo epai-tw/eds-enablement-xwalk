@@ -160,16 +160,9 @@
       },
       {
         "component": "richtext",
-        "name": "cta",
+        "name": "text",
         "value": "",
-        "label": "CTA 1",
-        "valueType": "string"
-      },
-      {
-        "component": "button",
-        "name": "button",
-        "value": "",
-        "label": "CTA 2",
+        "label": "CTA",
         "valueType": "string"
       },
       {
