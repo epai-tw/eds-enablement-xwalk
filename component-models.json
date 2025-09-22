@@ -171,6 +171,21 @@
         "value": "",
         "label": "CTA 2",
         "valueType": "string"
+      },
+      {
+        "component": "multiselect",
+        "name": "assetType",
+        "label": "Asset Type",
+        "options": [
+          {
+            "name": "Video",
+            "value": "video"
+          },
+          {
+            "name": "Image",
+            "value": "image"
+          }
+        ]
       }
     ]
   },
