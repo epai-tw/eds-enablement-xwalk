@@ -19,8 +19,7 @@
       "advantage-cards",
       "video",
       "embed",
-      "file-input",
-      "category-slider"
+      "file-input"
     ]
   },
   {
@@ -42,13 +41,6 @@
     "id": "cards",
     "components": [
       "card"
-    ]
-  },
-  {
-    "id": "category-slider",
-    "components": [
-      "category-video-slider-item",
-      "category-image-slider-item"
     ]
   },
   {
