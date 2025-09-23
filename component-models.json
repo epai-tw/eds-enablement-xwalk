@@ -321,7 +321,14 @@
         "component": "aem-content",
         "valueType": "string",
         "name": "video_location",
-        "label": "Video"
+        "label": "Video Content"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "video",
+        "label": "Video",
+        "multi": false
       },
       {
         "component": "multiselect",
