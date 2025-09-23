@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -7,10 +7,15 @@
     <meta name="template" content="page-content">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <base href="/">
+
+    <link rel="preload" href="./clientlib-site/fonts/roboto.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="./clientlib-site/fonts/roboto-500.woff2" as="font" type="font/woff">
+    <link rel="preload" href="./clientlib-site/fonts/tt-norms-pro-500.woff2" as="font" type="font/woff">
+
     <link rel="stylesheet" href="./clientlib-site/clientlibs/clientlib-base.css" type="text/css">
-    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-dependencies.js"></script>
     <link rel="stylesheet" href="./clientlib-site/clientlibs/clientlib-dependencies.css" type="text/css">
-  <script defer="defer" src="assets/646.6042350806127db7dab2.js"></script><script defer="defer" src="assets/49.224cf59104eafc353b73.js"></script><script defer="defer" src="assets/pdp.a880908e14c54d90fb0a.js"></script><link href="clientlib-pdp/pdp.css" rel="stylesheet"></head>
+  <script defer="defer" src="assets/vendors-node_modules_a11y-dialog_dist_a11y-dialog_esm_js-node_modules_choices_js_public_asset-449efc.167c64382dfe4ddd610f.js"></script><script defer="defer" src="assets/src_main_webpack_components_carousel_js__carousel_js-src_main_webpack_components_header_js__h-1f3c9b.86b7a07d95b39cb2b812.js"></script><script defer="defer" src="assets/pdp.fa6d6c67b6aac643c274.js"></script><link href="clientlib-pdp/pdp.css" rel="stylesheet"></head>
   <body class="page" data-page="pdp">
     <div class="root responsivegrid">
       
@@ -23,13 +28,28 @@
         
         <div class="navigation">
           <nav class="cmp-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main Navigation">
-            <ul class="cmp-navigation__group">
-              <li class="cmp-navigation__item cmp-navigation__item--logo">
-                <a href="/" title="Asus CTO" class="cmp-navigation__item-link">
-                  <img src="./clientlib-site/images/logo.svg" alt="Asus CTO Logo">
-                </a>
-              </li>
-            </ul>
+            <a href="./" aria-label="Go to Home Page" class="cmp-navigation__item--logo">
+              
+              <div class="logo-item logo-item--asus">
+                <div class="logo-wrapper">
+                  <img src="./clientlib-site/images/logo-asus.svg" alt="ASUS logo" class="logo-default" width="87" height="20">
+                  <img src="./clientlib-site/images/logo-asus-hover.svg" alt="ASUS logo" class="logo-hover" width="87" height="20">
+                </div>
+              </div>
+
+              
+              <div class="logo-item logo-item--rog">
+                <div class="logo-wrapper">
+                  <img src="./clientlib-site/images/logo-rog.svg" alt="ROG Logo" class="logo-default" width="135" height="26">
+                  <img src="./clientlib-site/images/logo-rog-hover.svg" alt="ROG Hover Logo" class="logo-hover" width="135" height="26">
+                </div>
+              </div>
+
+              
+              <div title="Gaming PC Custom Builder" class="logo-item logo-item--gaming">
+                <img src="./clientlib-site/images/gaming_pc_logo.svg" alt="Gaming PC Custom Builder Logo" width="104" height="22">
+              </div>
+            </a>
           </nav>
         </div>
 
@@ -38,35 +58,53 @@
           <nav class="cmp-sitenavigation" aria-label="Site Navigation">
             <ul class="cmp-sitenavigation__group cmp-sitenavigation__group--main">
               <li class="cmp-sitenavigation__item cmp-sitenavigation__item--desktop">
-                <a class="cmp-sitenavigation__item-link" href="./products.html">All desktop</a>
+                <a class="cmp-sitenavigation__item-link" href="./product-listing.html">All Desktops</a>
               </li>
               <li class="cmp-sitenavigation__item cmp-sitenavigation__item--help">
-                <a class="cmp-sitenavigation__item-link" href="./help-me-choose.html">Help me choose</a>
+                <a class="cmp-sitenavigation__item-link" href="./help-me-choose.html">Help Me Choose</a>
               </li>
               <li class="cmp-sitenavigation__item cmp-sitenavigation__item--news">
-                <a class="cmp-sitenavigation__item-link" href="#">News & Articles</a>
+                <a class="cmp-sitenavigation__item-link" href="./news-articles.html">News & Articles</a>
               </li>
             </ul>
 
             
             <ul class="cmp-sitenavigation__group cmp-sitenavigation__group--icons">
-              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--search">
+              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--search hidden">
                 <a class="cmp-sitenavigation__item-link" href="/">
-                  <img src="./clientlib-site/images/search-icon.svg" alt="search-icon">
-                </a>
-              </li>
-              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--profile">
-                <a class="cmp-sitenavigation__item-link" href="/">
-                  <img src="./clientlib-site/images/profile-icon.svg" alt="profile-icon">
+                  <span class="icon icon--search"></span>
                 </a>
               </li>
               <li class="cmp-sitenavigation__item cmp-sitenavigation__item--cart">
-                <a class="cmp-sitenavigation__item-link" href="/">
-                  <img src="./clientlib-site/images/card-icon.svg" alt="cart-icon">
+                <a class="cmp-sitenavigation__item-link" href="/" aria-label="Cart">
+                  <span class="icon icon--cart"></span>
                 </a>
               </li>
-              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--menu">
-                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Menu"></button>
+              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--profile">
+                <div class="profile-dropdown">
+                  
+                  <button class="cmp-sitenavigation__item-link profile-toggle logged-in" aria-label="Member Account" aria-expanded="false">
+                    <span class="icon icon--profile"></span>
+                  </button>
+                  <ul class="profile-menu">
+                    <li class="profile-menu__header">
+                      <button class="profile-menu__close" aria-label="Close profile menu">
+                      </button>
+                    </li>
+                    <li class="profile-menu__item"><a href="#">Login</a></li>
+                    <li class="profile-menu__item"><a href="#">My Account</a></li>
+                    <li class="profile-menu__item"><a href="#">Product Registration</a></li>
+                    <li class="profile-menu__item"><a href="#">Check My Order</a></li>
+                    <li class="profile-menu__item"><a href="#">My Wishlist</a></li>
+                    <li class="profile-menu__item"><a href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--menu-toggle">
+                <button id="header-hamburger-menu-toggle" class="btn btn-link" aria-label="Toggle Menu">
+                  <span class="icon icon--hamburger"></span>
+                  <span class="icon icon--close"></span>
+                </button>
               </li>
             </ul>
           </nav>
@@ -76,24 +114,45 @@
   </header>
 
   
-  <div class="mobile-menu-overlay" id="mobile-menu">
-    <ul class="mobile-menu p-0">
-      <li class="has-divider"><a href="./products.html" class="px-6">All Desktops</a></li>
-      <li class="has-divider"><a href="./help-me-choose.html" class="px-6">Help Me Choose</a></li>
-      <li class="has-divider"><a href="#" class="px-6">News & Articles</a></li>
-      <li class="px-6">
-        <div class="mobile-search">
-          <img src="./clientlib-site/images/icon-search.svg" alt="Search">
-          <input type="text" placeholder="Enter keywords">
-        </div>
-      </li>
-      <li>
-        <a href="/" class="px-6 d-flex-align">
-          <img src="./clientlib-site/images/icon-profile-mobile.svg" alt="Profile">
-          <div class="profile">My Account</div>
-        </a>
-      </li>
-    </ul>
+  <div class="mobile-menu-overlay" id="mobile-menu-dialog" aria-labelledby="mobile-menu-title" aria-hidden="true" data-a11y-dialog-native>
+    <div class="mobile-menu-container">
+      <div id="mobile-menu-title" class="sr-only">Mobile Navigation Menu</div>
+      <ul class="mobile-menu">
+        <li><a href="./product-listing.html" class="px-6">All Desktops</a></li>
+        <li><a href="./help-me-choose.html" class="px-6">Help Me Choose</a></li>
+        <li><a href="./news-articles.html" class="px-6">News & Articles</a></li>
+
+        
+        <li class="px-6 hidden">
+          <div class="mobile-search">
+            <span class="icon icon--search"></span>
+            <input placeholder="Enter keywords">
+          </div>
+        </li>
+
+        
+        <li class="mobile-account-section">
+          <button class="mobile-account-toggle px-6 d-flex-align mobile-account-link" aria-expanded="false">
+            <span class="icon icon--profile"></span>
+            <span class="profile">My Account</span>
+            <span class="icon icon--arrow-right arrow-icon"></span>
+          </button>
+          <div class="mobile-account-submenu">
+            <div class="submenu-header">
+              <button class="back-button" aria-label="Back">
+                <span class="icon icon--arrow-left"></span>
+                <span class="submenu-title">My Account</span>
+              </button>
+            </div>
+            <ul class="submenu-items">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Product Registration</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -109,35 +168,35 @@
     <div class="swiper-wrapper">
       
         <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-image-1.png" alt="ROG G700 - Front View" class="gallery-main-image" data-gallery-index="0" loading="eager">
+          <img src="./clientlib-site/images/products/product-1-image-1.webp" alt="ROG G700 - Front View" class="gallery-main-image" data-gallery-index="0" loading="eager">
         </div>
       
         <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-2.png" alt="ROG G700 - Side View" class="gallery-main-image" data-gallery-index="1" loading="lazy">
+          <img src="./clientlib-site/images/products/product-1-image-2.webp" alt="ROG G700 - Side View" class="gallery-main-image" data-gallery-index="1" loading="lazy">
         </div>
       
         <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-3.png" alt="ROG G700 - Back View" class="gallery-main-image" data-gallery-index="2" loading="lazy">
+          <img src="./clientlib-site/images/products/product-1-image-3.webp" alt="ROG G700 - Back View" class="gallery-main-image" data-gallery-index="2" loading="lazy">
         </div>
       
         <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-4.png" alt="ROG G700 - Interior View" class="gallery-main-image" data-gallery-index="3" loading="lazy">
+          <img src="./clientlib-site/images/products/product-1-image-4.webp" alt="ROG G700 - Interior View" class="gallery-main-image" data-gallery-index="3" loading="lazy">
         </div>
       
         <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-5.png" alt="ROG G700 - Components" class="gallery-main-image" data-gallery-index="4" loading="lazy">
+          <img src="./clientlib-site/images/products/product-1-image-5.webp" alt="ROG G700 - Components" class="gallery-main-image" data-gallery-index="4" loading="lazy">
         </div>
       
         <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-6.png" alt="ROG G700 - Setup" class="gallery-main-image" data-gallery-index="5" loading="lazy">
+          <img src="./clientlib-site/images/products/product-1-image-6.webp" alt="ROG G700 - Setup" class="gallery-main-image" data-gallery-index="5" loading="lazy">
         </div>
       
         <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-5.png" alt="ROG G700 - Components" class="gallery-main-image" data-gallery-index="6" loading="lazy">
+          <img src="./clientlib-site/images/products/product-1-image-5.webp" alt="ROG G700 - Components" class="gallery-main-image" data-gallery-index="6" loading="lazy">
         </div>
       
         <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-6.png" alt="ROG G700 - Setup" class="gallery-main-image" data-gallery-index="7" loading="lazy">
+          <img src="./clientlib-site/images/products/product-1-image-6.webp" alt="ROG G700 - Setup" class="gallery-main-image" data-gallery-index="7" loading="lazy">
         </div>
       
     </div>
@@ -149,35 +208,35 @@
       <div class="swiper-wrapper">
         
           <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-1.png" alt="ROG G700 - Front View Thumbnail" class="gallery-thumb-image" data-gallery-index="0" loading="lazy">
+            <img src="./clientlib-site/images/products/product-1-thumb-1.webp" alt="ROG G700 - Front View Thumbnail" class="gallery-thumb-image" data-gallery-index="0" loading="lazy">
           </div>
         
           <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-2.png" alt="ROG G700 - Side View Thumbnail" class="gallery-thumb-image" data-gallery-index="1" loading="lazy">
+            <img src="./clientlib-site/images/products/product-1-thumb-2.webp" alt="ROG G700 - Side View Thumbnail" class="gallery-thumb-image" data-gallery-index="1" loading="lazy">
           </div>
         
           <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-3.png" alt="ROG G700 - Back View Thumbnail" class="gallery-thumb-image" data-gallery-index="2" loading="lazy">
+            <img src="./clientlib-site/images/products/product-1-thumb-3.webp" alt="ROG G700 - Back View Thumbnail" class="gallery-thumb-image" data-gallery-index="2" loading="lazy">
           </div>
         
           <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-4.png" alt="ROG G700 - Interior View Thumbnail" class="gallery-thumb-image" data-gallery-index="3" loading="lazy">
+            <img src="./clientlib-site/images/products/product-1-thumb-4.webp" alt="ROG G700 - Interior View Thumbnail" class="gallery-thumb-image" data-gallery-index="3" loading="lazy">
           </div>
         
           <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-5.png" alt="ROG G700 - Components Thumbnail" class="gallery-thumb-image" data-gallery-index="4" loading="lazy">
+            <img src="./clientlib-site/images/products/product-1-thumb-5.webp" alt="ROG G700 - Components Thumbnail" class="gallery-thumb-image" data-gallery-index="4" loading="lazy">
           </div>
         
           <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-6.png" alt="ROG G700 - Setup Thumbnail" class="gallery-thumb-image" data-gallery-index="5" loading="lazy">
+            <img src="./clientlib-site/images/products/product-1-thumb-6.webp" alt="ROG G700 - Setup Thumbnail" class="gallery-thumb-image" data-gallery-index="5" loading="lazy">
           </div>
         
           <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-5.png" alt="ROG G700 - Components Thumbnail" class="gallery-thumb-image" data-gallery-index="6" loading="lazy">
+            <img src="./clientlib-site/images/products/product-1-thumb-5.webp" alt="ROG G700 - Components Thumbnail" class="gallery-thumb-image" data-gallery-index="6" loading="lazy">
           </div>
         
           <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-6.png" alt="ROG G700 - Setup Thumbnail" class="gallery-thumb-image" data-gallery-index="7" loading="lazy">
+            <img src="./clientlib-site/images/products/product-1-thumb-6.webp" alt="ROG G700 - Setup Thumbnail" class="gallery-thumb-image" data-gallery-index="7" loading="lazy">
           </div>
         
       </div>
@@ -226,27 +285,27 @@
       
             <div class="fps-scores">
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/call-of-duty.png" alt="Call of Duty: Modern Warfare">
+                <img src="./clientlib-site/images/games/call-of-duty.webp" alt="Call of Duty: Modern Warfare" loading="lazy">
                 <span>118 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/alan-wake.png" alt="Alan Wake 2">
+                <img src="./clientlib-site/images/games/alan-wake.webp" alt="Alan Wake 2" loading="lazy">
                 <span>67 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/counter-strike.png" alt="Counter Strike 2">
+                <img src="./clientlib-site/images/games/counter-strike.webp" alt="Counter Strike 2" loading="lazy">
                 <span>100 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/baldurs-gate.png" alt="Baldur's Gate 3">
+                <img src="./clientlib-site/images/games/baldurs-gate.webp" alt="Baldur's Gate 3" loading="lazy">
                 <span>82 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/fortnite.png" alt="Fortnite">
+                <img src="./clientlib-site/images/games/fortnite.webp" alt="Fortnite" loading="lazy">
                 <span>75 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/red-redemption.png" alt="Red Redemption 2">
+                <img src="./clientlib-site/images/games/red-redemption.webp" alt="Red Redemption 2" loading="lazy">
                 <span>130 FPS</span>
               </div>
             </div>
@@ -257,27 +316,27 @@
       
             <div class="fps-scores">
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/call-of-duty.png" alt="Call of Duty: Modern Warfare">
+                <img src="./clientlib-site/images/games/call-of-duty.webp" alt="Call of Duty: Modern Warfare" loading="lazy">
                 <span>120 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/alan-wake.png" alt="Alan Wake 2">
+                <img src="./clientlib-site/images/games/alan-wake.webp" alt="Alan Wake 2" loading="lazy">
                 <span>67 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/counter-strike.png" alt="Counter Strike 2">
+                <img src="./clientlib-site/images/games/counter-strike.webp" alt="Counter Strike 2" loading="lazy">
                 <span>100 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/baldurs-gate.png" alt="Baldur's Gate 3">
+                <img src="./clientlib-site/images/games/baldurs-gate.webp" alt="Baldur's Gate 3" loading="lazy">
                 <span>82 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/fortnite.png" alt="Fortnite">
+                <img src="./clientlib-site/images/games/fortnite.webp" alt="Fortnite" loading="lazy">
                 <span>75 FPS</span>
               </div>
               <div class="fps-item">
-                <img src="./clientlib-site/images//games/red-redemption.png" alt="Red Redemption 2">
+                <img src="./clientlib-site/images/games/red-redemption.webp" alt="Red Redemption 2" loading="lazy">
                 <span>130 FPS</span>
               </div>
             </div>
@@ -302,7 +361,7 @@
     <div class="time-spy-score-right">
       <span class="data-from">Data from</span>
       <div class="data-source">
-        <img src="./clientlib-site/images/3dmark.png" alt="3DMark logo">
+        <img src="./clientlib-site/images/3dmark.webp" alt="3DMark logo" loading="lazy">
         <button data-tooltip-trigger aria-describedby="fps-tooltip" data-tooltip-position="bottom" class="btn btn-link" aria-label="3D Mark information">
           <span class="icon icon--info"></span>
         </button>
@@ -326,11 +385,10 @@
           </div>
 
           <h2 class="product-title" id="product-name">ROG G700 (2025)</h2>
-          <p class="product-id" aria-describedby="product-name">Model: G700TF-XS776</p>
+          <p class="product-model" aria-describedby="product-name">Model: G700TF-XS776</p>
 
-          <div class="cmp-product-card__stars" data-rating="4" aria-label="Rated 4 out of 5 stars based on 100 customer reviews" role="img">
-            <div class="cmp-product-card__stars-icon"></div>
-            <span class="cmp-product-card__stars-text">4 (100)</span>
+          <div class="cmp-product-card__stars">
+            <div data-bv-show="inline_rating" data-bv-product-id="ASUS_M1_25392_P" data-bv-redirect-url="pdp.html#product-reviews"></div>
           </div>
 
           <div class="game-title">
@@ -409,174 +467,194 @@
 </section>
 
 <div class="cmp-game-fps-sticky-navigation">
-  <div class="cmp-game-fps-sticky-nav">
-  <div class="container">
-     <div class="layout-grid">
-        <div class="layout-grid__col layout-grid__col--span-6 layout-grid__col--md-span-12">
-           <div class="cmp-game-fps-sticky-nav__left">
-              <div class="cmp-game-fps-sticky-nav__left__content">
-                 <div class="cmp-game-fps-sticky-nav__left__content__title">
-                    <h4>ROG G700 (2025)</h4>
-                 </div>
-                 <div class="cmp-game-fps-sticky-nav__left__content__description">
-                    <p>GA15DK-RS754 | 90PF02Q1-M01TUO</p>
-                 </div>
-              </div>
-           </div>
-        </div>
-        <div class="layout-grid__col layout-grid__col--span-6 layout-grid__col--md-span-12">
-           <div class="cmp-mob-accordion">
-              <div class="mob-accordion">
-                 <div class="mob-accordion-item">
-                    <div class="mob-accordion-item-header">
-                       <span class="mob-accordion-item-header-title">Game Performance
-                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down mob-accordion-item-header-icon">
-                          <path d="m6 9 6 6 6-6"/>
-                       </svg>
-                    </span></div>
-                    <div class="mob-accordion-item-description-wrapper">
-                       <div class="mob-accordion-item-description">
-                          <div class="fps-info-section">
-                             <div>
-                                <button class="fps-info" data-a11y-dialog-show="fps-dialog" aria-label="View FPS Details">
-                                <span class="fps-title">Game FPS</span><span class="icon icon--plus"></span>
-                                </button>
-                                <p>Performance in your build</p>
-                             </div>
-                             <div>
-                                <select class="fps-select" name="resolution" id="resolution">
-                                   <option value="1880">1080p</option>
-                                   <option value="1440">1440p</option>
-                                </select>
-                             </div>
-                          </div>
-                          <div class="fps-img-section">
-                             <div class="fps-scores">
-                                <div class="fps-item">
-                                   <img src="./clientlib-site/images//games/call-of-duty.png" alt="Call of Duty: Modern Warfare">
-                                   <div>118</div>
-                                </div>
-                                <div class="fps-item">
-                                   <img src="./clientlib-site/images//games/alan-wake.png" alt="Alan Wake 2">
-                                   <div>67</div>
-                                </div>
-                                <div class="fps-item">
-                                   <img src="./clientlib-site/images//games/counter-strike.png" alt="Counter Strike 2">
-                                   <div>100</div>
-                                </div>
-                                <div class="fps-item">
-                                   <img src="./clientlib-site/images//games/baldurs-gate.png" alt="Baldur's Gate 3">
-                                   <div>82</div>
-                                </div>
-                                <div class="fps-item">
-                                   <img src="./clientlib-site/images//games/fortnite.png" alt="Fortnite">
-                                   <div>75</div>
-                                </div>
-                                <div class="fps-item">
-                                   <img src="./clientlib-site/images//games/red-redemption.png" alt="Red Redemption 2">
-                                   <div>130</div>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-           <div class="cmp-game-fps-sticky-nav__right web-only">
-              <div class="fps-info-section">
-                 <div>
-                    <button class="fps-info" data-a11y-dialog-show="fps-dialog" aria-label="View FPS Details">
-                    <span class="fps-title">Game FPS</span><span class="icon icon--plus"></span>
-                    </button>
-                 </div>
-                 <p>Performance in your build</p>
-                 <div>
-                    <select class="fps-select" name="resolution" id="resolution">
-                       <option value="1880">1080p</option>
-                       <option value="1440">1440p</option>
-                    </select>
-                 </div>
-              </div>
-              <div class="vertical-divider"></div>
-              <div class="fps-img-section">
-                 <div class="fps-scores">
-                    <div class="fps-item">
-                       <img src="./clientlib-site/images//games/call-of-duty.png" alt="Call of Duty: Modern Warfare">
-                       <div>118</div>
-                    </div>
-                    <div class="fps-item">
-                       <img src="./clientlib-site/images//games/alan-wake.png" alt="Alan Wake 2">
-                       <div>67</div>
-                    </div>
-                    <div class="fps-item">
-                       <img src="./clientlib-site/images//games/counter-strike.png" alt="Counter Strike 2">
-                       <div>100</div>
-                    </div>
-                    <div class="fps-item">
-                       <img src="./clientlib-site/images//games/baldurs-gate.png" alt="Baldur's Gate 3">
-                       <div>82</div>
-                    </div>
-                    <div class="fps-item">
-                       <img src="./clientlib-site/images//games/fortnite.png" alt="Fortnite">
-                       <div>75</div>
-                    </div>
-                    <div class="fps-item">
-                       <img src="./clientlib-site/images//games/red-redemption.png" alt="Red Redemption 2">
-                       <div>130</div>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-     </div>
-  </div>
+   <div class="cmp-game-fps-sticky-nav">
+   <div class="container">
+      <div class="layout-grid">
+         <div class="layout-grid__col layout-grid__col--span-6 layout-grid__col--md-span-12">
+            <div class="cmp-game-fps-sticky-nav__left">
+               <div class="cmp-game-fps-sticky-nav__left__content">
+                  <div class="cmp-game-fps-sticky-nav__left__content__title">
+                     <h4>ROG G700 (2025)</h4>
+                  </div>
+                  <div class="cmp-game-fps-sticky-nav__left__content__description">
+                     <p>GA15DK-RS754</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="layout-grid__col layout-grid__col--span-6 layout-grid__col--md-span-12">
+            <div class="game-fps-accordion-wrapper">
+               <div class="game-fps-accordion">
+                  <div class="game-fps-accordion-item">
+                     <div class="game-fps-accordion-item-header">
+                        <span class="game-fps-accordion-item-header-title">Game Performance
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down mob-accordion-item-header-icon">
+                              <path d="m6 9 6 6 6-6"/>
+                           </svg>
+                        </span>
+                     </div>
+                     <div class="game-fps-accordion-item-description-wrapper">
+                        <div class="game-fps-accordion-item-description">
+                           <div class="fps-info-section">
+                              <div class="fps-info-section__left">
+                                 <button class="fps-info" data-a11y-dialog-show="fps-dialog" aria-label="Game FPS Performance in your build">
+                                    <span class="fps-title">Game FPS</span>
+                                    <span class="icon icon--plus"></span>
+                                 </button>
+                                 <p>Performance in your build</p>
+                              </div>
+                              <div class="fps-info-section__right">
+                                 <select id="select-resolution-mobile" name="select-resolution-mobile" class="cmp-product-sort__select cmp-select-resolution-dropdown" aria-label="Select game resolution" aria-expanded="false" role="combobox">
+                                    <option value="1880" role="option" aria-selected="true">1080p</option>
+                                    <option value="1440" role="option" aria-selected="false">1440p</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="fps-img-section">
+                              <div class="fps-scores">
+                                 <div class="fps-item">
+                                    <img src="./clientlib-site/images//games/call-of-duty.webp" alt="Call of Duty: Modern Warfare">
+                                    <div>118</div>
+                                 </div>
+                                 <div class="fps-item">
+                                    <img src="./clientlib-site/images//games/alan-wake.webp" alt="Alan Wake 2">
+                                    <div>67</div>
+                                 </div>
+                                 <div class="fps-item">
+                                    <img src="./clientlib-site/images//games/counter-strike.webp" alt="Counter Strike 2">
+                                    <div>100</div>
+                                 </div>
+                                 <div class="fps-item">
+                                    <img src="./clientlib-site/images//games/baldurs-gate.webp" alt="Baldur's Gate 3">
+                                    <div>82</div>
+                                 </div>
+                                 <div class="fps-item">
+                                    <img src="./clientlib-site/images//games/fortnite.webp" alt="Fortnite">
+                                    <div>75</div>
+                                 </div>
+                                 <div class="fps-item">
+                                    <img src="./clientlib-site/images//games/red-redemption.webp" alt="Red Redemption 2">
+                                    <div>130</div>
+                                 </div>
+                              </div>
+
+                           </div>
+                           
+                           <div class="empty-game-fps-section hidden">
+                              <p>
+                                 Game FPS is currently unavailable
+                              </p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="cmp-game-fps-sticky-nav__right web-only">
+               <div class="fps-info-section">
+                  <div>
+                     <button class="fps-info" data-a11y-dialog-show="fps-dialog" aria-label="Game FPS Performance in your build">
+                        <span class="fps-title">Game FPS</span><span class="icon icon--plus"></span>
+                     </button>
+                     <p>Performance in your build</p>
+                  </div>
+                  <div>
+                     <select id="select-resolution" name="select-resolution" class="cmp-product-sort__select cmp-select-resolution-dropdown" aria-label="Select game resolution" aria-expanded="false" role="combobox">
+                                    <option value="1880" role="option" aria-selected="true">1080p</option>
+                                    <option value="1440" role="option" aria-selected="false">1440p</option>
+                                 </select>
+                  </div>
+               </div>
+               <div class="vertical-divider"></div>
+               <div class="fps-img-section">
+                  <div class="fps-scores">
+                     <div class="fps-item">
+                        <img src="./clientlib-site/images//games/call-of-duty.webp" alt="Call of Duty: Modern Warfare">
+                        <div>118</div>
+                     </div>
+                     <div class="fps-item">
+                        <img src="./clientlib-site/images//games/alan-wake.webp" alt="Alan Wake 2">
+                        <div>67</div>
+                     </div>
+                     <div class="fps-item">
+                        <img src="./clientlib-site/images//games/counter-strike.webp" alt="Counter Strike 2">
+                        <div>100</div>
+                     </div>
+                     <div class="fps-item">
+                        <img src="./clientlib-site/images//games/baldurs-gate.webp" alt="Baldur's Gate 3">
+                        <div>82</div>
+                     </div>
+                     <div class="fps-item">
+                        <img src="./clientlib-site/images//games/fortnite.webp" alt="Fortnite">
+                        <div>75</div>
+                     </div>
+                     <div class="fps-item">
+                        <img src="./clientlib-site/images//games/red-redemption.webp" alt="Red Redemption 2">
+                        <div>130</div>
+                     </div>
+                  </div>
+               </div>
+
+               
+               <div class="empty-game-fps-section hidden">
+                  <p>
+                     Game FPS is currently unavailable
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </div>
 </div>
 <div class="tabs panelcontainer">
-  <div id="tabs-basic-tabs" class="cmp-tabs" data-cmp-is="custom-tabs" data-placeholder-text="false" data-style="basic">
-    <div class="secondary-navigation">
-      <ol role="tablist" class="cmp-tabs__tablist" aria-multiselectable="false">
-        <li role="tab" id="product-features-tab" class="cmp-tabs__tab cmp-tabs__tab--active" aria-controls="product-features-tabpanel" tabindex="0" data-cmp-hook-tabs="tab" aria-selected="true">
-          Features
-        </li>
-
-        <li role="tab" id="product-tech-specs-tab" class="cmp-tabs__tab" aria-controls="product-tech-specs-tabpanel" tabindex="-1" data-cmp-hook-tabs="tab" aria-selected="false">
-          Tech Specs
-        </li>
-
-        <li role="tab" id="product-reviews-tab" class="cmp-tabs__tab" aria-controls="product-reviews-tabpanel" tabindex="-1" data-cmp-hook-tabs="tab" aria-selected="false">
-          Reviews
-        </li>
-
-        <li role="tab" id="product-customization-tab" class="cmp-tabs__tab" aria-controls="product-customization-tabpanel" tabindex="-1" data-cmp-hook-tabs="tab" aria-selected="false">
-          Customization
-        </li>
-
-        <li role="tab" id="product-bundles-tab" class="cmp-tabs__tab" aria-controls="product-bundles-tabpanel" tabindex="-1" data-cmp-hook-tabs="tab" aria-selected="false">
-          Bundles &amp; Bonuses
-        </li>
-      </ol>
-    </div>
-
-    <div id="product-features-tabpanel" role="tabpanel" aria-labelledby="product-features-tab" tabindex="0" class="cmp-tabs__tabpanel cmp-tabs__tabpanel--active" data-cmp-hook-tabs="tabpanel" aria-hidden="false">
-      <div id="key-features" class="cmp-text">
-        <div class="cmp-key-features">
+   <div id="tabs-basic-tabs" class="cmp-tabs" data-cmp-is="custom-tabs" data-placeholder-text="false" data-style="basic">
+      <div class="secondary-navigation" id="pdp-secondary-navigation">
+         <div class="secondary-navigation-carousel">
+            <ol role="tablist" class="cmp-tabs__tablist swiper-wrapper" aria-multiselectable="false">
+               <li role="tab" id="product-features-tab" class="cmp-tabs__tab cmp-tabs__tab--active swiper-slide" aria-controls="product-features" tabindex="0" data-cmp-hook-tabs="tab" aria-selected="true">
+                  Features
+               </li>
+               <li role="tab" id="product-tech-specs-tab" class="cmp-tabs__tab swiper-slide" aria-controls="product-tech-specs" tabindex="-1" data-cmp-hook-tabs="tab" aria-selected="false">
+                  Tech Specs
+               </li>
+               <li role="tab" id="product-reviews-tab" class="cmp-tabs__tab swiper-slide" aria-controls="product-reviews" tabindex="-1" data-cmp-hook-tabs="tab" aria-selected="false">
+                  Reviews
+               </li>
+               <li role="tab" id="product-customization-tab" class="cmp-tabs__tab swiper-slide" aria-controls="product-customization" tabindex="-1" data-cmp-hook-tabs="tab" aria-selected="false">
+                  Customization
+               </li>
+               <li role="tab" id="product-bundles-tab" class="cmp-tabs__tab swiper-slide" aria-controls="product-bundles" tabindex="-1" data-cmp-hook-tabs="tab" aria-selected="false">
+                  Bundles &amp; Bonuses
+               </li>
+            </ol>
+         </div>
+         <div class="secondary-navigation-actions">
+            <button class="secondary-navigation-action-prev">
+            <span class="icon icon--arrow-left"></span>
+            </button>
+            <button class="secondary-navigation-action-next">
+            <span class="icon icon--arrow-right"></span>
+            </button>
+         </div>
+      </div>
+      <div id="product-features" role="tabpanel" aria-labelledby="product-features-tab" tabindex="0" class="cmp-tabs__tabpanel cmp-tabs__tabpanel--active" data-cmp-hook-tabs="tabpanel" aria-hidden="false">
+         <div class="cmp-key-features">
   <div class="container container-mobile-full">
     <div class="section-heading content-center">
       <h2 id="key-features-heading">Key Features</h2>
     </div>
     <div class="cmp-key-features__content">
       <div class="cmp-key-features__images">
-        <img src="./clientlib-site/images/key-feature-img-1.png" alt="Key feature">
+        <img src="./clientlib-site/images/key-feature-img-1.webp" alt="ROG G700 desktop PC with blue and purple internal lighting, showcasing its sleek design and transparent side panel">
       </div>
 
       <div id="key-features-additional-images" class="cmp-key-features__additional-content" aria-hidden="true">
         <div class="cmp-key-features__images">
-          <img src="./clientlib-site/images/key-feature-img-2.png" alt="Key feature">
+          <img src="./clientlib-site/images/key-feature-img-2.webp" alt="ROG G700 desktop PC with blue and purple internal lighting, showcasing its sleek design and transparent side panel">
         </div>
         <div class="cmp-key-features__images">
-          <img src="./clientlib-site/images/key-feature-img-3.png" alt="Key feature">
+          <img src="./clientlib-site/images/key-feature-img-3.webp" alt="ROG G700 desktop PC with blue and purple internal lighting, showcasing its sleek design and transparent side panel">
         </div>
 
         <div class="cmp-feature-content">
@@ -623,47 +701,2022 @@
 </div>
 
       </div>
-    </div>
-
-    <div id="product-tech-specs-tabpanel" role="tabpanel" aria-labelledby="product-tech-specs-tab" tabindex="0" class="cmp-tabs__tabpanel" data-cmp-hook-tabs="tabpanel" aria-hidden="true">
-      <div id="tech-specs" class="cmp-text">
-        <div class="cmp-tech-specs">
+      <div id="product-tech-specs" role="tabpanel" aria-labelledby="product-tech-specs-tab" tabindex="0" class="cmp-tabs__tabpanel" data-cmp-hook-tabs="tabpanel" aria-hidden="true">
+         <div class="cmp-tech-specs">
   <div class="container">
-    <div class="section-heading content-center">
-      <h2>Tech Specs</h2>
+     <div class="section-heading">
+        <h2>Tech Specs</h2>
+        <div class="support-faq"><a href="#">Support & FAQs<span class="icon icon--arrow-right"></span></a></div>
+     </div>
+     <div class="cmp-tech-specs-details">
+        <div class="layout-grid">
+           <div class="layout-grid__col layout-grid__col--span-6 layout-grid__col--md-span-12">
+              <div class="cmp-tech-specs__item-wrapper">
+                 <div class="cmp-tech-specs__item">
+                    <h3>Color</h3>
+                    <ul>
+                     <li>Black</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Operating System</h3>
+                    <ul>
+                     <li>Windows 11 Pro - ASUS recommends Windows 11 Pro for business</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Processor</h3>
+                    <ul>
+                     <li>Intel® Core™ Ultra 9 Processor 285K (36M Cache, up to 5.50 GHz)</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Chipset</h3>
+                    <ul>
+                     <li>Intel® B860 Chipset</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Memory</h3>
+                    <ul>
+                     <li>4x DDR5 U-DIMM slot </li>
+                    <li>16GB DDR5 U-DIMM x 2  </li>
+                     <li>Memory max up to:128GB</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Sata</h3>
+                    <ul>
+                     <li>6 x SATA 6.0Gb/s ports</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Storage</h3>
+                    <ul>
+                     <li>1TB M.2 2280 NVMe™ PCIe® 4.0 SSD x 2</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>FRONT I/O PORTS</h3>
+                    <ul>  <li>1x Headphone </li>
+                       <li>1x Mic in </li>
+                       <li>1x USB 3.2 Gen 1 Type-C</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>REAR I/O PORTS</h3>
+                    <ul>
+                       <li>1x RJ45 Gigabit Ethernet </li>
+                       <li>2x HDMI </li>
+                       <li>1x Displayport 1.4 </li>
+                       <li>1x PS2 </li>
+                       <li>3 x Audio jacks </li>
+                       <li> 4x USB 2.0 Type-A </li>
+                      <li> 2x USB 3.2 Gen 2 Type-A</li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
+           <div class="layout-grid__col layout-grid__col--span-6 layout-grid__col--md-span-12">
+              <div class="cmp-tech-specs__item-wrapper">
+                 <div class="cmp-tech-specs__item">
+                    <h3>Expansion Slots (Includes Used)</h3>
+                    <ul>
+                     <li>
+                        1x PCIe® 4.0 x 16 
+                     </li> 
+                     <li>
+                        3 x PCIe® 4.0 x16 
+                     </li>
+                     <li>
+                        (when using vertical graphic card, other PCle 4.0 x16 slots are not available)
+                     </li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Audio</h3>
+                    <ul> <li> High Definition 7.1 Channel Audio</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Power supply</h3>
+                    <ul> <li> 850W power supply (80+ Gold, peak 900W)</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Weight</h3>
+                    <ul> <li> 18.32 kg (40.39 lbs)</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Dimensions</h3>
+                    <ul> <li> 24.00 x 50.92 x 47.96 cm (9.45" x 20.05" x 18.88") </li>
+                       Not including chassis feet and GPU bracket.
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Dimensions</h3>
+                    <ul> <li>24.00 x 50.92 x 47.96 cm (9.45" x 20.05" x 18.88") </li>
+                       Not including chassis feet and GPU bracket.
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Ecolabels & Compliances</h3>
+                    <ul> <li>RoHs</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Included in the box (Optional)</h3>
+                    <ul> <li>Gaming RGB Mouse(USB) </li>
+                       <li>Gaming RGB Keyboard(USB)</li>
+                    </ul>
+                 </div>
+                 <div class="cmp-tech-specs__item">
+                    <h3>Thermal</h3>
+                    <ul> <li>Liquid Cooler</li>
+                    </ul>
+                 </div>
+              </div>
+           </div>
+        </div>
+     </div>
+  </div>
+</div>
+      </div>
+      <div id="product-reviews" role="tabpanel" aria-labelledby="product-reviews-tab" tabindex="0" class="cmp-tabs__tabpanel" data-cmp-hook-tabs="tabpanel" aria-hidden="true">
+         <div class="container">
+            <div class="section-heading content-center">
+               <div data-bv-show="reviews" data-bv-product-id="ASUS_M1_25392_P"></div>
+            </div>
+         </div>
+      </div>
+      <div id="product-customization" role="tabpanel" aria-labelledby="product-customization-tab" tabindex="0" class="cmp-tabs__tabpanel" data-cmp-hook-tabs="tabpanel" aria-hidden="true">
+         <div class="cmp-customizations" id="customize-product">
+  <div class="container">
+    <div class="cmp-customizations__content">
+      <div class="layout-grid">
+        <div class="layout-grid__col layout-grid__col--span-4 layout-grid__col--md-span-12">
+          <div class="cmp-customization__sidebar">
+            <div class="section-heading">
+              <h2>Customization</h2>
+            </div>
+            <div class="customizations-actions">
+              <button id="reset-customization" class="btn btn-link" disabled="disabled">
+                Reset
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M9.16667 17.0235C7.60361 16.8205 6.31007 16.1319 5.28604 14.9579C4.26201 13.7838 3.75 12.4082 3.75 10.8313C3.75 9.98403 3.91722 9.17236 4.25167 8.39625C4.58611 7.62 5.05458 6.93806 5.65708 6.35042L6.54813 7.24146C6.03632 7.7084 5.65035 8.25035 5.39021 8.86729C5.13007 9.48424 5 10.1389 5 10.8313C5 12.0535 5.39021 13.1307 6.17063 14.0629C6.95104 14.995 7.94972 15.5652 9.16667 15.7735V17.0235ZM10.8333 17.0396V15.7896C12.0364 15.546 13.0316 14.9629 13.819 14.0404C14.6063 13.1179 15 12.0482 15 10.8313C15 9.44236 14.5139 8.26181 13.5417 7.28958C12.5694 6.31736 11.3889 5.83125 10 5.83125H9.70521L10.8302 6.95625L9.95188 7.83438L7.32375 5.20625L9.95188 2.57812L10.8302 3.45625L9.70521 4.58125H10C11.7436 4.58125 13.2212 5.18701 14.4327 6.39854C15.6442 7.61007 16.25 9.08764 16.25 10.8313C16.25 12.3996 15.7367 13.7682 14.71 14.9371C13.6832 16.1058 12.391 16.8067 10.8333 17.0396Z" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+            <nav class="cmp-customization__sidebar-nav">
+              <a class="cmp-customization__sidebar-nav-item active" href="#customize-processor">
+                <div class="cmp-customization__sidebar-nav-item-icon">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.0003 6.66406L24.0003 2.66406H33.3337V6.66406H37.3337V15.9974L33.3337 19.9974L37.3337 23.9974V33.3307H33.3337V37.3307H24.0003L20.0003 33.3307L16.0003 37.3307H6.66699V33.3307H2.66699V23.9974L6.66699 19.9974L2.66699 15.9974V6.66406H6.66699V2.66406H16.0003L20.0003 6.66406ZM6.66699 6.66406V33.3307H33.3337V6.66406H6.66699Z" fill="currentColor"/>
+                    <path d="M27.4665 13.9979V25.9979L25.9999 27.4646H13.9999L12.5332 25.9979V13.9979L13.9999 12.5312H25.9999L27.4665 13.9979Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="cmp-customization__sidebar-nav-item-content">
+                  <div class="title">Processor</div>
+                  <div class="subtitle">Intel Core Ultra 9 285K</div>
+                </div>
+              </a>
+              <a class="cmp-customization__sidebar-nav-item" href="#customize-graphic-card-info">
+                <div class="cmp-customization__sidebar-nav-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M32.0013 2.66406H8.0013L2.66797 7.9974V37.3307V31.9974L8.0013 37.3307H32.0013L37.3346 31.9974V7.9974L32.0013 2.66406ZM4.66797 21.3307C5.40434 21.3307 6.0013 20.7338 6.0013 19.9974C6.0013 19.261 5.40434 18.6641 4.66797 18.6641C3.9316 18.6641 3.33464 19.261 3.33464 19.9974C3.33464 20.7338 3.9316 21.3307 4.66797 21.3307ZM36.668 19.9974C36.668 20.7338 36.071 21.3307 35.3346 21.3307C34.5982 21.3307 34.0013 20.7338 34.0013 19.9974C34.0013 19.261 34.5982 18.6641 35.3346 18.6641C36.071 18.6641 36.668 19.261 36.668 19.9974ZM18.668 4.66406C18.668 5.40044 19.2649 5.9974 20.0013 5.9974C20.7377 5.9974 21.3346 5.40044 21.3346 4.66406C21.3346 3.92769 20.7377 3.33073 20.0013 3.33073C19.2649 3.33073 18.668 3.92769 18.668 4.66406ZM20.0013 33.9974C20.7377 33.9974 21.3346 34.5943 21.3346 35.3307C21.3346 36.0671 20.7377 36.6641 20.0013 36.6641C19.2649 36.6641 18.668 36.0671 18.668 35.3307C18.668 34.5943 19.2649 33.9974 20.0013 33.9974ZM33.3346 6.66406H6.66797V33.3307H33.3346V6.66406Z" fill="currentColor"/>
+                    <mask id="mask0_11906_1719" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="12" y="12" width="16" height="16">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M13.9999 12.5312H25.9999L27.4665 13.9979V25.9979L25.9999 27.4646H13.9999L12.5332 25.9979V13.9979L13.9999 12.5312Z" fill="white"/>
+                    </mask>
+                    <g mask="url(#mask0_11906_1719)">
+                      <path d="M26.0003 12.5297L27.1316 11.3983L26.6631 10.9297H26.0003V12.5297ZM14.0003 12.5297V10.9297H13.3375L12.8689 11.3983L14.0003 12.5297ZM27.4669 13.9964H29.0669V13.3336L28.5983 12.865L27.4669 13.9964ZM27.4669 25.9964L28.5983 27.1277L29.0669 26.6592V25.9964H27.4669ZM26.0003 27.463V29.063H26.6631L27.1316 28.5944L26.0003 27.463ZM14.0003 27.463L12.8689 28.5944L13.3375 29.063H14.0003V27.463ZM12.5336 25.9964H10.9336V26.6592L11.4022 27.1277L12.5336 25.9964ZM12.5336 13.9964L11.4022 12.865L10.9336 13.3336V13.9964H12.5336ZM26.0003 10.9297H14.0003V14.1297H26.0003V10.9297ZM28.5983 12.865L27.1316 11.3983L24.8689 13.661L26.3356 15.1277L28.5983 12.865ZM29.0669 25.9964V13.9964H25.8669V25.9964H29.0669ZM27.1316 28.5944L28.5983 27.1277L26.3356 24.865L24.8689 26.3317L27.1316 28.5944ZM14.0003 29.063H26.0003V25.863H14.0003V29.063ZM11.4022 27.1277L12.8689 28.5944L15.1316 26.3317L13.6649 24.865L11.4022 27.1277ZM10.9336 13.9964V25.9964H14.1336V13.9964H10.9336ZM12.8689 11.3983L11.4022 12.865L13.6649 15.1277L15.1316 13.661L12.8689 11.3983Z" fill="currentColor"/>
+                    </g>
+                  </svg>
+                </div>
+                <div class="cmp-customization__sidebar-nav-item-content">
+                  <div class="title">Graphic Card</div>
+                  <div class="subtitle">RTX 5080 PRIME 16GB GDDR7</div>
+                </div>
+              </a>
+              <a class="cmp-customization__sidebar-nav-item" href="#customize-memory-info">
+                <div class="cmp-customization__sidebar-nav-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20.6398 0.335938L29.6654 9.36154V29.6693H0.332031V0.335938H20.6398ZM26.9576 13.4231H3.03972V26.9615H26.9576V13.4231ZM3.03972 5.0744H6.64998V8.6846H3.03972V5.0744ZM12.0654 5.0744H8.4551V8.6846H12.0654V5.0744ZM13.8706 5.0744H17.4807V8.6846H13.8706V5.0744Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="cmp-customization__sidebar-nav-item-content">
+                  <div class="title">Memory</div>
+                  <div class="subtitle">16GB DDR5 6000MT/s</div>
+                </div>
+              </a>
+              <a class="cmp-customization__sidebar-nav-item" href="#customize-storage-info">
+                <div class="cmp-customization__sidebar-nav-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="18" viewBox="0 0 36 18" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M35.3346 0.46875H0.667969V17.5354H35.3346V0.46875ZM11.868 3.66875H6.0013V14.3354H11.868V3.66875ZM15.068 3.66875H20.9346V14.3354H15.068V3.66875ZM30.0013 3.66875H24.1346V14.3354H30.0013V3.66875Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="cmp-customization__sidebar-nav-item-content">
+                  <div class="title">Storage</div>
+                  <div class="subtitle">1TB PCIe 4.0 M.2 SSD</div>
+                </div>
+              </a>
+              <a class="cmp-customization__sidebar-nav-item" href="#customize-processor-cooler-info">
+                <div class="cmp-customization__sidebar-nav-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none">
+                    <path d="M18.9683 17.9787C23.6571 18.636 27.1045 22.8165 26.6291 27.5114C26.1509 32.226 22.0655 35.3747 18.0127 35.3303V18.9021C17.637 21.3501 16.5129 23.3615 14.5486 24.8693C12.5843 26.3771 10.345 26.9655 7.90344 26.5447C3.15644 25.7237 0.540374 21.4732 0.668561 18.0073H17.0375C16.3235 17.8023 15.5583 17.6604 14.8553 17.3657C14.1281 17.0662 13.4407 16.6775 12.8093 16.2088C12.1831 15.7309 11.6222 15.1733 11.1407 14.5501C10.6663 13.9376 10.2763 13.264 9.98111 12.5476C9.68277 11.8197 9.48377 11.0551 9.38947 10.2741C9.29781 9.49138 9.31541 8.69969 9.44172 7.92176C10.2178 3.34908 14.2794 0.589708 17.9822 0.665588V17.0455C18.6419 12.2264 22.959 8.85108 27.5974 9.37242C32.3593 9.90852 35.4091 14.0851 35.3274 17.9787H18.9683Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="cmp-customization__sidebar-nav-item-content">
+                  <div class="title">Processor Cooler</div>
+                  <div class="subtitle">Liquid Cooler</div>
+                </div>
+              </a>
+              <a class="cmp-customization__sidebar-nav-item" href="#customize-operating-system-info">
+                <div class="cmp-customization__sidebar-nav-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+                    <path d="M5.33203 12.3308C5.33203 8.46764 8.46374 5.33594 12.3269 5.33594C16.19 5.33594 19.3218 8.46764 19.3218 12.3308V19.3257H12.3269C8.46374 19.3257 5.33203 16.1939 5.33203 12.3308Z" fill="currentColor"/>
+                    <path d="M20.6777 12.3308C20.6777 8.46764 23.8095 5.33594 27.6725 5.33594C31.5357 5.33594 34.6675 8.46764 34.6675 12.3308C34.6675 16.1939 31.5357 19.3257 27.6725 19.3257H20.6777V12.3308Z" fill="currentColor"/>
+                    <path d="M5.33203 27.6667C5.33203 23.8036 8.46374 20.6719 12.3269 20.6719H19.3218V27.6667C19.3218 31.5299 16.19 34.6616 12.3269 34.6616C8.46374 34.6616 5.33203 31.5299 5.33203 27.6667Z" fill="currentColor"/>
+                    <path d="M20.6777 20.6719H27.6725C31.5357 20.6719 34.6675 23.8036 34.6675 27.6667C34.6675 31.5299 31.5357 34.6616 27.6725 34.6616C23.8095 34.6616 20.6777 31.5299 20.6777 27.6667V20.6719Z" fill="currentColor"/>
+                  </svg>
+                </div>
+                <div class="cmp-customization__sidebar-nav-item-content">
+                  <div class="title">Operating system</div>
+                  <div class="subtitle">Windows 11 Home</div>
+                </div>
+              </a>
+            </nav>
+          </div>
+        </div>
+        <div class="layout-grid__col layout-grid__col--span-8 layout-grid__col--md-span-12">
+          <div class="cmp-customization__component" id="customize-processor">
+            <div class="cmp-customization__component-header">
+              <h4 class="cmp-customization__component-title">Processor</h4>
+              <div class="cmp-customization__component-actions">
+                <button class="btn btn-link" data-a11y-dialog-show="processor-info-dialog">
+                  Choosing a processor
+                  <span class="icon icon--plus"></span>
+                </button>
+              </div>
+            </div>
+            <div class="cmp-customization__component-list">
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-processor" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">13th Gen Intel® Core™ i5-13400F Processor</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-processor" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">13th Gen Intel® Core™ i7-13400F Processor</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-processor" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">Intel® Core™ i5-14400F Processor</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-processor" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">13th Gen Intel® Core™ i7-13400F Processor</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-processor" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">13th Gen Intel® Core™ i7-13400F Processor</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-processor" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">Intel Core Ultra 5 225F</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+            </div>
+          </div>
+          <div class="cmp-customization__component" id="customize-graphic-card-info">
+            <div class="cmp-customization__component-header">
+              <h4 class="cmp-customization__component-title">Graphic Card</h4>
+              <div class="cmp-customization__component-actions">
+                <button class="btn btn-link" data-a11y-dialog-show="graphic-card-info-dialog">
+                  Choosing a graphic card
+                  <span class="icon icon--plus"></span>
+                </button>
+              </div>
+            </div>
+            <div class="cmp-customization__component-list">
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-graphic-card" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">NVIDIA® GeForce RTX™ 3050 Desktop GPU</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-graphic-card" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">NVIDIA® GeForce RTX™4060 DUAL Desktop GPU</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-graphic-card" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">NVIDIA® GeForce RTX™4060 DUAL Desktop GPUv</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-graphic-card" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">NVIDIA® GeForce RTX™4060TI DUAL 8GB GDDR6 : 3xDP, 1x HDMI (up to 353 AI TOPs)</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+</div>
+            </div>
+          </div>
+          <div class="cmp-customization__component" id="customize-memory-info">
+            <div class="cmp-customization__component-header">
+              <h4 class="cmp-customization__component-title">Memory</h4>
+              <div class="cmp-customization__component-actions">
+                <button class="btn btn-link" data-a11y-dialog-show="memory-info-dialog">
+                  Choosing a memory
+                  <span class="icon icon--plus"></span>
+                </button>
+              </div>
+            </div>
+            <div class="cmp-customization__component-list">
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-memory" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">16GB Dual Channel DDR5 (2x 8GB - Green) 5200 MT/s</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-memory" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">32GB Dual Channel DDR5 (2x 16GB - Green) 5200 MT/s</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-memory" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">32GB Dual Channel DDR5 XMP (2x 16GB - Black) 6400 MT/s</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-memory" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">64GB Dual Channel DDR5 (2x 32GB - Green) 5200 MT/s</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+            </div>
+          </div>
+          <div class="cmp-customization__component" id="customize-storage-info">
+            <div class="cmp-customization__component-header">
+              <h4 class="cmp-customization__component-title">Storage</h4>
+              <div class="cmp-customization__component-actions">
+                <button class="btn btn-link" data-a11y-dialog-show="storage-info-dialog">
+                  Choosing a storage
+                  <span class="icon icon--plus"></span>
+                </button>
+              </div>
+            </div>
+            <div class="cmp-customization__component-list">
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-storage" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">1TB NVMe M.2 PCIe SSD</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-storage" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">2TB NVMe M.2 PCIe SSD</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-storage" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">4TB NVMe M.2 PCIe Gen4 SSD</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-storage" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">1TB NVMe M.2 PCIe SSD (Boot) + 2TB NVMe M.2 PCIe SSD (Storage)</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+</div>
+            </div>
+          </div>
+          <div class="cmp-customization__component" id="customize-processor-cooler-info">
+            <div class="cmp-customization__component-header">
+              <h4 class="cmp-customization__component-title">Processor cooler</h4>
+              <div class="cmp-customization__component-actions">
+                <button class="btn btn-link" data-a11y-dialog-show="processor-cooler-info-dialog">
+                  Choosing a processor cooler
+                  <span class="icon icon--plus"></span>
+                </button>
+              </div>
+            </div>
+            <div class="cmp-customization__component-list">
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-processor-cooler" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">Liquid Cooler</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-processor-cooler" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">Tower Air Cooler</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+            </div>
+          </div>
+          <div class="cmp-customization__component" id="customize-operating-system-info">
+            <div class="cmp-customization__component-header">
+              <h4 class="cmp-customization__component-title">Operating System</h4>
+              <div class="cmp-customization__component-actions">
+                <button class="btn btn-link" data-a11y-dialog-show="operating-system-info-dialog">
+                  Choosing a operating system
+                  <span class="icon icon--plus"></span>
+                </button>
+              </div>
+            </div>
+            <div class="cmp-customization__component-list">
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-operating-system" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">Windows 11 Home</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+</div>
+
+              <div class="cmp-customization-card">
+  <div class="radio-overlay">
+    <input type="radio" name="customization-option-operating-system" class="customization-radio">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">Windows 11 Pro</p>
+  </div>
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-      </div>
-    </div>
+<section class="dialog-container dialog--boxed cmp-processor-dialog" data-a11y-dialog="processor-info-dialog" id="processor-info-dialog" aria-hidden="true">
+  <div class="dialog-overlay" data-a11y-dialog-hide="processor-info-dialog"></div>
+  <div class="dialog-content" role="dialog" aria-modal="true" aria-labelledby="fps-title">
+    <button class="dialog-close" type="button" data-a11y-dialog-hide="processor-info-dialog" aria-label="Close dialog"></button>
 
-    <div id="product-reviews-tabpanel" role="tabpanel" aria-labelledby="product-reviews-tab" tabindex="0" class="cmp-tabs__tabpanel" data-cmp-hook-tabs="tabpanel" aria-hidden="true">
-      <div class="container">
-        <div class="section-heading content-center">
-          <h2>Reviews</h2>
-        </div>
-      </div>
-    </div>
+    <div class="fps-content">
+      <h2 id="fps-title" class="dialog-title">What PROCESSOR is right for me?</h2>
 
-    <div id="product-customization-tabpanel" role="tabpanel" aria-labelledby="product-customization-tab" tabindex="0" class="cmp-tabs__tabpanel" data-cmp-hook-tabs="tabpanel" aria-hidden="true">
-      <div class="container">
-        <div class="section-heading content-center">
-          <h2>Customization</h2>
-        </div>
+      <div class="dialog-section">
+        <p>
+          Choosing the right processor (CPU) is essential for your PC build, 
+          as it acts like the brain of your system, coordinating all components and significantly impacting in-game FPS.
+           Here are some great options to consider:
+        </p>
       </div>
-    </div>
 
-    <div id="product-bundles-tabpanel" role="tabpanel" aria-labelledby="product-bundles-tab" tabindex="0" class="cmp-tabs__tabpanel" data-cmp-hook-tabs="tabpanel" aria-hidden="true">
-      <div class="container">
-        <div class="section-heading content-center">
-          <h2>Bundles &amp; Bonuses</h2>
-        </div>
+      <div class="dialog-section">
+   
+       <div class="processor-USP">
+        <div>
+          <img src="./clientlib-site/images/intel-core.png" alt="Intel Core Ultra 7 Processor">
+         </div>
+         <div>
+          <p class="processor-title">Intel® Core™ Ultra 7 Processor</p>
+          <ul>
+            <li>
+              Designed for next-gen performance on computing and gaming. 
+            </li>
+            <li>
+              Features advanced efficiency for demanding applications.
+            </li>
+            <li>
+              Adapts to workloads for optimal performance.
+            </li>
+            <li>
+              Deal for gamers and creators needing robust capabilities.
+            </li>
+          </ul>
+         </div>
+       </div>
+       <div class="processor-USP">
+        <div>
+          <img src="./clientlib-site/images/intel-core.png" alt="Intel Core Ultra 7 Processor">
+         </div>
+         <div>
+          <p class="processor-title">Intel® Core™ i7-13700KF</p>
+          <ul>
+            <li>
+              Designed for users demanding peak performance.
+            </li>
+            <li>
+              Allows for pushing your system to achieve enhanced speed.
+            </li>
+            <li>
+              Provides superior multitasking capabilities for demanding tasks.
+            </li>
+            <li>
+              Delivers higher frame rates and smoother gameplay experiences.
+            </li>
+          </ul>
+         </div>
+       </div>
+       <div class="processor-USP">
+        <div>
+          <img src="./clientlib-site/images/intel-core.png" alt="Intel Core Ultra 7 Processor">
+         </div>
+         <div>
+          <p class="processor-title">Intel® Core™ i5-13400F</p>
+          <ul>
+            <li>
+              Designed for next-gen performance on computing and gaming. 
+            </li>
+            <li>
+              Features advanced efficiency for demanding applications.
+            </li>
+            <li>
+              Adapts to workloads for optimal performance.
+            </li>
+            <li>
+              Deal for gamers and creators needing robust capabilities.
+            </li>
+          </ul>
+         </div>
+       </div>
       </div>
     </div>
   </div>
+</section>
+
+      </div>
+      <div id="product-bundles" role="tabpanel" aria-labelledby="product-bundles-tab" tabindex="0" class="cmp-tabs__tabpanel" data-cmp-hook-tabs="tabpanel" aria-hidden="true">
+        <div class="cmp-bundles-bonuses">
+   <div class="container">
+      <div class="layout-grid m-bottom">
+         <div class="layout-grid__col layout-grid__col--span-4 layout-grid__col--md-span-12">
+            <div class="bundles-section">
+               <div class="section-heading">
+                  <h2>Bundles</h2>
+               </div>
+            </div>
+         </div>
+         <div class="layout-grid__col layout-grid__col--span-8 layout-grid__col--md-span-12">
+            <h3>Choose a bundle</h3>
+            <div class="cmp-bundles__component-list">    
+               <div class="cmp-bundles-card">
+  <div class="radio-overlay">
+    <input type="radio" name="bundles-option-bundles" class="bundles-radio" id="radio1">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">Just this item</p>
+  </div>
+  
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="bundles-info-dialog-bundle1"></button>
+  </div>
 </div>
-</main>
+<section class="dialog-container dialog--boxed cmp-bundles-dialog" data-a11y-dialog="bundles-info-dialog-bundle1" id="bundles-info-dialog-bundle1" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="bundles-info-dialog-bundle1"></div>
+   <div class="dialog-content cmp-custom__popup-bundles" role="dialog" aria-modal="true" aria-labelledby="fps-title-bundle1">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="bundles-info-dialog-bundle1" aria-label="Close dialog"></button>
+      <div class="fps-content">
+         <h2 id="bundle-titlebundle1" class="dialog-title">Just this item</h2>
+         <div class="dialog-section">
+            <div>
+               <p>
+                  What's Inside?
+               </p>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item"> <img alt="" src="./clientlib-site/images/graphic-card-holder.svg"> <span> ROG Herculx XH01 Graphics Card Holder</span></div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item"> <img alt="" src="./clientlib-site/images/yearly-subscription.svg"> <span> Microsoft 365: 1-Year Subscription</span></div>
+                  <div class="cmp-custom__popup-reminder">
+                     <p>Reminder</p>
+                     <p>Lorem Impsum</p>
+                  </div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item">
+                     <div><img alt="" src="./clientlib-site/images/mouse.svg"></div>
+                     <div class="cmp-custom__popup-content__item__text">
+                        <p>ASUS SmartO Mouse MD200 Silent Plus</p>
+                        <div class="option-heading">Choose a color</div>
+                        <div class="cmp-custom__popup-content__item__text__options">
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-1">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Red</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-2">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Blue</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-3">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Purple</span></p>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item">
+                     <div><img alt="" src="./clientlib-site/images/suitcase.svg"></div>
+                     <div>
+                        <p>ASUS ROG Phone II suitcase</p>
+                        <div class="option-heading">Choose a spec</div>
+                        <div class="cmp-custom__popup-content__item__text__options">
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-1">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>20 inches, 56cm * 23cm * 36cm, 36L</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-2">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>22 inches, 61cm * 25cm * 39cm, 42L</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-3">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>24 inches, 66cm * 26cm * 43cm, 65L</span></p>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+               <div class="cmp-bundles-card">
+  <div class="radio-overlay">
+    <input type="radio" name="bundles-option-bundles" class="bundles-radio" id="radio1">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">ASUS ROG Elite Gaming Bundle</p>
+  </div>
+  
+  <div>
+    <p class="price">+ $350.00</p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="bundles-info-dialog-bundle2"></button>
+  </div>
+</div>
+<section class="dialog-container dialog--boxed cmp-bundles-dialog" data-a11y-dialog="bundles-info-dialog-bundle2" id="bundles-info-dialog-bundle2" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="bundles-info-dialog-bundle2"></div>
+   <div class="dialog-content cmp-custom__popup-bundles" role="dialog" aria-modal="true" aria-labelledby="fps-title-bundle2">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="bundles-info-dialog-bundle2" aria-label="Close dialog"></button>
+      <div class="fps-content">
+         <h2 id="bundle-titlebundle2" class="dialog-title">ASUS ROG Elite Gaming Bundle</h2>
+         <div class="dialog-section">
+            <div>
+               <p>
+                  What's Inside?
+               </p>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item"> <img alt="" src="./clientlib-site/images/graphic-card-holder.svg"> <span> ROG Herculx XH01 Graphics Card Holder</span></div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item"> <img alt="" src="./clientlib-site/images/yearly-subscription.svg"> <span> Microsoft 365: 1-Year Subscription</span></div>
+                  <div class="cmp-custom__popup-reminder">
+                     <p>Reminder</p>
+                     <p>Lorem Impsum</p>
+                  </div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item">
+                     <div><img alt="" src="./clientlib-site/images/mouse.svg"></div>
+                     <div class="cmp-custom__popup-content__item__text">
+                        <p>ASUS SmartO Mouse MD200 Silent Plus</p>
+                        <div class="option-heading">Choose a color</div>
+                        <div class="cmp-custom__popup-content__item__text__options">
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-1">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Red</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-2">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Blue</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-3">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Purple</span></p>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item">
+                     <div><img alt="" src="./clientlib-site/images/suitcase.svg"></div>
+                     <div>
+                        <p>ASUS ROG Phone II suitcase</p>
+                        <div class="option-heading">Choose a spec</div>
+                        <div class="cmp-custom__popup-content__item__text__options">
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-1">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>20 inches, 56cm * 23cm * 36cm, 36L</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-2">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>22 inches, 61cm * 25cm * 39cm, 42L</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-3">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>24 inches, 66cm * 26cm * 43cm, 65L</span></p>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+               <div class="cmp-bundles-card">
+  <div class="radio-overlay">
+    <input type="radio" name="bundles-option-bundles" class="bundles-radio" id="radio1">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">ROG Strix Overkill &amp; Office 365 bundle</p>
+  </div>
+  
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="bundles-info-dialog-bundle3">Edit</button>
+  </div>
+</div>
+<section class="dialog-container dialog--boxed cmp-bundles-dialog" data-a11y-dialog="bundles-info-dialog-bundle3" id="bundles-info-dialog-bundle3" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="bundles-info-dialog-bundle3"></div>
+   <div class="dialog-content cmp-custom__popup-bundles" role="dialog" aria-modal="true" aria-labelledby="fps-title-bundle3">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="bundles-info-dialog-bundle3" aria-label="Close dialog"></button>
+      <div class="fps-content">
+         <h2 id="bundle-titlebundle3" class="dialog-title">ROG Strix Overkill &amp; Office 365 bundle</h2>
+         <div class="dialog-section">
+            <div>
+               <p>
+                  What's Inside?
+               </p>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item"> <img alt="" src="./clientlib-site/images/graphic-card-holder.svg"> <span> ROG Herculx XH01 Graphics Card Holder</span></div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item"> <img alt="" src="./clientlib-site/images/yearly-subscription.svg"> <span> Microsoft 365: 1-Year Subscription</span></div>
+                  <div class="cmp-custom__popup-reminder">
+                     <p>Reminder</p>
+                     <p>Lorem Impsum</p>
+                  </div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item">
+                     <div><img alt="" src="./clientlib-site/images/mouse.svg"></div>
+                     <div class="cmp-custom__popup-content__item__text">
+                        <p>ASUS SmartO Mouse MD200 Silent Plus</p>
+                        <div class="option-heading">Choose a color</div>
+                        <div class="cmp-custom__popup-content__item__text__options">
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-1">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Red</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-2">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Blue</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-3">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Purple</span></p>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item">
+                     <div><img alt="" src="./clientlib-site/images/suitcase.svg"></div>
+                     <div>
+                        <p>ASUS ROG Phone II suitcase</p>
+                        <div class="option-heading">Choose a spec</div>
+                        <div class="cmp-custom__popup-content__item__text__options">
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-1">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>20 inches, 56cm * 23cm * 36cm, 36L</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-2">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>22 inches, 61cm * 25cm * 39cm, 42L</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-3">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>24 inches, 66cm * 26cm * 43cm, 65L</span></p>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+               <div class="cmp-bundles-card">
+  <div class="radio-overlay">
+    <input type="radio" name="bundles-option-bundles" class="bundles-radio" id="radio1">
+    <div class="radio-checkmark"></div>
+  </div>
+  <div>
+    <p class="cmp-product-name">ROG Slayer Ultimate Pack</p>
+  </div>
+  
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="bundles-info-dialog-bundle4">select option</button>
+  </div>
+</div>
+<section class="dialog-container dialog--boxed cmp-bundles-dialog" data-a11y-dialog="bundles-info-dialog-bundle4" id="bundles-info-dialog-bundle4" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="bundles-info-dialog-bundle4"></div>
+   <div class="dialog-content cmp-custom__popup-bundles" role="dialog" aria-modal="true" aria-labelledby="fps-title-bundle4">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="bundles-info-dialog-bundle4" aria-label="Close dialog"></button>
+      <div class="fps-content">
+         <h2 id="bundle-titlebundle4" class="dialog-title">ROG Slayer Ultimate Pack</h2>
+         <div class="dialog-section">
+            <div>
+               <p>
+                  What's Inside?
+               </p>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item"> <img alt="" src="./clientlib-site/images/graphic-card-holder.svg"> <span> ROG Herculx XH01 Graphics Card Holder</span></div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item"> <img alt="" src="./clientlib-site/images/yearly-subscription.svg"> <span> Microsoft 365: 1-Year Subscription</span></div>
+                  <div class="cmp-custom__popup-reminder">
+                     <p>Reminder</p>
+                     <p>Lorem Impsum</p>
+                  </div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item">
+                     <div><img alt="" src="./clientlib-site/images/mouse.svg"></div>
+                     <div class="cmp-custom__popup-content__item__text">
+                        <p>ASUS SmartO Mouse MD200 Silent Plus</p>
+                        <div class="option-heading">Choose a color</div>
+                        <div class="cmp-custom__popup-content__item__text__options">
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-1">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Red</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-2">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Blue</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="bundle-option-3">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>Purple</span></p>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="cmp-custom__popup-content">
+                  <div class="cmp-custom__popup-content__item">
+                     <div><img alt="" src="./clientlib-site/images/suitcase.svg"></div>
+                     <div>
+                        <p>ASUS ROG Phone II suitcase</p>
+                        <div class="option-heading">Choose a spec</div>
+                        <div class="cmp-custom__popup-content__item__text__options">
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-1">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>20 inches, 56cm * 23cm * 36cm, 36L</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-2">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>22 inches, 61cm * 25cm * 39cm, 42L</span></p>
+                            </div>
+                          </div>
+                          <div class="cmp-bundles-options-radio">
+                            <div class="radio-overlay">
+                              <input type="radio" class="bundles-radio" id="spec-option-3">
+                              <div class="radio-checkmark"></div>
+                            </div>
+                            <div>
+                              <p class="cmp-product-name"><span>24 inches, 66cm * 26cm * 43cm, 65L</span></p>
+                            </div>
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+            </div>
+         </div>
+      </div>
+      <div class="layout-grid">
+         <div class="layout-grid__col layout-grid__col--span-4 layout-grid__col--md-span-12">
+            <div class="cmp-bonus-section">
+               <div class="section-heading">
+                  <h2>Bonuses</h2>
+               </div>
+            </div>
+         </div>
+         <div class="layout-grid__col layout-grid__col--span-8 layout-grid__col--md-span-12">
+            <h3>Choose your bonus</h3>
+            <div class="cmp-bonus-section">
+               <p class="cmp__bonus-disclaimer">Freebies are only available while stock lasts.</p>
+               <p class="cmp__bonus-warning">Gear up for the best school year with powerful ROG Phone 9</p>
+               <p class="cmp__bonus-instructions">  <span class="icon icon--info"> </span> Please select a freebie</p>
+               <p class="cmp__bonus-selected">(1 / 1 selected) bonuses selected</p>
+               <div class="cmp-bundles__component-list">
+                  <div class="cmp-bundles-card bonus-out-of-stock">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox bonus-out-of-stock" id="checkbox1" disabled="disabled">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/marshmellow.svg" alt=""></span>
+    <p class="cmp-product-name">ASUS Marshmallow</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog"></button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+                  <div class="cmp-bundles-card">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox" id="checkbox1">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/bagpack.svg" alt=""></span>
+    <p class="cmp-product-name">ASUS ProArt Backpack</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog">select options</button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+                  <div class="cmp-bundles-card">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox" id="checkbox1">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/grey-mouse.svg" alt=""></span>
+    <p class="cmp-product-name">ROG Mouse Ace L</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog"></button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+               </div>
+            </div>
+            <div class="cmp-bonus-section">
+               <p class="cmp__bonus-warning">Rate Your Gear and Win up to P1,000 GCash!</p>
+               <p class="cmp__bonus-selected">(0 / 1 selected) bonuses selected</p>
+               <div class="cmp-bundles__component-list">
+                  <div class="cmp-bundles-card bonus-out-of-stock">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox bonus-out-of-stock" id="checkbox1" disabled="disabled">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/marshmellow.svg" alt=""></span>
+    <p class="cmp-product-name">ASUS Marshmallow</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog"></button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+               <div class="cmp-bundles-card">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox" id="checkbox1">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/bagpack.svg" alt=""></span>
+    <p class="cmp-product-name">ASUS ProArt Backpack</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog"></button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+               <div class="cmp-bundles-card">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox" id="checkbox1">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/grey-mouse.svg" alt=""></span>
+    <p class="cmp-product-name">ROG Mouse Ace L</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog"></button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+               </div>
+            </div>
+            <div class="cmp-bonus-section">
+               <p class="cmp__bonus-warning">2025 Back to School Promotion</p>
+               <p class="cmp__bonus-selected">(0 / 2 selected) bonuses selected</p>
+               <div class="cmp-bundles__component-list">
+                  <div class="cmp-bundles-card bonus-out-of-stock">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox bonus-out-of-stock" id="checkbox1" disabled="disabled">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/marshmellow.svg" alt=""></span>
+    <p class="cmp-product-name">ASUS Marshmallow</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog"></button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+                  <div class="cmp-bundles-card">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox" id="checkbox1">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/bagpack.svg" alt=""></span>
+    <p class="cmp-product-name">ASUS ProArt Backpack</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog"></button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+                  <div class="cmp-bundles-card">
+  <div class="checkbox-overlay">
+    <input type="checkbox" name="bundles-option-bonus" class="bundles-checkbox" id="checkbox1">
+    <div class="checkbox-checkmark"></div>
+  </div>
+  <div class="cmp-bundles-card__product">
+    <span><img src="./clientlib-site/images/grey-mouse.svg" alt=""></span>
+    <p class="cmp-product-name">ROG Mouse Ace L</p>
+  </div>
+  <div>
+    <p class="price"></p>
+  </div>
+  <div class="select-cta">
+    <button class="actions" data-a11y-dialog-show="select-bonus-dialog"></button>
+  </div>
+</div>
+
+<section class="dialog-container dialog--boxed cmp-bonus-dialog" data-a11y-dialog="select-bonus-dialog" id="select-bonus-dialog" aria-hidden="true">
+   <div class="dialog-overlay" data-a11y-dialog-hide="select-bonus-dialog"></div>
+   <div class="dialog-content cmp-custom__popup-bonuses" role="dialog" aria-modal="true">
+      <button class="dialog-close" type="button" data-a11y-dialog-hide="select-bonus-dialog" aria-label="Close dialog"></button>
+      <div>
+         <h3>ASUS ProArt Backpack</h3>
+         <p class="sub-heading">Choose a color. Gifts are limited and available while stocks last.</p>
+         <div class="cmp-bonus-popup-content">
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-1">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/black-colour.svg" alt=""></span><span>Black</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-2">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"><img src="./clientlib-site/images/red-colour.svg" alt=""></span><span>Red</span></p>
+               </div>
+            </div>
+            <div class="cmp-bonus-options-radio">
+               <div class="radio-overlay">
+                  <input type="radio" class="bonus-radio" id="bonus-option-3">
+                  <div class="radio-checkmark"></div>
+               </div>
+               <div>
+                  <p class="cmp-product-name"> <span class="cmp-product-colour"> <img src="./clientlib-site/images/grey-colour.svg" alt=""></span><span>Grey</span></p>
+               </div>
+            </div>
+         </div>
+          <div class="confirm-cta"> <button role="button"> Confirm</button></div>
+      </div>
+   </div>
+</section>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      <div class="cmp-no-bundles-bonus">
+         <h3>No bundles or bonuses available for this customization</h3>
+         <p>Click “Add to Cart” to continue with your current selection.</p>
+      </div>
+   </div>
+</div>
+      </div>
+   </div>
+</div>
+<div class="cmp-related-products-section">
+   <div class="container">
+      <div class="section-heading">
+         <h2>Related Products</h2>
+      </div>
+      <div class="swiper mySwiper">
+         <div class="swiper-wrapper">
+            <div class="swiper-slide"> 
+              <div class="cmp-related-products">
+  <div class="cmp-related-products__body">
+    <div class="cmp-related-products__image cmp-image">
+      <button class="cmp-related-products__preview-btn" data-a11y-dialog-show="product-preview-dialog" aria-label="Quick view ROG G700 (2025)">Quick view</button>
+      <img class="cmp-image__image" src="./clientlib-site/images/products/product-3-image-1.webp" alt="ROG G700 (2025)" loading="lazy">
+      
+    </div>
+
+    <div class="cmp-related-products__info">
+      <h3 class="cmp-related-products__title">
+        <a href="pdp.html">ROG G700 (2025)</a>
+      </h3>
+      <p class="cmp-related-products__model">
+        <a href="pdp.html#product-features"></a>
+      </p>
+    </div>
+
+    <div class="cmp-product-card__rating_and_compare">
+      <div class="cmp-product-card__rating">
+        <div class="cmp-product-card__stars" data-rating="4" aria-label="Rated 4 out of 5 stars based on 200 customer reviews" role="img">
+          <div class="cmp-product-card__stars-icon"></div>
+          <span class="cmp-product-card__stars-text" aria-hidden="true">4 (200)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-related-products__price-block">
+      <div class="cmp-related-products__price">$1099</div>
+     
+     <div>
+      
+        <span class="cmp-related-products__original-price">$99,999,00</span>
+      
+      
+        <span class="cmp-related-products__discount">SAVE $99,999,00</span>
+      
+     </div>
+     
+    </div>
+  </div>
+
+  <div class="cmp-related-products__footer">
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn">Buy now</button> <button class="save-icon"><img src="./clientlib-site/images/save-icon.png"></button>
+    </div>
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn learn-more">Learn More</button>
+    </div>
+  </div>
+</div></div>
+            <div class="swiper-slide">
+               <div class="cmp-related-products">
+  <div class="cmp-related-products__body">
+    <div class="cmp-related-products__image cmp-image">
+      <button class="cmp-related-products__preview-btn" data-a11y-dialog-show="product-preview-dialog" aria-label="Quick view ASUS Chromebook CX1 (CX1101)">Quick view</button>
+      <img class="cmp-image__image" src="./clientlib-site/images/products/product-3-image-1.webp" alt="ASUS Chromebook CX1 (CX1101)" loading="lazy">
+      
+    </div>
+
+    <div class="cmp-related-products__info">
+      <h3 class="cmp-related-products__title">
+        <a href="pdp.html">ASUS Chromebook CX1 (CX1101)</a>
+      </h3>
+      <p class="cmp-related-products__model">
+        <a href="pdp.html#product-features"></a>
+      </p>
+    </div>
+
+    <div class="cmp-product-card__rating_and_compare">
+      <div class="cmp-product-card__rating">
+        <div class="cmp-product-card__stars" data-rating="4" aria-label="Rated 4 out of 5 stars based on 200 customer reviews" role="img">
+          <div class="cmp-product-card__stars-icon"></div>
+          <span class="cmp-product-card__stars-text" aria-hidden="true">4 (200)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-related-products__price-block">
+      <div class="cmp-related-products__price">$1199</div>
+     
+    </div>
+  </div>
+
+  <div class="cmp-related-products__footer">
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn">Notify me</button> <button class="save-icon"><img src="./clientlib-site/images/save-icon.png"></button>
+    </div>
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn learn-more">Learn More</button>
+    </div>
+  </div>
+</div></div>
+            <div class="swiper-slide">
+               <div class="cmp-related-products">
+  <div class="cmp-related-products__body">
+    <div class="cmp-related-products__image cmp-image">
+      <button class="cmp-related-products__preview-btn" data-a11y-dialog-show="product-preview-dialog" aria-label="Quick view TUF Gaming Combo K1&amp;M3">Quick view</button>
+      <img class="cmp-image__image" src="./clientlib-site/images/products/product-3-image-1.webp" alt="TUF Gaming Combo K1&amp;M3" loading="lazy">
+      
+    </div>
+
+    <div class="cmp-related-products__info">
+      <h3 class="cmp-related-products__title">
+        <a href="pdp.html">TUF Gaming Combo K1&amp;M3</a>
+      </h3>
+      <p class="cmp-related-products__model">
+        <a href="pdp.html#product-features"></a>
+      </p>
+    </div>
+
+    <div class="cmp-product-card__rating_and_compare">
+      <div class="cmp-product-card__rating">
+        <div class="cmp-product-card__stars" data-rating="4" aria-label="Rated 4 out of 5 stars based on 200 customer reviews" role="img">
+          <div class="cmp-product-card__stars-icon"></div>
+          <span class="cmp-product-card__stars-text" aria-hidden="true">4 (200)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-related-products__price-block">
+      <div class="cmp-related-products__price">$1199</div>
+     
+     <div>
+      
+        <span class="cmp-related-products__original-price">$1299</span>
+      
+      
+        <span class="cmp-related-products__discount">SAVE $100</span>
+      
+     </div>
+     
+    </div>
+  </div>
+
+  <div class="cmp-related-products__footer">
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn">Pre order</button> <button class="save-icon"><img src="./clientlib-site/images/save-icon.png"></button>
+    </div>
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn learn-more">Learn More</button>
+    </div>
+  </div>
+</div></div>
+            <div class="swiper-slide">
+               <div class="cmp-related-products">
+  <div class="cmp-related-products__body">
+    <div class="cmp-related-products__image cmp-image">
+      <button class="cmp-related-products__preview-btn" data-a11y-dialog-show="product-preview-dialog" aria-label="Quick view ASUS Vivobook 16 Laptop (M1605)">Quick view</button>
+      <img class="cmp-image__image" src="./clientlib-site/images/products/product-3-image-1.webp" alt="ASUS Vivobook 16 Laptop (M1605)" loading="lazy">
+      
+    </div>
+
+    <div class="cmp-related-products__info">
+      <h3 class="cmp-related-products__title">
+        <a href="pdp.html">ASUS Vivobook 16 Laptop (M1605)</a>
+      </h3>
+      <p class="cmp-related-products__model">
+        <a href="pdp.html#product-features"></a>
+      </p>
+    </div>
+
+    <div class="cmp-product-card__rating_and_compare">
+      <div class="cmp-product-card__rating">
+        <div class="cmp-product-card__stars" data-rating="5" aria-label="Rated 5 out of 5 stars based on 200 customer reviews" role="img">
+          <div class="cmp-product-card__stars-icon"></div>
+          <span class="cmp-product-card__stars-text" aria-hidden="true">5 (200)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-related-products__price-block">
+      <div class="cmp-related-products__price">$1199</div>
+     
+     <div>
+      
+        <span class="cmp-related-products__original-price">$1299</span>
+      
+      
+        <span class="cmp-related-products__discount">SAVE $100</span>
+      
+     </div>
+     
+    </div>
+  </div>
+
+  <div class="cmp-related-products__footer">
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn">Buy now</button> <button class="save-icon"><img src="./clientlib-site/images/save-icon.png"></button>
+    </div>
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn learn-more">Learn More</button>
+    </div>
+  </div>
+</div></div>
+            <div class="swiper-slide">
+               <div class="cmp-related-products">
+  <div class="cmp-related-products__body">
+    <div class="cmp-related-products__image cmp-image">
+      <button class="cmp-related-products__preview-btn" data-a11y-dialog-show="product-preview-dialog" aria-label="Quick view ROG G700 (2025)">Quick view</button>
+      <img class="cmp-image__image" src="./clientlib-site/images/products/product-3-image-1.webp" alt="ROG G700 (2025)" loading="lazy">
+      
+    </div>
+
+    <div class="cmp-related-products__info">
+      <h3 class="cmp-related-products__title">
+        <a href="pdp.html">ROG G700 (2025)</a>
+      </h3>
+      <p class="cmp-related-products__model">
+        <a href="pdp.html#product-features"></a>
+      </p>
+    </div>
+
+    <div class="cmp-product-card__rating_and_compare">
+      <div class="cmp-product-card__rating">
+        <div class="cmp-product-card__stars" data-rating="4" aria-label="Rated 4 out of 5 stars based on 200 customer reviews" role="img">
+          <div class="cmp-product-card__stars-icon"></div>
+          <span class="cmp-product-card__stars-text" aria-hidden="true">4 (200)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cmp-related-products__price-block">
+      <div class="cmp-related-products__price">$1199</div>
+     
+     <div>
+      
+        <span class="cmp-related-products__original-price">$1299</span>
+      
+      
+        <span class="cmp-related-products__discount">SAVE $100</span>
+      
+     </div>
+     
+    </div>
+  </div>
+
+  <div class="cmp-related-products__footer">
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn">Notify me</button> <button class="save-icon"><img src="./clientlib-site/images/save-icon.png"></button>
+    </div>
+    <div>
+      <button class="cmp-button cmp-related-products__buy-button btn learn-more">Learn More</button>
+    </div>
+  </div>
+</div></div>
+         </div>
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
+      <div class="pagination-wrapper">
+        <div class="swiper-pagination pagination-bullets"></div>
+        <div class="swiper-pagination pagination-fraction"></div>
+      </div>
+      </div>
+    
+   </div>
+</div></main>
 
       <footer class="experiencefragment">
   <div class="cmp-experiencefragment">
@@ -671,7 +2724,7 @@
       <div class="footer-grid">
         
         <div class="footer-left">
-          <form class="newsletter" aria-label="Newsletter signup">
+          <form class="newsletter" method="post" action="" aria-label="Newsletter signup">
             <label for="newsletter-email">Get the latest deals and more</label>
             <div class="newsletter__form mt-4">
               <input type="email" id="newsletter-email" name="email" placeholder="Enter email address" required>
@@ -680,18 +2733,51 @@
           </form>
 
           <div class="social">
-            <h2 id="social-heading" class="visually-hidden">Follow us on social media</h2>
             <small class="text-social">Follow us at:</small>
-            <ul class="social__icons p-0 m-0" aria-label="Social Media Links">
-              <li><a href="/" target="_blank" aria-label="Facebook"><img src="./clientlib-site/images/icon-fb.svg" alt="facebook"></a></li>
-              <li><a href="/" target="_blank" aria-label="X (formerly Twitter)"><img src="./clientlib-site/images/x-icon.svg" alt="x-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="Discord"><img src="./clientlib-site/images/discord.svg" alt="discord-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="YouTube"><img src="./clientlib-site/images/youtube-icon.svg" alt="youtube-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="Twitch"><img src="./clientlib-site/images/twitch.svg" alt="twitch-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="Instagram"><img src="./clientlib-site/images/insta-icon.svg" alt="insta-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="TikTok"><img src="./clientlib-site/images/tiktok.svg" alt="tiktok"></a></li>
-              <li><a href="/" target="_blank" aria-label="Threads"><img src="./clientlib-site/images/thread.svg" alt="thread"></a></li>
-            </ul>
+            <nav aria-label="Social media">
+              <ul class="social__icons p-0 m-0">
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Facebook (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-facebook.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Twitter (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-x.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Discord (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-discord.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on YouTube (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-youtube.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Twitch (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-twitch.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Instagram (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-instagram.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on TikTok (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-tiktok.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Threads (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-thread.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
 
@@ -719,10 +2805,10 @@
 
       <div class="footer-bottom">
         <span><img src="./clientlib-site/images/Global.svg" alt="Global">Global / English</span>
-        <nav class="footer-bottom__links" aria-label="Legal and policy links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Cookie Settings</a>
+        <nav class="footer-bottom__links" aria-label="Legal links">
+          <a href="#" target="_blank" aria-label="View Privacy Policy (open a new window)">Privacy Policy</a>
+          <a href="#" target="_blank" aria-label="View Terms of Use (open a new window)">Terms & Conditions</a>
+          <a href="#" target="_blank" aria-label="View Cookie Settings (open a new window)">Cookie Settings</a>
         </nav>
       </div>
     </div>
@@ -787,7 +2873,7 @@
 
       <div class="dialog-section">
         <h3 class="dialog-section-title">What should my FPS be for a good gaming experience?</h3>
-        <ul>
+        <ul class="list-style-square">
           <li>
             <strong>30 FPS:</strong> Playable but may feel choppy, especially in
             fast-paced games.
@@ -804,7 +2890,7 @@
       </div>
 
       <div class="dialog-section">
-        <img class="dialog-image--rounded" src="./clientlib-site/images/fps-comparison.png" alt="FPS comparison: 60Hz vs 144Hz vs 240Hz">
+        <img class="dialog-image--rounded" src="./clientlib-site/images/fps-comparison.webp" alt="FPS comparison: 60Hz vs 144Hz vs 240Hz" loading="lazy">
       </div>
 
       <div class="dialog-section">
@@ -918,13 +3004,16 @@
     </div>
 
     <div class="dialog-section">
-      <img src="./clientlib-site/images/3dmark.png" alt="3DMark Logo">
+      <img src="./clientlib-site/images/3dmark.webp" alt="3DMark Logo" loading="lazy">
     </div>
   </div>
 </section>
     </div>
 
-    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-site.js"></script>
-    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-base.js"></script>
+    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-dependencies.js" defer="defer"></script>
+    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-site.js" defer="defer"></script>
+    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-base.js" defer="defer"></script>
+
+    <script src="https://apps.bazaarvoice.com/deployments/asustek/main_site_black/production/en_US/bv.js" defer="defer"></script>
   </body>
 </html>

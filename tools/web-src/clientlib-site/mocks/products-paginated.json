@@ -1,149 +1,403 @@
 {
   "products": [
     {
-      "id": "product-1",
+      "id": "rog-g700-2025",
+      "bazaarvoiceProductId": "ASUS_M1_25392_P",
       "name": "ROG G700 (2025)",
       "model": "G700TF-XS776",
-      "image": "./clientlib-site/images/products/product-1-image-1.png",
-      "imageHover": "./clientlib-site/images/products/product-3-image-1.png",
-      "status": [
-        "In Stock",
-        "New",
-        "Deal"
-      ],
-      "stars": 4,
-      "reviews": 100,
-      "benchmarkGame": "Call of Duty: Modern Warfare",
-      "fps": 235,
-      "fpsDetails": [
+      "status": ["In Stock", "New", "Deal"],
+      "bundleMessage": "Bundle and <br>save $100",
+      "isAvailable": true,
+      "isBuyable": true,
+      "isCustomizable": true,
+      "buyLink": "./pdp.html",
+      "customizeLink": "./pdp.html",
+      "image": "./clientlib-site/images/products/product-1-image-1.webp",
+      "imageHover": "./clientlib-site/images/products/product-3-image-1.webp",
+      "images": [
         {
-          "game": "Call of Duty: Modern Warfare III",
-          "fps1080": "--",
-          "fps1440": "57 FPS"
+          "image": "./clientlib-site/images/products/product-1-image-1.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-1.webp",
+          "title": "ROG G700 (2025) - Image 1"
         },
         {
-          "game": "Fortnite Chapter 4",
-          "fps1080": "346 FPS",
-          "fps1440": "45 FPS"
+          "image": "./clientlib-site/images/products/product-1-image-2.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-2.webp",
+          "title": "ROG G700 (2025) - Image 2"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-3.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-3.webp",
+          "title": "ROG G700 (2025) - Image 3"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-4.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-4.webp",
+          "title": "ROG G700 (2025) - Image 4"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-5.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-5.webp",
+          "title": "ROG G700 (2025) - Image 5"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-6.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-6.webp",
+          "title": "ROG G700 (2025) - Image 6"
+        }
+      ],
+      "fps": 235,
+      "benchmarkGame": "Call of Duty: Modern Warfare",
+      "fpsData": [
+        {
+          "game": "COD",
+          "fps1080": 130,
+          "fps1440": 120,
+          "image": "./clientlib-site/images/games/call-of-duty.webp"
+        },
+        {
+          "game": "Alan Wake",
+          "fps1080": 67,
+          "fps1440": 60,
+          "image": "./clientlib-site/images/games/alan-wake.webp"
+        },
+        {
+          "game": "Counter Strike 2",
+          "fps1080": 100,
+          "fps1440": 100,
+          "image": "./clientlib-site/images/games/counter-strike.webp"
+        },
+        {
+          "game": "Fortnite",
+          "fps1080": 82,
+          "fps1440": 82,
+          "image": "./clientlib-site/images/games/fortnite.webp"
+        },
+        {
+          "game": "Baldur's Gate 3",
+          "fps1080": 75,
+          "fps1440": 75,
+          "image": "./clientlib-site/images/games/baldurs-gate.webp"
         },
         {
           "game": "Red Dead Redemption 2",
-          "fps1080": "315 FPS",
-          "fps1440": "--"
+          "fps1080": 130,
+          "fps1440": 130,
+          "image": "./clientlib-site/images/games/red-redemption.webp"
         }
       ],
+      "timeSpyScore": {
+        "score": "10,998",
+        "level": "4",
+        "source": {
+          "image": "./clientlib-site/images/3dmark.webp",
+          "name": "3DMark",
+          "tooltip": "All FPS performance data presented are theoretical and may vary in real-world usage. The FPS data is based on third-party testing conducted by UL and is provided for reference purposes only. Actual performance may differ."
+        }
+      },
       "specs": [
-        "NVIDIA® GeForce RTX™ 5070 PRIME",
+        "NVIDIA® GeForce RTX™ 5070 PRIME",
         "Windows 11 Pro",
-        "Intel® Core™ Ultra 7 Processor 265F",
+        "Intel® Core™ Ultra 7 Processor 265F",
         "32GB DDR5 4800 MHz RAM"
       ],
+      "features": [
+        {
+          "title": "Cutting-Edge GPUs",
+          "description": "NVIDIA Blackwell Architecture"
+        },
+        {
+          "title": "AI-Enhanced Graphics and Performance",
+          "description": "NVIDIA DLSS 4 with Multi Frame Generation"
+        },
+        {
+          "title": "Game-Winning Responsiveness",
+          "description": "NVIDIA Reflex 2 with Frame Warp"
+        }
+      ],
       "price": "999",
-      "originalPrice": "1099",
+      "originalPrice": "1,099",
       "discount": "100",
-      "estorePriceTooltipText": "ASUS estore price is the price of a product provided by ASUS estore. Specifications listed here may not be available on estore and are for reference only."
+      "estorePriceTooltipText": "ASUS estore price is the price of a product provided by ASUS estore. Specifications listed here may not be available on estore and are for reference only.",
+      "purchaseLimit": "A maximum of 5 pieces per customer.",
+      "shippingInfo": "Up to 5 working days to ship.",
+      "installment": {
+        "startingAt": "90/mo",
+        "providerName": "Affirm",
+        "providerImage": "./clientlib-site/images/affirm.svg",
+        "tooltip": "Check your purchasing power"
+      }
     },
     {
-      "id": "product-2",
-      "name": "TUF A15 (2024)",
-      "model": "TUF507R-AS74",
-      "image": "./clientlib-site/images/products/product-2-image-1.png",
-      "imageHover": "",
-      "status": [
-        "In Stock"
-      ],
-      "stars": 5,
-      "reviews": 250,
-      "benchmarkGame": "Cyberpunk 2077",
-      "fps": 150,
-      "fpsDetails": [
+      "id": "rog-strix-g13chr",
+      "bazaarvoiceProductId": "ASUS_M1_25392_P",
+      "name": "ROG Strix G13CHR",
+      "model": "G13CHR-51440F199W",
+      "status": ["In Stock", "New", "Deal", "Hot"],
+      "isAvailable": false,
+      "isBuyable": true,
+      "isCustomizable": true,
+      "buyLink": "./pdp.html",
+      "customizeLink": "./pdp.html",
+      "image": "./clientlib-site/images/products/product-2-image-1.webp",
+      "images": [
         {
-          "game": "Cyberpunk 2077",
-          "fps1080": "150 FPS",
-          "fps1440": "90 FPS"
+          "image": "./clientlib-site/images/products/product-1-image-1.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-1.webp",
+          "title": "ROG Strix G13CHR - Image 1"
         },
         {
-          "game": "Alan Wake 2",
-          "fps1080": "120 FPS",
-          "fps1440": "75 FPS"
+          "image": "./clientlib-site/images/products/product-1-image-2.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-2.webp",
+          "title": "ROG Strix G13CHR - Image 2"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-3.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-3.webp",
+          "title": "ROG Strix G13CHR - Image 3"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-4.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-4.webp",
+          "title": "ROG Strix G13CHR - Image 4"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-5.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-5.webp",
+          "title": "ROG Strix G13CHR - Image 5"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-6.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-6.webp",
+          "title": "ROG Strix G13CHR - Image 6"
         }
       ],
-      "specs": [
-        "NVIDIA® GeForce RTX™ 4070",
-        "Windows 11",
-        "AMD Ryzen™ 9 7940HS",
-        "16GB DDR5 4800 MHz RAM"
+      "fps": 235,
+      "benchmarkGame": "Call of Duty: Modern Warfare",
+      "fpsData": [
+        {
+          "game": "COD",
+          "fps1080": 130,
+          "image": "./clientlib-site/images/games/call-of-duty.webp"
+        },
+        {
+          "game": "Alan Wake",
+          "fps1080": 67,
+          "image": "./clientlib-site/images/games/alan-wake.webp"
+        },
+        {
+          "game": "Counter Strike 2",
+          "fps1080": 100,
+          "image": "./clientlib-site/images/games/counter-strike.webp"
+        },
+        {
+          "game": "Fortnite",
+          "fps1080": 82,
+          "image": "./clientlib-site/images/games/fortnite.webp"
+        },
+        {
+          "game": "Baldur's Gate 3",
+          "fps1080": 75,
+          "image": "./clientlib-site/images/games/baldurs-gate.webp"
+        }
       ],
-      "price": "1299",
-      "originalPrice": "1499",
-      "discount": "200",
-      "estorePriceTooltipText": "ASUS estore price is the price of a product provided by ASUS estore. Specifications listed here may not be available on estore and are for reference only."
+      "timeSpyScore": {
+        "score": "10,998",
+        "level": "4",
+        "source": {
+          "image": "./clientlib-site/images/3dmark.webp",
+          "name": "3DMark"
+        }
+      },
+      "specs": [
+        "NVIDIA® GeForce RTX™ 5070 PRIME",
+        "Windows 11 Pro",
+        "Intel® Core™ Ultra 7 Processor 265F",
+        "32GB DDR5 4800 MHz RAM"
+      ],
+      "features": [
+        {
+          "title": "Cutting-Edge GPUs",
+          "description": "NVIDIA Blackwell Architecture"
+        },
+        {
+          "title": "AI-Enhanced Graphics and Performance",
+          "description": "NVIDIA DLSS 4 with Multi Frame Generation"
+        },
+        {
+          "title": "Game-Winning Responsiveness",
+          "description": "NVIDIA Reflex 2 with Frame Warp"
+        }
+      ],
+      "price": "1,080",
+      "estorePriceTooltipText": "ASUS estore price is the price of a product provided by ASUS estore. Specifications listed here may not be available on estore and are for reference only.",
+      "purchaseLimit": "A maximum of 5 pieces per customer.",
+      "shippingInfo": "Up to 5 working days to ship.",
+      "installment": {
+        "startingAt": "90/mo",
+        "providerName": "Affirm",
+        "providerImage": "./clientlib-site/images/affirm.svg",
+        "tooltip": "Check your purchasing power"
+      }
     },
     {
-      "id": "product-3",
-      "name": "ROG G700 (2025)",
-      "model": "G700TF-XS776",
-      "image": "./clientlib-site/images/products/product-3-image-1.png",
-      "status": [
-        "In Stock"
-      ],
-      "stars": 4.5,
-      "reviews": 250,
-      "benchmarkGame": "Cyberpunk 2077",
-      "fps": 150,
-      "fpsDetails": [
+      "id": "rog-g700-tuf-gaming-gt50",
+      "bazaarvoiceProductId": "ASUS_M1_25392_P",
+      "name": "ROG G700 (TUF Gaming GT50)",
+      "model": "G13CHR-51440F199W",
+      "status": ["In Stock", "New", "Deal"],
+      "bundleMessage": "Bundle and <br>save $100",
+      "isAvailable": true,
+      "isBuyable": true,
+      "isCustomizable": true,
+      "buyLink": "./pdp.html",
+      "customizeLink": "./pdp.html",
+      "image": "./clientlib-site/images/products/product-3-image-1.webp",
+      "images": [
         {
-          "game": "Cyberpunk 2077",
-          "fps1080": "150 FPS",
-          "fps1440": "90 FPS"
+          "image": "./clientlib-site/images/products/product-1-image-1.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-1.webp",
+          "title": "ROG G700 (TUF Gaming GT50) - Image 1"
         },
         {
-          "game": "Alan Wake 2",
-          "fps1080": "120 FPS",
-          "fps1440": "75 FPS"
+          "image": "./clientlib-site/images/products/product-1-image-2.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-2.webp",
+          "title": "ROG G700 (TUF Gaming GT50) - Image 2"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-3.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-3.webp",
+          "title": "ROG G700 (TUF Gaming GT50) - Image 3"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-4.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-4.webp",
+          "title": "ROG G700 (TUF Gaming GT50) - Image 4"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-5.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-5.webp",
+          "title": "ROG G700 (TUF Gaming GT50) - Image 5"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-6.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-6.webp",
+          "title": "ROG G700 (TUF Gaming GT50) - Image 6"
         }
       ],
+      "fps": 235,
+      "benchmarkGame": "Call of Duty: Modern Warfare",
       "specs": [
-        "NVIDIA® GeForce RTX™ 4070",
-        "Windows 11",
-        "AMD Ryzen™ 9 7940HS",
-        "16GB DDR5 4800 MHz RAM"
+        "NVIDIA® GeForce RTX™ 5070 PRIME",
+        "Windows 11 Pro",
+        "Intel® Core™ Ultra 7 Processor 265F",
+        "32GB DDR5 4800 MHz RAM"
       ],
-      "price": "1299",
-      "estorePriceTooltipText": "ASUS estore price is the price of a product provided by ASUS estore. Specifications listed here may not be available on estore and are for reference only."
+      "features": [
+        {
+          "title": "Cutting-Edge GPUs",
+          "description": "NVIDIA Blackwell Architecture"
+        },
+        {
+          "title": "AI-Enhanced Graphics and Performance",
+          "description": "NVIDIA DLSS 4 with Multi Frame Generation"
+        },
+        {
+          "title": "Game-Winning Responsiveness",
+          "description": "NVIDIA Reflex 2 with Frame Warp"
+        }
+      ],
+      "price": "860",
+      "originalPrice": "960",
+      "discount": "100",
+      "estorePriceTooltipText": "ASUS estore price is the price of a product provided by ASUS estore. Specifications listed here may not be available on estore and are for reference only.",
+      "purchaseLimit": "A maximum of 5 pieces per customer.",
+      "shippingInfo": "Up to 5 working days to ship.",
+      "installment": {
+        "startingAt": "90/mo",
+        "providerName": "Affirm",
+        "providerImage": "./clientlib-site/images/affirm.svg",
+        "tooltip": "Check your purchasing power"
+      }
     },
     {
-      "id": "product-3",
-      "name": "ROG G700 (2025)",
-      "model": "G700TF-XS776",
-      "image": "./clientlib-site/images/products/product-3-image-1.png",
-      "status": [
-        "In Stock"
-      ],
-      "stars": 4.5,
-      "reviews": 250,
-      "benchmarkGame": "Cyberpunk 2077",
-      "fps": 150,
-      "fpsDetails": [
+      "id": "rog-strix-g22ch",
+      "bazaarvoiceProductId": "ASUS_M1_25392_P",
+      "name": "ROG Strix G22CH G22CH",
+      "model": "G22CH(SPNL)-BBR54S-CB",
+      "status": ["In Stock", "New", "Deal"],
+      "isAvailable": true,
+      "isBuyable": true,
+      "isCustomizable": false,
+      "buyLink": "./pdp.html",
+      "customizeLink": "./pdp.html",
+      "image": "./clientlib-site/images/products/product-3-image-1.webp",
+      "images": [
         {
-          "game": "Cyberpunk 2077",
-          "fps1080": "150 FPS",
-          "fps1440": "90 FPS"
+          "image": "./clientlib-site/images/products/product-1-image-1.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-1.webp",
+          "title": "ROG Strix G22CH - Image 1"
         },
         {
-          "game": "Alan Wake 2",
-          "fps1080": "120 FPS",
-          "fps1440": "75 FPS"
+          "image": "./clientlib-site/images/products/product-1-image-2.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-2.webp",
+          "title": "ROG Strix G22CH - Image 2"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-3.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-3.webp",
+          "title": "ROG Strix G22CH - Image 3"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-4.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-4.webp",
+          "title": "ROG Strix G22CH - Image 4"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-5.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-5.webp",
+          "title": "ROG Strix G22CH - Image 5"
+        },
+        {
+          "image": "./clientlib-site/images/products/product-1-image-6.webp",
+          "thumbnail": "./clientlib-site/images/products/product-1-thumb-6.webp",
+          "title": "ROG Strix G22CH - Image 6"
         }
       ],
+      "fps": 235,
+      "benchmarkGame": "Call of Duty: Modern Warfare",
       "specs": [
-        "NVIDIA® GeForce RTX™ 4070",
-        "Windows 11",
-        "AMD Ryzen™ 9 7940HS",
-        "16GB DDR5 4800 MHz RAM"
+        "NVIDIA® GeForce RTX™ 5070 PRIME",
+        "Windows 11 Pro",
+        "Intel® Core™ Ultra 7 Processor 265F",
+        "32GB DDR5 4800 MHz RAM"
       ],
-      "price": "1299",
-      "estorePriceTooltipText": "ASUS estore price is the price of a product provided by ASUS estore. Specifications listed here may not be available on estore and are for reference only."
+      "features": [
+        {
+          "title": "Cutting-Edge GPUs",
+          "description": "NVIDIA Blackwell Architecture"
+        },
+        {
+          "title": "AI-Enhanced Graphics and Performance",
+          "description": "NVIDIA DLSS 4 with Multi Frame Generation"
+        },
+        {
+          "title": "Game-Winning Responsiveness",
+          "description": "NVIDIA Reflex 2 with Frame Warp"
+        }
+      ],
+      "price": "860",
+      "originalPrice": "960",
+      "discount": "100",
+      "estorePriceTooltipText": "ASUS estore price is the price of a product provided by ASUS estore. Specifications listed here may not be available on estore and are for reference only.",
+      "purchaseLimit": "A maximum of 5 pieces per customer.",
+      "shippingInfo": "Up to 5 working days to ship.",
+      "installment": {
+        "startingAt": "90/mo",
+        "providerName": "Affirm",
+        "providerImage": "./clientlib-site/images/affirm.svg",
+        "tooltip": "Check your purchasing power"
+      }
     }
   ],
   "page": 1,

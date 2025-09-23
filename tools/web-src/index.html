@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -7,10 +7,15 @@
     <meta name="template" content="page-content">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
+    <base href="/">
+
+    <link rel="preload" href="./clientlib-site/fonts/roboto.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="./clientlib-site/fonts/roboto-500.woff2" as="font" type="font/woff">
+    <link rel="preload" href="./clientlib-site/fonts/tt-norms-pro-500.woff2" as="font" type="font/woff">
+
     <link rel="stylesheet" href="./clientlib-site/clientlibs/clientlib-base.css" type="text/css">
-    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-dependencies.js"></script>
     <link rel="stylesheet" href="./clientlib-site/clientlibs/clientlib-dependencies.css" type="text/css">
-  <script defer="defer" src="assets/646.6042350806127db7dab2.js"></script><script defer="defer" src="assets/399.4374a1f8047a31a3b557.js"></script><script defer="defer" src="assets/49.224cf59104eafc353b73.js"></script><script defer="defer" src="assets/site.6984ff2c38f430ad1f21.js"></script><link href="clientlib-site/site.css" rel="stylesheet"></head>
+  <script defer="defer" src="assets/vendors-node_modules_a11y-dialog_dist_a11y-dialog_esm_js-node_modules_choices_js_public_asset-449efc.167c64382dfe4ddd610f.js"></script><script defer="defer" src="assets/vendors-node_modules_nouislider_dist_nouislider_mjs.1eb3cd97d734a571dbd1.js"></script><script defer="defer" src="assets/src_main_webpack_components_carousel_js__carousel_js-src_main_webpack_components_header_js__h-1f3c9b.86b7a07d95b39cb2b812.js"></script><script defer="defer" src="assets/site.bc57f3c896d81c34d085.js"></script><link href="clientlib-site/site.css" rel="stylesheet"></head>
   <body class="page" data-page="site">
     <div class="root responsivegrid">
       
@@ -23,13 +28,28 @@
         
         <div class="navigation">
           <nav class="cmp-navigation" itemscope itemtype="http://schema.org/SiteNavigationElement" aria-label="Main Navigation">
-            <ul class="cmp-navigation__group">
-              <li class="cmp-navigation__item cmp-navigation__item--logo">
-                <a href="/" title="Asus CTO" class="cmp-navigation__item-link">
-                  <img src="./clientlib-site/images/logo.svg" alt="Asus CTO Logo">
-                </a>
-              </li>
-            </ul>
+            <a href="./" aria-label="Go to Home Page" class="cmp-navigation__item--logo">
+              
+              <div class="logo-item logo-item--asus">
+                <div class="logo-wrapper">
+                  <img src="./clientlib-site/images/logo-asus.svg" alt="ASUS logo" class="logo-default" width="87" height="20">
+                  <img src="./clientlib-site/images/logo-asus-hover.svg" alt="ASUS logo" class="logo-hover" width="87" height="20">
+                </div>
+              </div>
+
+              
+              <div class="logo-item logo-item--rog">
+                <div class="logo-wrapper">
+                  <img src="./clientlib-site/images/logo-rog.svg" alt="ROG Logo" class="logo-default" width="135" height="26">
+                  <img src="./clientlib-site/images/logo-rog-hover.svg" alt="ROG Hover Logo" class="logo-hover" width="135" height="26">
+                </div>
+              </div>
+
+              
+              <div title="Gaming PC Custom Builder" class="logo-item logo-item--gaming">
+                <img src="./clientlib-site/images/gaming_pc_logo.svg" alt="Gaming PC Custom Builder Logo" width="104" height="22">
+              </div>
+            </a>
           </nav>
         </div>
 
@@ -38,35 +58,53 @@
           <nav class="cmp-sitenavigation" aria-label="Site Navigation">
             <ul class="cmp-sitenavigation__group cmp-sitenavigation__group--main">
               <li class="cmp-sitenavigation__item cmp-sitenavigation__item--desktop">
-                <a class="cmp-sitenavigation__item-link" href="./products.html">All desktop</a>
+                <a class="cmp-sitenavigation__item-link" href="./product-listing.html">All Desktops</a>
               </li>
               <li class="cmp-sitenavigation__item cmp-sitenavigation__item--help">
-                <a class="cmp-sitenavigation__item-link" href="./help-me-choose.html">Help me choose</a>
+                <a class="cmp-sitenavigation__item-link" href="./help-me-choose.html">Help Me Choose</a>
               </li>
               <li class="cmp-sitenavigation__item cmp-sitenavigation__item--news">
-                <a class="cmp-sitenavigation__item-link" href="#">News & Articles</a>
+                <a class="cmp-sitenavigation__item-link" href="./news-articles.html">News & Articles</a>
               </li>
             </ul>
 
             
             <ul class="cmp-sitenavigation__group cmp-sitenavigation__group--icons">
-              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--search">
+              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--search hidden">
                 <a class="cmp-sitenavigation__item-link" href="/">
-                  <img src="./clientlib-site/images/search-icon.svg" alt="search-icon">
-                </a>
-              </li>
-              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--profile">
-                <a class="cmp-sitenavigation__item-link" href="/">
-                  <img src="./clientlib-site/images/profile-icon.svg" alt="profile-icon">
+                  <span class="icon icon--search"></span>
                 </a>
               </li>
               <li class="cmp-sitenavigation__item cmp-sitenavigation__item--cart">
-                <a class="cmp-sitenavigation__item-link" href="/">
-                  <img src="./clientlib-site/images/card-icon.svg" alt="cart-icon">
+                <a class="cmp-sitenavigation__item-link" href="/" aria-label="Cart">
+                  <span class="icon icon--cart"></span>
                 </a>
               </li>
-              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--menu">
-                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Menu"></button>
+              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--profile">
+                <div class="profile-dropdown">
+                  
+                  <button class="cmp-sitenavigation__item-link profile-toggle logged-in" aria-label="Member Account" aria-expanded="false">
+                    <span class="icon icon--profile"></span>
+                  </button>
+                  <ul class="profile-menu">
+                    <li class="profile-menu__header">
+                      <button class="profile-menu__close" aria-label="Close profile menu">
+                      </button>
+                    </li>
+                    <li class="profile-menu__item"><a href="#">Login</a></li>
+                    <li class="profile-menu__item"><a href="#">My Account</a></li>
+                    <li class="profile-menu__item"><a href="#">Product Registration</a></li>
+                    <li class="profile-menu__item"><a href="#">Check My Order</a></li>
+                    <li class="profile-menu__item"><a href="#">My Wishlist</a></li>
+                    <li class="profile-menu__item"><a href="#">Sign out</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="cmp-sitenavigation__item cmp-sitenavigation__item--menu-toggle">
+                <button id="header-hamburger-menu-toggle" class="btn btn-link" aria-label="Toggle Menu">
+                  <span class="icon icon--hamburger"></span>
+                  <span class="icon icon--close"></span>
+                </button>
               </li>
             </ul>
           </nav>
@@ -76,24 +114,45 @@
   </header>
 
   
-  <div class="mobile-menu-overlay" id="mobile-menu">
-    <ul class="mobile-menu p-0">
-      <li class="has-divider"><a href="./products.html" class="px-6">All Desktops</a></li>
-      <li class="has-divider"><a href="./help-me-choose.html" class="px-6">Help Me Choose</a></li>
-      <li class="has-divider"><a href="#" class="px-6">News & Articles</a></li>
-      <li class="px-6">
-        <div class="mobile-search">
-          <img src="./clientlib-site/images/icon-search.svg" alt="Search">
-          <input type="text" placeholder="Enter keywords">
-        </div>
-      </li>
-      <li>
-        <a href="/" class="px-6 d-flex-align">
-          <img src="./clientlib-site/images/icon-profile-mobile.svg" alt="Profile">
-          <div class="profile">My Account</div>
-        </a>
-      </li>
-    </ul>
+  <div class="mobile-menu-overlay" id="mobile-menu-dialog" aria-labelledby="mobile-menu-title" aria-hidden="true" data-a11y-dialog-native>
+    <div class="mobile-menu-container">
+      <div id="mobile-menu-title" class="sr-only">Mobile Navigation Menu</div>
+      <ul class="mobile-menu">
+        <li><a href="./product-listing.html" class="px-6">All Desktops</a></li>
+        <li><a href="./help-me-choose.html" class="px-6">Help Me Choose</a></li>
+        <li><a href="./news-articles.html" class="px-6">News & Articles</a></li>
+
+        
+        <li class="px-6 hidden">
+          <div class="mobile-search">
+            <span class="icon icon--search"></span>
+            <input placeholder="Enter keywords">
+          </div>
+        </li>
+
+        
+        <li class="mobile-account-section">
+          <button class="mobile-account-toggle px-6 d-flex-align mobile-account-link" aria-expanded="false">
+            <span class="icon icon--profile"></span>
+            <span class="profile">My Account</span>
+            <span class="icon icon--arrow-right arrow-icon"></span>
+          </button>
+          <div class="mobile-account-submenu">
+            <div class="submenu-header">
+              <button class="back-button" aria-label="Back">
+                <span class="icon icon--arrow-left"></span>
+                <span class="submenu-title">My Account</span>
+              </button>
+            </div>
+            <ul class="submenu-items">
+              <li><a href="#">Login</a></li>
+              <li><a href="#">My Account</a></li>
+              <li><a href="#">Product Registration</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 
@@ -106,8 +165,7 @@
             <div class="hero-banner cmp-hero-banner hero-content--start-center">
   
     <div class="hero-video-wrapper">
-      <video class="hero-video" muted playsinline poster="./clientlib-site/images/hero-banner-1.jpg" data-src="./clientlib-site/videos/hero-banner-video-1.mp4">
-      </video>
+      <video class="hero-video" muted playsinline poster="./clientlib-site/images/hero-banner-1.webp" data-src="./clientlib-site/videos/hero-banner-video-1.mp4" fetchpriority="high"></video>
     </div>
   
 
@@ -116,7 +174,10 @@
     
       <h1 class="headline">Next-Level<br>Gaming</h1>
     
-    <a href="#" class="cta-button btn">Customize &amp; buy</a>
+    <a href="./pdp.html" class="cta-button btn">
+      Customize &amp; buy
+      
+    </a>
   </div>
 </div>
 
@@ -125,8 +186,7 @@
             <div class="hero-banner cmp-hero-banner hero-content--center-top">
   
     <div class="hero-video-wrapper">
-      <video class="hero-video" muted playsinline poster="./clientlib-site/images/hero-banner-mobile-1.png" data-src="./clientlib-site/videos/sample-video-1.mp4">
-      </video>
+      <video class="hero-video" muted playsinline poster="./clientlib-site/images/hero-banner-2.webp" data-src="./clientlib-site/videos/hero-banner-video-1.mp4" fetchpriority="high"></video>
     </div>
   
 
@@ -135,7 +195,12 @@
     
       <h2 class="headline">Dream PC a Reality</h2>
     
-    <a href="#" class="cta-button btn">Learn more</a>
+    <a href="./pdp.html" class="cta-button btn">
+      Learn more
+      
+        <span class="sr-only"> about Dream PC a Reality</span>
+      
+    </a>
   </div>
 </div>
 
@@ -147,17 +212,22 @@
       <picture>
         
         
-        <img src="./clientlib-site/images/hero-banner-3.jpg" alt="ASUS GEFORCE RTXTM 40" class="hero-image">
+        <img src="./clientlib-site/images/hero-banner-3.webp" alt="ASUS GEFORCE RTX™ 40" class="hero-image" loading="lazy">
       </picture>
     </div>
   
 
   <div class="hero-content">
-    <p class="product-name">ASUS GEFORCE RTXTM 40</p>
+    <p class="product-name">ASUS GEFORCE RTX™ 40</p>
     
       <h2 class="headline">Super <br> Resurgence</h2>
     
-    <a href="#" class="cta-button btn">Learn more</a>
+    <a href="./pdp.html" class="cta-button btn">
+      Learn more
+      
+        <span class="sr-only"> about ASUS GEFORCE RTX™ 40</span>
+      
+    </a>
   </div>
 </div>
 
@@ -169,51 +239,52 @@
 
         
         <div class="cmp-carousel__media-controls">
-          <button class="cmp-carousel__media-control cmp-carousel__media-control--play-pause" type="button" aria-label="Pause">
-            <span class="visually-hidden">Pause</span>
-          </button>
+          <button class="cmp-carousel__media-control cmp-carousel__media-control--play-pause" aria-label="Play video auto-play"></button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="pt-5 section-with-bottom-spacing">
-  <div class="cmp-container container">
-    <div class="featured-products-wrapper">
-  <div class="featured-product-card">
-    <div class="product-image-wrapper">
-      <img src="./clientlib-site/images/latest-pick.png" alt="Thumbnail image of ROG G700 (2025)" class="product-image">
-    </div>
-    <div class="product-info">
-      <h3 class="label">Latest creations</h3>
-      <h4 class="title">ROG G700 (2025)</h4>
-      <a href="#" class="view-configs" aria-label="View configurations for ROG G700 (2025)">View configs <img src="./clientlib-site/images/icon-arrow.svg" alt="Arrow Right"></a>
-    </div>
+<div class="gradient-animation">
+  <section class="pt-5 section-with-bottom-spacing">
+    <h2 class="sr-only">Featured Products</h2>
+    <div class="cmp-container container">
+      <div class="layout-grid">
+        <div class="layout-grid__col layout-grid__col--span-6 layout-grid__col--md-span-12">
+          <div class="featured-product-card">
+  <div class="product-image-wrapper">
+    <img src="./clientlib-site/images/latest-pick2.webp" alt="Thumbnail image of ROG G700 (2025)" class="product-image">
   </div>
-
-  <div class="featured-product-card">
-    <div class="product-image-wrapper">
-      <img src="./clientlib-site/images/latest-pick2.png" alt="Thumbnail image of ROG Strix G10DK G10DK" class="product-image">
-    </div>
-    <div class="product-info">
-      <h3 class="label">Top picks</h3>
-      <h4 class="title">ROG Strix G10DK G10DK</h4>
-      <a href="#" class="view-configs" aria-label="View configurations for ROG Strix G10DK G10DK">View configs <img src="./clientlib-site/images/icon-arrow.svg" alt="Arrow Right"></a>
-    </div>
+  <div class="product-info">
+    <h3 class="label">Latest creations</h3>
+    <h4 class="title">ROG G700 (2025)</h4>
+    <a href="#" class="cta" aria-label="View configurations for ROG G700 (2025)">View configs <span class="icon icon--arrow-wide-right"></span></a>
   </div>
 </div>
-
+        </div>
+        <div class="layout-grid__col layout-grid__col--span-6 layout-grid__col--md-span-12">
+          <div class="featured-product-card">
+  <div class="product-image-wrapper">
+    <img src="./clientlib-site/images/latest-pick.webp" alt="Thumbnail image of ROG Strix G10DK G10DK" class="product-image">
   </div>
-</section>
+  <div class="product-info">
+    <h3 class="label">Top picks</h3>
+    <h4 class="title">ROG Strix G10DK G10DK</h4>
+    <a href="#" class="cta" aria-label="View configurations for ROG Strix G10DK G10DK">View configs <span class="icon icon--arrow-wide-right"></span></a>
+  </div>
+</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section-with-top-spacing section-with-bottom-spacing">
-  <div class="container">
-    <div class="carousel panelcontainer">
-      <div class="section-heading">
+  <section class="section-with-top-spacing section-with-bottom-spacing">
+    <div class="container">
+      <div class="carousel panelcontainer">
+        <div class="section-heading">
   <div class="section-heading__text-group">
     <h2 class="section-heading__title">Hot Products</h2>
-    
     
   </div>
 
@@ -227,118 +298,128 @@
   
 </div>
 
-      <div id="carousel-4e80c7e13k" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-placeholder-text="false" data-slides-per-view="1" data-slides-per-view-tablet="2.3" data-slides-per-view-desktop="3" data-loop-slides="false" data-init="false" data-product-type="hot">
-        <div class="cmp-carousel__content cmp-carousel__content--overflow">
-          
+        <div id="carousel-4e80c7e13k" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-placeholder-text="false" data-slides-per-view="1" data-slides-per-view-tablet="2.3" data-slides-per-view-desktop="3" data-loop-slides="false" data-init="false" data-product-type="hot">
+          <div class="cmp-carousel__content cmp-carousel__content--overflow">
+            
+          </div>
+        </div>
+
+        
+        <div class="section-actions-container">
+          <a href="./product-listing.html" class="section-actions-btn btn btn-link">
+            View all <span class="icon icon--arrow-right"></span>
+          </a>
+          <div class="loader">
+            <span class="icon icon--loader"></span>
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="cmp-product-card__viewall-container">
-      <button class="cmp-product-card__viewall-btn btn btn-link">
-        View all <img src="./clientlib-site/images/icon-arrow.svg" alt="Arrow Right">
-      </button>
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-with-top-spacing section-with-bottom-spacing">
-  <div class="cmp-container container">
-    <section class="game-recommendation">
+  <section class="section-with-top-spacing section-with-bottom-spacing">
+    <div class="cmp-container container">
+      <div class="game-recommendation">
   <div class="carousel panelcontainer">
     <div class="section-heading">
   <div class="section-heading__text-group">
     <h2 class="section-heading__title">Select The Game You Play</h2>
     
-    
-      <p class="section-heading__description">We will recommend a plan that suits you most!</p>
+    <p class="section-heading__description">We will recommend a plan that suits you most!</p>
     
   </div>
 
   
+    <div class="section-heading__action-buttons cmp-carousel__actions">
+      <button class="cmp-carousel__action cmp-carousel__action--previous">
+      </button>
+      <button class="cmp-carousel__action cmp-carousel__action--next">
+      </button>
+    </div>
+  
 </div>
 
 
-    <form id="game-selection-form" class="game-form" aria-label="Game selection form" data-select-game-form>
-      <div id="carousel-4e80c7e13l" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-slides-per-view="2.2" data-slides-per-view-tablet="4.2" data-slides-per-view-desktop="6" data-loop-slides="false">
-        <div class="cmp-carousel__content" aria-atomic="false" aria-live="polite">
+    <form id="game-selection-form" class="game-form" action="./product-matches.html" aria-label="Game selection form" data-select-game-form>
+      <div id="carousel-4e80c7e13l" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-slides-per-view="2" data-slides-per-view-tablet="6" data-slides-per-view-desktop="6" data-loop-slides="false">
+        <div class="cmp-carousel__content cmp-carousel__content--overflow" aria-atomic="false" aria-live="polite">
           
             <div class="cmp-carousel__item">
               <div class="game-item">
-                <input type="checkbox" id="game-you-play-cod" name="games" value="cod">
-                <div class="game-details-wrapper">
-                  <div class="image-wrapper" aria-hidden="true">
-                    <img src="./clientlib-site/images/games/call-of-duty.png" alt="" class="game-image">
-                    <div class="checkmark-overlay"></div>
-                  </div>
-                  <label class="game-info" for="game-you-play-cod">Call of Duty: Modern Warfare</label>
-                </div>
-              </div>
+  <input type="checkbox" id="game-you-play-cod" name="games" value="cod" data-name="Call of Duty: Modern Warfare" data-image="./clientlib-site/images/games/call-of-duty.webp">
+  <div class="game-details-wrapper">
+    <div class="image-wrapper" aria-hidden="true">
+      <img src="./clientlib-site/images/games/call-of-duty.webp" alt="" class="game-image" loading="lazy">
+      <div class="checkmark-overlay"></div>
+    </div>
+    <label class="game-info" for="game-you-play-cod">Call of Duty: Modern Warfare</label>
+  </div>
+</div>
             </div>                                   
           
             <div class="cmp-carousel__item">
               <div class="game-item">
-                <input type="checkbox" id="game-you-play-alanwake" name="games" value="alanwake">
-                <div class="game-details-wrapper">
-                  <div class="image-wrapper" aria-hidden="true">
-                    <img src="./clientlib-site/images/games/alan-wake.png" alt="" class="game-image">
-                    <div class="checkmark-overlay"></div>
-                  </div>
-                  <label class="game-info" for="game-you-play-alanwake">Alan Wake 2</label>
-                </div>
-              </div>
+  <input type="checkbox" id="game-you-play-alanwake" name="games" value="alanwake" data-name="Alan Wake 2" data-image="./clientlib-site/images/games/alan-wake.webp">
+  <div class="game-details-wrapper">
+    <div class="image-wrapper" aria-hidden="true">
+      <img src="./clientlib-site/images/games/alan-wake.webp" alt="" class="game-image" loading="lazy">
+      <div class="checkmark-overlay"></div>
+    </div>
+    <label class="game-info" for="game-you-play-alanwake">Alan Wake 2</label>
+  </div>
+</div>
             </div>                                   
           
             <div class="cmp-carousel__item">
               <div class="game-item">
-                <input type="checkbox" id="game-you-play-cs2" name="games" value="cs2">
-                <div class="game-details-wrapper">
-                  <div class="image-wrapper" aria-hidden="true">
-                    <img src="./clientlib-site/images/games/counter-strike.png" alt="" class="game-image">
-                    <div class="checkmark-overlay"></div>
-                  </div>
-                  <label class="game-info" for="game-you-play-cs2">Counter Strike 2</label>
-                </div>
-              </div>
+  <input type="checkbox" id="game-you-play-cs2" name="games" value="cs2" data-name="Counter Strike 2" data-image="./clientlib-site/images/games/counter-strike.webp">
+  <div class="game-details-wrapper">
+    <div class="image-wrapper" aria-hidden="true">
+      <img src="./clientlib-site/images/games/counter-strike.webp" alt="" class="game-image" loading="lazy">
+      <div class="checkmark-overlay"></div>
+    </div>
+    <label class="game-info" for="game-you-play-cs2">Counter Strike 2</label>
+  </div>
+</div>
             </div>                                   
           
             <div class="cmp-carousel__item">
               <div class="game-item">
-                <input type="checkbox" id="game-you-play-baldur" name="games" value="baldur">
-                <div class="game-details-wrapper">
-                  <div class="image-wrapper" aria-hidden="true">
-                    <img src="./clientlib-site/images/games/baldurs-gate.png" alt="" class="game-image">
-                    <div class="checkmark-overlay"></div>
-                  </div>
-                  <label class="game-info" for="game-you-play-baldur">Baldur&#39;s Gate 3</label>
-                </div>
-              </div>
+  <input type="checkbox" id="game-you-play-baldur" name="games" value="baldur" data-name="Baldur&#39;s Gate 3" data-image="./clientlib-site/images/games/baldurs-gate.webp">
+  <div class="game-details-wrapper">
+    <div class="image-wrapper" aria-hidden="true">
+      <img src="./clientlib-site/images/games/baldurs-gate.webp" alt="" class="game-image" loading="lazy">
+      <div class="checkmark-overlay"></div>
+    </div>
+    <label class="game-info" for="game-you-play-baldur">Baldur&#39;s Gate 3</label>
+  </div>
+</div>
             </div>                                   
           
             <div class="cmp-carousel__item">
               <div class="game-item">
-                <input type="checkbox" id="game-you-play-civ6" name="games" value="civ6">
-                <div class="game-details-wrapper">
-                  <div class="image-wrapper" aria-hidden="true">
-                    <img src="./clientlib-site/images/games/fortnite.png" alt="" class="game-image">
-                    <div class="checkmark-overlay"></div>
-                  </div>
-                  <label class="game-info" for="game-you-play-civ6">Fortnite</label>
-                </div>
-              </div>
+  <input type="checkbox" id="game-you-play-civ6" name="games" value="civ6" data-name="Fortnite" data-image="./clientlib-site/images/games/fortnite.webp">
+  <div class="game-details-wrapper">
+    <div class="image-wrapper" aria-hidden="true">
+      <img src="./clientlib-site/images/games/fortnite.webp" alt="" class="game-image" loading="lazy">
+      <div class="checkmark-overlay"></div>
+    </div>
+    <label class="game-info" for="game-you-play-civ6">Fortnite</label>
+  </div>
+</div>
             </div>                                   
           
             <div class="cmp-carousel__item">
               <div class="game-item">
-                <input type="checkbox" id="game-you-play-fortnite" name="games" value="fortnite">
-                <div class="game-details-wrapper">
-                  <div class="image-wrapper" aria-hidden="true">
-                    <img src="./clientlib-site/images/games/red-redemption.png" alt="" class="game-image">
-                    <div class="checkmark-overlay"></div>
-                  </div>
-                  <label class="game-info" for="game-you-play-fortnite">Red Redemption 2</label>
-                </div>
-              </div>
+  <input type="checkbox" id="game-you-play-fortnite" name="games" value="fortnite" data-name="Red Redemption 2" data-image="./clientlib-site/images/games/red-redemption.webp">
+  <div class="game-details-wrapper">
+    <div class="image-wrapper" aria-hidden="true">
+      <img src="./clientlib-site/images/games/red-redemption.webp" alt="" class="game-image" loading="lazy">
+      <div class="checkmark-overlay"></div>
+    </div>
+    <label class="game-info" for="game-you-play-fortnite">Red Redemption 2</label>
+  </div>
+</div>
             </div>                                   
           
         </div> 
@@ -355,7 +436,7 @@
             <div id="budget-range" class="budget-range-slider" data-start="[1100, 5000]" data-min="500" data-max="5000" data-step="100"></div>
             <div class="range-labels">
               <span>$500</span>
-              <span>$5000</span>
+              <span>$5,000</span>
             </div>
           </div>
           <div class="budget-value" id="budget-max-value"></div>
@@ -372,141 +453,109 @@
       </div>
     </form>
   </div>
-</section>
-  </div>
-</section>
+</div>
+    </div>
+  </section>
 
-<section class="section-with-top-spacing section-with-bottom-spacing">
-  <div class="container">
-    <div class="carousel panelcontainer">
-      <div class="section-heading content-center">
+  <section class="section-with-top-spacing section-with-bottom-spacing">
+    <div class="container">
+      <div class="carousel panelcontainer">
+        <div class="section-heading content-center">
   <div class="section-heading__text-group">
     <h2 class="section-heading__title">Our Advantages</h2>
-    
     
   </div>
 
   
 </div>
 
-      <div id="carousel-4e80c7e13a" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-cmp-delay="5000" data-carousel-effect="creative" data-prev-slide-message="Previous advantage" data-next-slide-message="Next advantage">
-        <div class="cmp-carousel__content">
-          <div id="carousel-4e80c7e13a-item-30704e84cd-tabpanel" class="cmp-carousel__item cmp-carousel__item--active">
-            <div class="cmp-advantage-card">
+        <div id="carousel-4e80c7e13a" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-cmp-delay="5000" data-carousel-effect="creative" data-prev-slide-message="Previous advantage" data-next-slide-message="Next advantage">
+          <div class="cmp-carousel__content">
+            <div id="carousel-4e80c7e13a-item-30704e84cd-tabpanel" class="cmp-carousel__item cmp-carousel__item--active">
+              <div class="cmp-advantage-card">
   <div class="cmp-advantage-card__image-wrapper">
-    <img src="./clientlib-site/images/advantage.jpg" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image">
+    <img src="./clientlib-site/images/advantage-1.webp" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image" loading="lazy">
     <video class="cmp-advantage-card__video" data-src="./clientlib-site/videos/hero-banner-video-1.mp4" playsinline controls></video>
   </div>
   <div class="cmp-advantage-card__overlay">
     <div class="cmp-advantage-card__content">
       <h3 class="cmp-advantage-card__title">Ultimate Gaming Experience</h3>
-      <p class="cmp-advantage-card__desc">
-        Our systems are engineered to enhance both performance and noise control, guaranteeing
-        stability and an unparalleled gaming experience.
-      </p>
+      <p class="cmp-advantage-card__desc">Our systems are engineered to enhance both performance and noise control, guaranteeing stability and an unparalleled gaming experience.</p>
       <button class="cmp-advantage-card__btn btn">Watch now <img src="./clientlib-site/images/icon-play-filled.svg" alt="play-icon"></button>
     </div>
   </div>
 </div>
-          </div>
-          <div id="carousel-4e80c7e13a-item-645fc67b90-tabpanel" class="cmp-carousel__item">
-            <div class="cmp-advantage-card">
+            </div>
+            <div id="carousel-4e80c7e13a-item-645fc67b90-tabpanel" class="cmp-carousel__item">
+              <div class="cmp-advantage-card">
   <div class="cmp-advantage-card__image-wrapper">
-    <img src="./clientlib-site/images/advantage.jpg" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image">
+    <img src="./clientlib-site/images/advantage-2.webp" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image" loading="lazy">
     <video class="cmp-advantage-card__video" data-src="./clientlib-site/videos/hero-banner-video-1.mp4" playsinline controls></video>
   </div>
   <div class="cmp-advantage-card__overlay">
     <div class="cmp-advantage-card__content">
-      <h3 class="cmp-advantage-card__title">Ultimate Gaming Experience</h3>
-      <p class="cmp-advantage-card__desc">
-        Our systems are engineered to enhance both performance and noise control, guaranteeing
-        stability and an unparalleled gaming experience.
-      </p>
+      <h3 class="cmp-advantage-card__title">Superior Component Quality</h3>
+      <p class="cmp-advantage-card__desc">Inspiration can come from anywhere, to shape our works and the world we create. As a multidisciplinary motion design and VFX studio, KORB creates immersive sensory experiences, building worlds that are beyond all imagination.</p>
       <button class="cmp-advantage-card__btn btn">Watch now <img src="./clientlib-site/images/icon-play-filled.svg" alt="play-icon"></button>
     </div>
   </div>
 </div>
-          </div>
-          <div id="carousel-4e80c7e13a-item-85d21a3332-tabpanel" class="cmp-carousel__item">
-            <div class="cmp-advantage-card">
+            </div>
+            <div id="carousel-4e80c7e13a-item-85d21a3332-tabpanel" class="cmp-carousel__item">
+              <div class="cmp-advantage-card">
   <div class="cmp-advantage-card__image-wrapper">
-    <img src="./clientlib-site/images/advantage.jpg" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image">
+    <img src="./clientlib-site/images/advantage-3.webp" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image" loading="lazy">
     <video class="cmp-advantage-card__video" data-src="./clientlib-site/videos/hero-banner-video-1.mp4" playsinline controls></video>
   </div>
   <div class="cmp-advantage-card__overlay">
     <div class="cmp-advantage-card__content">
-      <h3 class="cmp-advantage-card__title">Ultimate Gaming Experience</h3>
-      <p class="cmp-advantage-card__desc">
-        Our systems are engineered to enhance both performance and noise control, guaranteeing
-        stability and an unparalleled gaming experience.
-      </p>
+      <h3 class="cmp-advantage-card__title">New Technology and Trends</h3>
+      <p class="cmp-advantage-card__desc">Inspiration can come from anywhere, to shape our works and the world we create. As a multidisciplinary motion design and VFX studio, KORB creates immersive sensory experiences, building worlds that are beyond all imagination.</p>
       <button class="cmp-advantage-card__btn btn">Watch now <img src="./clientlib-site/images/icon-play-filled.svg" alt="play-icon"></button>
     </div>
   </div>
 </div>
-          </div>
-          <div id="carousel-4e80c7e13a-item-85d21a3334-tabpanel" class="cmp-carousel__item">
-            <div class="cmp-advantage-card">
+            </div>
+            <div id="carousel-4e80c7e13a-item-30704e84c1-tabpanel" class="cmp-carousel__item cmp-carousel__item--active">
+              <div class="cmp-advantage-card">
   <div class="cmp-advantage-card__image-wrapper">
-    <img src="./clientlib-site/images/advantage.jpg" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image">
+    <img src="./clientlib-site/images/advantage-1.webp" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image" loading="lazy">
     <video class="cmp-advantage-card__video" data-src="./clientlib-site/videos/hero-banner-video-1.mp4" playsinline controls></video>
   </div>
   <div class="cmp-advantage-card__overlay">
     <div class="cmp-advantage-card__content">
-      <h3 class="cmp-advantage-card__title">Ultimate Gaming Experience</h3>
-      <p class="cmp-advantage-card__desc">
-        Our systems are engineered to enhance both performance and noise control, guaranteeing
-        stability and an unparalleled gaming experience.
-      </p>
+      <h3 class="cmp-advantage-card__title">Ultimate Gaming Experience 2</h3>
+      <p class="cmp-advantage-card__desc">Our systems are engineered to enhance both performance and noise control, guaranteeing stability and an unparalleled gaming experience.</p>
       <button class="cmp-advantage-card__btn btn">Watch now <img src="./clientlib-site/images/icon-play-filled.svg" alt="play-icon"></button>
     </div>
   </div>
 </div>
+            </div>
           </div>
-          <div id="carousel-4e80c7e13a-item-85d21a3335-tabpanel" class="cmp-carousel__item">
-            <div class="cmp-advantage-card">
-  <div class="cmp-advantage-card__image-wrapper">
-    <img src="./clientlib-site/images/advantage.jpg" alt="Ultimate Gaming Experience" class="cmp-advantage-card__image">
-    <video class="cmp-advantage-card__video" data-src="./clientlib-site/videos/hero-banner-video-1.mp4" playsinline controls></video>
-  </div>
-  <div class="cmp-advantage-card__overlay">
-    <div class="cmp-advantage-card__content">
-      <h3 class="cmp-advantage-card__title">Ultimate Gaming Experience</h3>
-      <p class="cmp-advantage-card__desc">
-        Our systems are engineered to enhance both performance and noise control, guaranteeing
-        stability and an unparalleled gaming experience.
-      </p>
-      <button class="cmp-advantage-card__btn btn">Watch now <img src="./clientlib-site/images/icon-play-filled.svg" alt="play-icon"></button>
-    </div>
-  </div>
-</div>
-          </div>
-        </div>
 
-        
-        <div class="cmp-carousel__actions">
-          <button class="cmp-carousel__action cmp-carousel__action--previous">
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="cmp-carousel__action cmp-carousel__action--next">
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
+          
+          <div class="cmp-carousel__actions">
+            <button class="cmp-carousel__action cmp-carousel__action--previous">
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="cmp-carousel__action cmp-carousel__action--next">
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
-        
-        <ol class="cmp-carousel__indicators" role="tablist" aria-label="Choose a slide to display"></ol>
+          
+          <ol class="cmp-carousel__indicators" role="tablist" aria-label="Choose a slide to display"></ol>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-with-top-spacing section-with-bottom-spacing">
-  <div class="cmp-container container">
-    <div class="carousel panelcontainer">
-      <div class="section-heading">
+  <section class="section-with-top-spacing section-with-bottom-spacing">
+    <div class="cmp-container container">
+      <div class="carousel panelcontainer">
+        <div class="section-heading">
   <div class="section-heading__text-group">
     <h2 class="section-heading__title">Featured News &amp; Articles</h2>
-    
     
   </div>
 
@@ -520,12 +569,12 @@
   
 </div>
 
-      <div id="carousel-5e80c7e13a" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-cmp-delay="false" data-slides-per-view="1" data-slides-per-view-tablet="2" data-slides-per-view-desktop="3" data-loop-slides="false">
-        <div class="cmp-carousel__content">
-          <div id="carousel-5e80c7e13a-item-30704e84cd-tabpanel" class="cmp-carousel__item cmp-carousel__item--active">
-            <a class="cmp-article-card" href="/news/article-1" aria-label="Read article: ROG Strix vs Extreme vs Apex vs Hero: What&#39;s the difference between ROG gaming motherboards?">
+        <div id="carousel-5e80c7e13a" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-cmp-delay="false" data-slides-per-view="1" data-slides-per-view-tablet="3" data-slides-per-view-desktop="3" data-loop-slides="false">
+          <div class="cmp-carousel__content cmp-carousel__content--overflow">
+            <div id="carousel-5e80c7e13a-item-30704e84cd-tabpanel" class="cmp-carousel__item cmp-carousel__item--active">
+              <a class="cmp-article-card" href="/news/article-1" aria-label="Read article: ROG Strix vs Extreme vs Apex vs Hero: What&#39;s the difference between ROG gaming motherboards?">
   <div class="cmp-article-card__image cmp-image">
-    <img class="cmp-image__image" src="./clientlib-site/images/news-article-1.png" alt="Motherboard">
+    <img class="cmp-image__image" src="./clientlib-site/images/news-article-1.webp" alt="Motherboard" loading="lazy">
   </div>
 
   <div class="cmp-article-card__content">
@@ -537,11 +586,11 @@
   </div>
 </a>
 
-          </div>
-          <div id="carousel-5e80c7e13a-item-30704e84ce-tabpanel" class="cmp-carousel__item">
-            <a class="cmp-article-card" href="/news/article-2" aria-label="Read article: ROG Astral vs Strix vs TUF vs Prime: which ASUS graphics card is right for you?">
+            </div>
+            <div id="carousel-5e80c7e13a-item-30704e84ce-tabpanel" class="cmp-carousel__item">
+              <a class="cmp-article-card" href="/news/article-2" aria-label="Read article: ROG Astral vs Strix vs TUF vs Prime: which ASUS graphics card is right for you?">
   <div class="cmp-article-card__image cmp-image">
-    <img class="cmp-image__image" src="./clientlib-site/images/news-article-2.png" alt="Motherboard">
+    <img class="cmp-image__image" src="./clientlib-site/images/news-article-2.webp" alt="Motherboard" loading="lazy">
   </div>
 
   <div class="cmp-article-card__content">
@@ -553,11 +602,11 @@
   </div>
 </a>
 
-          </div>
-          <div id="carousel-5e80c7e13a-item-30704e84cf-tabpanel" class="cmp-carousel__item">
-            <a class="cmp-article-card" href="/news/article-3" aria-label="Read article: Introducing the ROG G700 prebuilt gaming PC: your next-gen power tower">
+            </div>
+            <div id="carousel-5e80c7e13a-item-30704e84cf-tabpanel" class="cmp-carousel__item">
+              <a class="cmp-article-card" href="/news/article-3" aria-label="Read article: Introducing the ROG G700 prebuilt gaming PC: your next-gen power tower">
   <div class="cmp-article-card__image cmp-image">
-    <img class="cmp-image__image" src="./clientlib-site/images/news-article-3.png" alt="Motherboard">
+    <img class="cmp-image__image" src="./clientlib-site/images/news-article-3.webp" alt="Motherboard" loading="lazy">
   </div>
 
   <div class="cmp-article-card__content">
@@ -569,18 +618,19 @@
   </div>
 </a>
 
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  <div class="cmp-product-card__viewall-container">
-    <button class="cmp-product-card__viewall-btn btn btn-link">
-      See all News & Articles <img src="./clientlib-site/images/icon-arrow.svg" alt="Arrow Right">
-    </button>
-  </div>
-</section></main>
+    
+    <div class="section-actions-container">
+      <button class="section-actions-btn btn btn-link">
+        See all News & Articles <img src="./clientlib-site/images/icon-arrow.svg" alt="Arrow Right">
+      </button>
+    </div>
+  </section>
+</div></main>
 
       <footer class="experiencefragment">
   <div class="cmp-experiencefragment">
@@ -588,7 +638,7 @@
       <div class="footer-grid">
         
         <div class="footer-left">
-          <form class="newsletter" aria-label="Newsletter signup">
+          <form class="newsletter" method="post" action="" aria-label="Newsletter signup">
             <label for="newsletter-email">Get the latest deals and more</label>
             <div class="newsletter__form mt-4">
               <input type="email" id="newsletter-email" name="email" placeholder="Enter email address" required>
@@ -597,18 +647,51 @@
           </form>
 
           <div class="social">
-            <h2 id="social-heading" class="visually-hidden">Follow us on social media</h2>
             <small class="text-social">Follow us at:</small>
-            <ul class="social__icons p-0 m-0" aria-label="Social Media Links">
-              <li><a href="/" target="_blank" aria-label="Facebook"><img src="./clientlib-site/images/icon-fb.svg" alt="facebook"></a></li>
-              <li><a href="/" target="_blank" aria-label="X (formerly Twitter)"><img src="./clientlib-site/images/x-icon.svg" alt="x-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="Discord"><img src="./clientlib-site/images/discord.svg" alt="discord-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="YouTube"><img src="./clientlib-site/images/youtube-icon.svg" alt="youtube-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="Twitch"><img src="./clientlib-site/images/twitch.svg" alt="twitch-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="Instagram"><img src="./clientlib-site/images/insta-icon.svg" alt="insta-icon"></a></li>
-              <li><a href="/" target="_blank" aria-label="TikTok"><img src="./clientlib-site/images/tiktok.svg" alt="tiktok"></a></li>
-              <li><a href="/" target="_blank" aria-label="Threads"><img src="./clientlib-site/images/thread.svg" alt="thread"></a></li>
-            </ul>
+            <nav aria-label="Social media">
+              <ul class="social__icons p-0 m-0">
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Facebook (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-facebook.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Twitter (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-x.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Discord (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-discord.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on YouTube (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-youtube.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Twitch (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-twitch.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Instagram (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-instagram.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on TikTok (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-tiktok.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+                <li>
+                  <a href="./" target="_blank" aria-label="Follow us on Threads (open a new window)">
+                    <img src="./clientlib-site/images/social/icon-thread.svg" alt="" width="40" height="40">
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
 
@@ -636,10 +719,10 @@
 
       <div class="footer-bottom">
         <span><img src="./clientlib-site/images/Global.svg" alt="Global">Global / English</span>
-        <nav class="footer-bottom__links" aria-label="Legal and policy links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms & Conditions</a>
-          <a href="#">Cookie Settings</a>
+        <nav class="footer-bottom__links" aria-label="Legal links">
+          <a href="#" target="_blank" aria-label="View Privacy Policy (open a new window)">Privacy Policy</a>
+          <a href="#" target="_blank" aria-label="View Terms of Use (open a new window)">Terms & Conditions</a>
+          <a href="#" target="_blank" aria-label="View Cookie Settings (open a new window)">Cookie Settings</a>
         </nav>
       </div>
     </div>
@@ -650,299 +733,9 @@
       
       
       
-        <section class="dialog-container cmp-product-preview" data-a11y-dialog="product-preview-dialog" id="product-preview-dialog" aria-hidden="true">
-
-  <div class="dialog-content" role="dialog" aria-modal="true" aria-labelledby="preview-product-title">
-
-  <div class="cmp-product-preview__topbar">
-    <div class="cmp-product-preview__topbar-left">
-      <p class="cmp-product-preview__purchase-limit">A maximum of 5 pieces per customer.</p>
-      <p class="cmp-product-preview__shipping-info">Up to 5 working days to ship.</p>
-    </div>
-
-    <div class="cmp-product-preview__topbar-right">
-      <div class="cmp-product-preview__price-group">
-        <div class="cmp-product-preview__price-final">$1,999.99</div>
-        <div class="cmp-product-preview__price-meta">
-          <span class="cmp-product-preview__price-old">$2,099.99</span>
-          <span class="cmp-product-preview__price-save">Save $100</span>
-        </div>
-        <div class="cmp-product-preview__installment">
-          Starting at $90/mo with
-          <img src="./clientlib-site/images/affirm.svg" alt="Affirm">
-          Check your purchasing power
-        </div>
-      </div>
-
-      <div class="cmp-product-preview__action-buttons">
-        <button class="cmp-button cmp-button--primary btn">Add to Cart</button>
-        <button class="light-mode btn btn-outline">View Details</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="cmp-product-preview__body">
-    <div class="product-preview-card">
-      <button class="close-icon" data-a11y-dialog-hide="product-preview-dialog" aria-label="Close the dialog"></button>
-      <div class="product-preview-image-section">
-        <div class="product-gallery">
-  
-  <div class="swiper product-gallery__main-carousel" data-show-image-gallery-modal="false" data-gallery-title="ROG G700 (2025)" data-gallery-description="GA15DK-RS754 | 90PF02Q1-M01TUO">
-    <div class="swiper-wrapper">
-      
-        <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-image-1.png" alt="ROG G700 - Front View" class="gallery-main-image" data-gallery-index="0" loading="eager">
-        </div>
-      
-        <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-2.png" alt="ROG G700 - Side View" class="gallery-main-image" data-gallery-index="1" loading="lazy">
-        </div>
-      
-        <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-3.png" alt="ROG G700 - Back View" class="gallery-main-image" data-gallery-index="2" loading="lazy">
-        </div>
-      
-        <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-4.png" alt="ROG G700 - Interior View" class="gallery-main-image" data-gallery-index="3" loading="lazy">
-        </div>
-      
-        <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-5.png" alt="ROG G700 - Components" class="gallery-main-image" data-gallery-index="4" loading="lazy">
-        </div>
-      
-        <div class="carousel__item swiper-slide">
-          <img src="./clientlib-site/images/products/product-1-thumb-6.png" alt="ROG G700 - Setup" class="gallery-main-image" data-gallery-index="5" loading="lazy">
-        </div>
-      
-    </div>
-  </div>
-
-  
-  <div class="product-gallery__thumbs-carousel-wrapper">
-    <div class="swiper product-gallery__thumbs-carousel">
-      <div class="swiper-wrapper">
-        
-          <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-1.png" alt="ROG G700 - Front View Thumbnail" class="gallery-thumb-image" data-gallery-index="0" loading="lazy">
-          </div>
-        
-          <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-2.png" alt="ROG G700 - Side View Thumbnail" class="gallery-thumb-image" data-gallery-index="1" loading="lazy">
-          </div>
-        
-          <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-3.png" alt="ROG G700 - Back View Thumbnail" class="gallery-thumb-image" data-gallery-index="2" loading="lazy">
-          </div>
-        
-          <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-4.png" alt="ROG G700 - Interior View Thumbnail" class="gallery-thumb-image" data-gallery-index="3" loading="lazy">
-          </div>
-        
-          <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-5.png" alt="ROG G700 - Components Thumbnail" class="gallery-thumb-image" data-gallery-index="4" loading="lazy">
-          </div>
-        
-          <div class="carousel__item swiper-slide">
-            <img src="./clientlib-site/images/products/product-1-thumb-6.png" alt="ROG G700 - Setup Thumbnail" class="gallery-thumb-image" data-gallery-index="5" loading="lazy">
-          </div>
-        
-      </div>
-    </div>
-  
-    
-    <div class="carousel__actions">
-      <button class="carousel__action carousel__action--previous" aria-label="Previous image">
-        <span class="icon icon--arrow-left"></span>
-      </button>
-      <button class="carousel__action carousel__action--next" aria-label="Next image">
-        <span class="icon icon--arrow-right"></span>
-      </button>
-    </div>
-  </div>
-</div>
-        <div class="fps-section" id="game-fps">
-  <div class="fps-header-row">
-    <span class="fps-title">Game FPS</span>
-    <div class="fps-info-group">
-      <button class="fps-info" data-a11y-dialog-show="fps-dialog" aria-label="View FPS Details">
-        What is FPS? <span class="icon icon--plus"></span>
-      </button>
-    </div>
-  </div>
-
-  <div class="fps-tabs-wrapper">
-    <div class="tabs panelcontainer" data-cmp-is="custom-tabs">
-  <div id="fps-tabs" class="cmp-tabs" data-style="solid">
-    <ol role="tablist" class="cmp-tabs__tablist" aria-multiselectable="false">
-      
-      <li role="tab" id="fps-tab-1080-tab" class="cmp-tabs__tab cmp-tabs__tab--active" aria-controls="fps-tab-1080-tabpanel" tabindex="0" aria-selected="true">
-        1080p
-      </li>
-      
-      <li role="tab" id="fps-tab-1440-tab" class="cmp-tabs__tab" aria-controls="fps-tab-1440-tabpanel" tabindex="-1" aria-selected="false">
-        1440p
-      </li>
-      
-    </ol>
-
-    
-    <div id="fps-tab-1080-tabpanel" role="tabpanel" aria-labelledby="fps-tab-1080-tab" tabindex="0" class="cmp-tabs__tabpanel cmp-tabs__tabpanel--active" aria-hidden="false">
-      
-            <div class="fps-scores">
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/call-of-duty.png" alt="Call of Duty: Modern Warfare">
-                <span>118 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/alan-wake.png" alt="Alan Wake 2">
-                <span>67 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/counter-strike.png" alt="Counter Strike 2">
-                <span>100 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/baldurs-gate.png" alt="Baldur's Gate 3">
-                <span>82 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/fortnite.png" alt="Fortnite">
-                <span>75 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/red-redemption.png" alt="Red Redemption 2">
-                <span>130 FPS</span>
-              </div>
-            </div>
-          
-    </div>
-    
-    <div id="fps-tab-1440-tabpanel" role="tabpanel" aria-labelledby="fps-tab-1440-tab" tabindex="0" class="cmp-tabs__tabpanel" aria-hidden="true">
-      
-            <div class="fps-scores">
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/call-of-duty.png" alt="Call of Duty: Modern Warfare">
-                <span>120 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/alan-wake.png" alt="Alan Wake 2">
-                <span>67 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/counter-strike.png" alt="Counter Strike 2">
-                <span>100 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/baldurs-gate.png" alt="Baldur's Gate 3">
-                <span>82 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/fortnite.png" alt="Fortnite">
-                <span>75 FPS</span>
-              </div>
-              <div class="fps-item">
-                <img src="./clientlib-site/images//games/red-redemption.png" alt="Red Redemption 2">
-                <span>130 FPS</span>
-              </div>
-            </div>
-          
-    </div>
-    
-  </div>
-</div>
-
-  </div>
-
-  <div class="time-spy-score">
-    <div class="time-spy-score-left">
-      <div class="time-spy-score-label">
-        <span class="label">Time Spy Score</span>
-        <button type="button" class="time-spy-score-btn" data-a11y-dialog-show="time-spy-score-dialog" aria-label="Time Spy Score Information" data-score="10,999" data-level="4">
-          <span class="icon icon--plus"></span>
-        </button>
-      </div>
-      <span class="score">10,999</span>
-    </div>
-    <div class="time-spy-score-right">
-      <span class="data-from">Data from</span>
-      <div class="data-source">
-        <img src="./clientlib-site/images/3dmark.png" alt="3DMark logo">
-        <button data-tooltip-trigger aria-describedby="fps-tooltip" data-tooltip-position="bottom" class="btn btn-link" aria-label="3D Mark information">
-          <span class="icon icon--info"></span>
-        </button>
-        <div id="fps-tooltip" class="tooltip__content tooltip__content--theme-dark tooltip__content--size-small" role="tooltip">
-          All FPS performance data presented are theoretical and may vary in real-world usage. The FPS data is based on third-party testing conducted by UL and is provided for reference purposes only. Actual performance may differ.
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-      </div>
-
-      <div class="product-preview-info-section">
-  <div class="availability-tags" role="group" aria-label="Product availability status">
-    <span class="tag in-stock" aria-label="Product is in stock">In Stock</span>
-    <span class="vertical-divider" aria-hidden="true"></span>
-    <span class="tag new" aria-label="This is a new product">New</span>
-    <span class="vertical-divider" aria-hidden="true"></span>
-    <span class="tag deal" aria-label="Special deal available">Deal</span>
-  </div>
-
-  <div id="preview-product-title">
-    <h2 class="product-title" id="product-name">ROG G700 (2025)</h2>
-    <p class="product-id" aria-describedby="product-name">Model: G700TF-XS776</p>
-  </div>
-
-  <div class="cmp-product-card__stars" data-rating="4" aria-label="Rated 4.5 out of 5 stars based on 100 customer reviews" role="img">
-    <div class="cmp-product-card__stars-icon"></div>
-    <span class="cmp-product-card__stars-text">4.5 (100)</span>
-  </div>
-
-  <div class="game-title">
-    <span>Call of Duty: Modern Warfare</span>
-    <a class="badge" href="#game-fps" aria-label="Jump to game FPS section">FPS: 235</a>
-  </div>
-
-  <label class="compare">
-    <input type="checkbox" class="compare-checkbox" data-add-to-compare data-id="product-1" data-name="ROG G700 (2025)" data-model="G700TF-XS776" data-image="./clientlib-site/images/products/product-1-image-1.png" data-price="999" data-stars="4.5" data-fps="235" data-pdp-url="#" data-sku="G700TF-XS776" aria-describedby="compare-description" aria-label="Add ROG G700 (2025) to comparison list">
-    Compare
-    <span id="compare-description" class="sr-only">Select to add this product to your comparison list</span>
-  </label>
-  <div class="divider"></div>
-  <ul class="features">
-    <li>
-      <strong>Cutting-Edge GPUs</strong><br>
-      <span>NVIDIA Blackwell Architecture</span>
-    </li>
-    <li>
-      <strong>AI-Enhanced Graphics and Performance</strong><br>
-      <span>NVIDIA DLSS 4 with Multi Frame Generation</span>
-    </li>
-    <li>
-      <strong>Game-Winning Responsiveness</strong><br>
-      <span>NVIDIA Reflex 2 with Frame Warp</span>
-    </li>
-  </ul>
-  <div class="divider"></div>
-  <div class="spec-summary">
-    <h3 id="spec-heading">Spec Summary</h3>
-    <ul>
-      <li>Windows 11 Pro</li>
-      <li>Intel® Core™ Ultra 7 Processor 265F</li>
-      <li>NVIDIA® GeForce RTX™ 5070 PRIME</li>
-      <li>Liquid Cooling</li>
-      <li>32GB DDR5 4800MHz RAM</li>
-      <li>1TB M.2 2280 NVMe™ PCIe® 4.0 SSD</li>
-      <li>High Definition 7.1 Channel Audio</li>
-    </ul>
-  </div>
-</div>
-
-    </div>
-  </div>
-</div></section>
-
-
+        <section class="dialog-container cmp-product-preview light-mode" data-a11y-dialog="product-preview-dialog" id="product-preview-dialog" aria-hidden="true">
+  <div class="dialog-content" role="dialog" aria-modal="true"></div>
+</section>
 
         <div class="cmp-product-compare is-hidden is-collapsed" data-compare-container role="region" aria-labelledby="compare-title">
   <div class="container">
@@ -970,12 +763,15 @@
     </div>
 
     <div class="cmp-product-compare__content-row" id="compare-content">
-      <ul class="cmp-product-compare__list">
-        
-      </ul>
+      <div class="carousel panelcontainer">
+        <div id="carousel-product-compare" class="cmp-carousel" role="group" aria-live="polite" aria-roledescription="carousel" data-cmp-is="carousel" data-slides-per-view="2" data-slides-per-view-tablet="2" data-slides-per-view-desktop="4" data-loop-slides="false" data-space-between="8" data-space-between-tablet="8" data-space-between-desktop="20">
+          <div class="cmp-carousel__content cmp-carousel__content--overflow cmp-product-compare__list" aria-atomic="false" aria-live="polite">
+          </div>
+        </div>
+      </div>
 
       <div class="cmp-product-compare__actions">
-        <button class="cmp-button cmp-button--primary" data-action="compare">
+        <button class="cmp-button cmp-button--primary" data-action="compare" data-compare-link="./product-comparison.html">
           View Comparison
         </button>
         <button class="cmp-button cmp-button--tertiary btn btn-link" data-action="clear-all">
@@ -1040,7 +836,7 @@
 
       <div class="dialog-section">
         <h3 class="dialog-section-title">What should my FPS be for a good gaming experience?</h3>
-        <ul>
+        <ul class="list-style-square">
           <li>
             <strong>30 FPS:</strong> Playable but may feel choppy, especially in
             fast-paced games.
@@ -1057,7 +853,7 @@
       </div>
 
       <div class="dialog-section">
-        <img class="dialog-image--rounded" src="./clientlib-site/images/fps-comparison.png" alt="FPS comparison: 60Hz vs 144Hz vs 240Hz">
+        <img class="dialog-image--rounded" src="./clientlib-site/images/fps-comparison.webp" alt="FPS comparison: 60Hz vs 144Hz vs 240Hz" loading="lazy">
       </div>
 
       <div class="dialog-section">
@@ -1171,13 +967,16 @@
     </div>
 
     <div class="dialog-section">
-      <img src="./clientlib-site/images/3dmark.png" alt="3DMark Logo">
+      <img src="./clientlib-site/images/3dmark.webp" alt="3DMark Logo" loading="lazy">
     </div>
   </div>
 </section>
     </div>
 
-    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-site.js"></script>
-    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-base.js"></script>
+    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-dependencies.js" defer="defer"></script>
+    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-site.js" defer="defer"></script>
+    <script type="text/javascript" src="./clientlib-site/clientlibs/clientlib-base.js" defer="defer"></script>
+
+    <script src="https://apps.bazaarvoice.com/deployments/asustek/main_site_black/production/en_US/bv.js" defer="defer"></script>
   </body>
 </html>
