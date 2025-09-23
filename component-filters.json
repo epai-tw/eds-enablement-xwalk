@@ -38,9 +38,16 @@
     ]
   },
   {
+    "id": "hero",
+    "components": [
+      "video"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
-      "card"
+      "card",
+      "video"
     ]
   },
   {
