@@ -55,6 +55,7 @@ function embedVimeo(url, autoplay, background) {
 }
 
 function getVideoElement(source, autoplay, background) {
+  debugger
   const video = document.createElement('video');
   video.setAttribute('controls', '');
   if (autoplay) video.setAttribute('autoplay', '');
@@ -107,6 +108,7 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
 };
 
 export default async function decorate(block) {
+  debugger
   const placeholder = block.querySelector('picture');
   const link = block.querySelector('a').href;
   block.textContent = '';
