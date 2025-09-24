@@ -5,6 +5,7 @@
     "/content/eds-enablement-xwalk/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/eds-enablement-xwalk/"
+    "/content/eds-enablement-xwalk/",
+    "/content/dam/eds-enablement-xwalk/"
   ]
 }
