@@ -7,6 +7,8 @@
 // and any block being loaded
 
 export function decorateRichtext(container = document) {
+  debugger
+  console.log('editor-support-rte.js');
   function deleteInstrumentation(element) {
     delete element.dataset.richtextResource;
     delete element.dataset.richtextProp;
