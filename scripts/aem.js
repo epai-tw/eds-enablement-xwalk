@@ -546,6 +546,43 @@ function buildBlock(blockName, content) {
 }
 
 /**
+ * Loads JS and CSS for an external header block.
+ * @param {Element} block The block element
+ */
+async function loadExternalHeaderBlock(block, externalCodeBasePath) {
+  const status = block.dataset.blockStatus;
+  if (status !== 'loading' && status !== 'loaded') {
+    block.dataset.blockStatus = 'loading';
+    const { blockName } = block.dataset;
+    try {
+      const cssLoaded = loadCSS(`${externalCodeBasePath}/blocks/${blockName}/${blockName}.css`);
+      const decorationComplete = new Promise((resolve) => {
+        (async () => {
+          try {
+            const mod = await import(
+              `${externalCodeBasePath}/blocks/${blockName}/${blockName}.js`
+            );
+            if (mod.default) {
+              await mod.default(block);
+            }
+          } catch (error) {
+            // eslint-disable-next-line no-console
+            console.log(`failed to load module for ${blockName}`, error);
+          }
+          resolve();
+        })();
+      });
+      await Promise.all([cssLoaded, decorationComplete]);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.log(`failed to load block ${blockName}`, error);
+    }
+    block.dataset.blockStatus = 'loaded';
+  }
+  return block;
+}
+
+/**
  * Loads JS and CSS for a block.
  * @param {Element} block The block element
  */
@@ -620,6 +657,18 @@ async function loadHeader(header) {
   header.append(headerBlock);
   decorateBlock(headerBlock);
   return loadBlock(headerBlock);
+}
+
+/**
+ * Loads a block named 'header' into header
+ * @param {Element} header header element
+ * @returns {Promise}
+ */
+async function loadExternalHeader(header) {
+  const headerBlock = buildBlock('header', '');
+  header.append(headerBlock);
+  decorateBlock(headerBlock);
+  return loadExternalHeaderBlock(headerBlock, 'https://main--brightelephant28416--aemsitestrial.aem.page');
 }
 
 /**
@@ -703,6 +752,7 @@ export {
   loadCSS,
   loadFooter,
   loadHeader,
+  loadExternalHeader,
   loadScript,
   loadSection,
   loadSections,
