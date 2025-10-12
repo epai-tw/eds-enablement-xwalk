@@ -660,7 +660,7 @@ async function loadHeader(header) {
 }
 
 /**
- * Loads a block named 'header' into header
+ * Loads a block named 'external header' into header
  * @param {Element} header header element
  * @returns {Promise}
  */
