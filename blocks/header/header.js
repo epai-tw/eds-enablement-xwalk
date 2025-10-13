@@ -63,7 +63,7 @@ function toggleAllNavSections(sections, expanded = false) {
 }
 
 /**
- * Toggles the entire nav
+ * Toggles the entire nav 
  * @param {Element} nav The container element
  * @param {Element} navSections The nav sections within the container element
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
@@ -110,8 +110,7 @@ function toggleMenu(nav, navSections, forceExpanded = null) {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  // const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
-  const navPath = 'https://main--eds-enablement-xwalk--epai-tw.aem.page/nav';
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM
