@@ -13,7 +13,7 @@ import {
 } from '../../scripts/aem.js';
 
 /**
- * Loads a fragment.
+ * Loads a fragment. 
  * @param {string} path The path to the fragment
  * @returns {HTMLElement} The root element of the fragment
  */
