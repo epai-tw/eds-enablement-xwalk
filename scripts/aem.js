@@ -684,7 +684,7 @@ async function loadFooter(footer) {
 }
 
 /**
- * Wait for Image.
+ * Wait for Image. 
  * @param {Element} section section element
  */
 async function waitForFirstImage(section) {
