@@ -39,19 +39,14 @@ export const TemplateCarousel = `<div class='container'>
       >
         <div class="cmp-carousel__content">
           <div id="carousel-4e80c7e13a-item-30704e84cd-tabpanel" class="cmp-carousel__item cmp-carousel__item--active">
-            ${container.toString()}
           </div>
           <div id="carousel-4e80c7e13a-item-645fc67b90-tabpanel" class="cmp-carousel__item">
-            ${container.toString()}
           </div>
           <div id="carousel-4e80c7e13a-item-85d21a3332-tabpanel" class="cmp-carousel__item">
-            ${container.toString()}
           </div>
           <div id="carousel-4e80c7e13a-item-85d21a3334-tabpanel" class="cmp-carousel__item">
-            ${container.toString()}
           </div>
           <div id="carousel-4e80c7e13a-item-85d21a3335-tabpanel" class="cmp-carousel__item">
-            ${container.toString()}
           </div>
         </div>
 
