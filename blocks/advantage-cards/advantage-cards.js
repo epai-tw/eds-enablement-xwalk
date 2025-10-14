@@ -67,23 +67,40 @@ export const TemplateCarousel = `<div class='container'>
     </div>
   </div>`;
 
-function renderCardWithPicture(templateHtml, pictureEl) {
+function renderCard(templateHtml, { pictureEl, titleEl }) {
   const tpl = document.createElement('template');
   tpl.innerHTML = templateHtml.trim();
 
-  const root = tpl.content.firstElementChild; // .cmp-advantage-card
-  const imgEl = root.querySelector('.cmp-advantage-card__image');
+  const root = tpl.content.firstElementChild;
 
+  // 1) 替換圖片
+  const imgEl = root.querySelector('.cmp-advantage-card__image');
   if (imgEl && pictureEl) {
     const pictureClone = pictureEl.cloneNode(true);
-    // 若樣式原本綁在圖片上，需要可選擇把 class 搬到 <picture> 或其內的 <img>
-    // pictureClone.classList.add('cmp-advantage-card__image');
+
+    // 確保樣式 class 存在於實際顯示的 <img> 上；若沒有 <img>，就加在 clone 本身
+    const innerImg = pictureClone.querySelector?.('img');
+    if (innerImg) {
+      innerImg.classList.add('cmp-advantage-card__image');
+    } else {
+      pictureClone.classList.add('cmp-advantage-card__image');
+    }
+
     imgEl.replaceWith(pictureClone);
   }
 
-  // 回傳 Element，後續可直接 append 到 DOM，或使用 outerHTML 拿字串
+  // 2) 替換標題
+  const titleTarget = root.querySelector('.cmp-advantage-card__title');
+  if (titleTarget && titleEl) {
+    const titleClone = titleEl.cloneNode(true);
+    // 保留樣式 class
+    titleClone.classList.add('cmp-advantage-card__title');
+    titleTarget.replaceWith(titleClone);
+  }
+
   return root;
 }
+
 
 
 export default function decorate(block) {
@@ -104,11 +121,12 @@ export default function decorate(block) {
       const titleEl = secondDiv?.querySelector('h3') || null;
       const descEl = secondDiv?.querySelector('p') || null;
 
-    let output = renderCardWithPicture(TemplateCard, pictureEl);
+    let newCard = renderCard(TemplateCard,{ pictureEl, titleEl });
 
+    card.replaceWith(newCard);
 
     console.log('>>>> advantage-cards >> card', card);
-    console.log('>>>> advantage-cards >> output', output);
+    console.log('>>>> advantage-cards >> output', newCard);
   });
 
   // ----------------------------------------------------
