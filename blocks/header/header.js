@@ -63,7 +63,7 @@ function toggleAllNavSections(sections, expanded = false) {
 }
 
 /**
- * Toggles the entire nav
+ * Toggles the entire nav 
  * @param {Element} nav The container element
  * @param {Element} navSections The nav sections within the container element
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null

@@ -2,6 +2,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
+  console.log('>>>> advantage-cards');
 //
 //   const [wrapper] = block.children;
 //   const carousel = document.createElement('carousel');
