@@ -1,6 +1,6 @@
 // eslint-disable-next-line import/extensions
 
-export const TemplateCard = `<div class="cmp-advantage-card">
+export const TemplateCard = `<div class="cmp-carousel__item"><div class="cmp-advantage-card">
   <div class="cmp-advantage-card__image-wrapper">
     <img
       src="/content/dam/eds-enablement-xwalk/asus-cto-sites/advantage.jpg"
@@ -22,7 +22,7 @@ export const TemplateCard = `<div class="cmp-advantage-card">
       <button class="cmp-advantage-card__btn btn">Watch now <img src="/content/dam/eds-enablement-xwalk/asus-cto-sites/icon-play-filled.svg" alt="play-icon" /></button>
     </div>
   </div>
-</div>`;
+</div></div>`;
 export const TemplateCarousel = `<div class='container'>
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
@@ -39,16 +39,6 @@ export const TemplateCarousel = `<div class='container'>
         data-carousel-effect="creative"
       >
         <div class="cmp-carousel__content">
-          <div id="carousel-4e80c7e13a-item-30704e84cd-tabpanel" class="cmp-carousel__item cmp-carousel__item--active">
-          </div>
-          <div id="carousel-4e80c7e13a-item-645fc67b90-tabpanel" class="cmp-carousel__item">
-          </div>
-          <div id="carousel-4e80c7e13a-item-85d21a3332-tabpanel" class="cmp-carousel__item">
-          </div>
-          <div id="carousel-4e80c7e13a-item-85d21a3334-tabpanel" class="cmp-carousel__item">
-          </div>
-          <div id="carousel-4e80c7e13a-item-85d21a3335-tabpanel" class="cmp-carousel__item">
-          </div>
         </div>
 
         <!-- Carousel actions - Previous/Next -->
@@ -109,8 +99,17 @@ export default function decorate(block) {
   // ----------------------------------------------------
   // get content
   // ----------------------------------------------------
-  [...block.children].forEach((card, index) => {
 
+  const tpl = document.createElement('div');
+  tpl.innerHTML = TemplateCarousel.trim();
+  //
+  const contentEl = tpl.querySelector('.cmp-carousel__content');
+  if (!contentEl) {
+    throw new Error('Carousel content container (.cmp-carousel__content) not found.');
+  }
+
+  const cardNodes = [...block.children].map((card) =>
+    {
       const firstDiv = card.children[0];
       const secondDiv = card.children[1];
       const thirdDiv = card.children[2];
@@ -121,16 +120,19 @@ export default function decorate(block) {
       const titleEl = secondDiv?.querySelector('h3') || null;
       const descEl = secondDiv?.querySelector('p') || null;
 
-    let newCard = renderCard(TemplateCard,{ pictureEl, titleEl });
-
-    card.replaceWith(newCard);
-
-    console.log('>>>> advantage-cards >> card', card);
-    console.log('>>>> advantage-cards >> output', newCard);
-  });
-
-  // ----------------------------------------------------
-  // transform content
-  // ----------------------------------------------------
+      let newCard = renderCard(TemplateCard,{ pictureEl, titleEl });
+      console.log('>>>> map', newCard);
+      return newCard;
+    }
+  );
+  //
+  console.log('>>>> advantage-cards >> cardNodes', cardNodes);
+  // //
+  contentEl.append(...cardNodes);
+  console.log('>>>> advantage-cards >> contentEl', contentEl);
+  // console.log('>>>> advantage-cards >> tpl', tpl);
+  // block.append(cardNodes);
+  block.textContent = '';
+  block.append(tpl);
 
 }
