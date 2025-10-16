@@ -4,7 +4,7 @@
 // import $ from 'jquery';
 
 // eslint-disable-next-line no-debugger
-console.log('Swiper', window.Swiper);
+console.log('Swiper ', window.Swiper);
 // Constants
 const CUSTOM_EFFECT_NAME = 'creative';
 const CAROUSEL_SELECTOR = '.carousel:has(.cmp-carousel:not([data-init="false"]))';
