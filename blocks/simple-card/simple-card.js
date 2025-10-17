@@ -1,28 +1,33 @@
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 export default function decorate(block) {
-  // Get the authored content (first row contains image and heading)
-  const row = block.firstElementChild;
-  if (!row) return;
-
-  const cells = [...row.children];
+  // Store the original HTML for display
+  const originalHTML = block.innerHTML;
+  
+  // Get the authored content (all rows contain image and heading)
+  const rows = [...block.children];
   let imageElement = null;
   let headingText = '';
 
-  // Extract image and heading from authored cells
-  cells.forEach((cell) => {
-    const picture = cell.querySelector('picture');
-    const img = cell.querySelector('img');
+  // Extract image and heading from authored rows
+  rows.forEach((row) => {
+    const picture = row.querySelector('picture');
+    const img = row.querySelector('img');
     
     if (picture || img) {
       imageElement = picture || img;
-    } else if (cell.textContent.trim()) {
-      headingText = cell.textContent.trim();
+    } else if (row.textContent.trim()) {
+      // Extract text from rows that don't contain images
+      headingText = row.textContent.trim();
     }
   });
 
-  // Use static HTML template
+  // Use static HTML template with original HTML display
   block.innerHTML = `
+    <div class="original-html-display">
+      <h4>Original Block HTML:</h4>
+      <pre><code>${originalHTML.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</code></pre>
+    </div>
     <div class="simple-card-container">
       <div class="simple-card-image"></div>
       <div class="simple-card-content">
