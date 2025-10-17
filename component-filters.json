@@ -17,7 +17,8 @@
       "columns",
       "fragment",
       "quote",
-      "carousel"
+      "carousel", 
+      "simple-card"
     ]
   },
   {
