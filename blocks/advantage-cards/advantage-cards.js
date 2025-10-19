@@ -3,12 +3,12 @@
 export const TemplateCard = `<div class="cmp-carousel__item"><div class="cmp-advantage-card">
   <div class="cmp-advantage-card__image-wrapper">
     <img
-      src="/content/dam/eds-enablement-xwalk/asus-cto-sites/advantage.jpg"
       alt="Ultimate Gaming Experience"
       class="cmp-advantage-card__image"
     />
     <video class="cmp-advantage-card__video" playsinline controls>
-      <source src="/content/dam/eds-enablement-xwalk/asus-cto-sites/videos/hero-banner-video-1.mp4" type="video/mp4">
+      <source 
+        type="video/mp4">
       Your browser does not support the video tag.
     </video>
   </div>
@@ -19,7 +19,8 @@ export const TemplateCard = `<div class="cmp-carousel__item"><div class="cmp-adv
         Our systems are engineered to enhance both performance and noise control, guaranteeing
         stability and an unparalleled gaming experience.
       </p>
-      <button class="cmp-advantage-card__btn btn">Watch now <img src="/content/dam/eds-enablement-xwalk/asus-cto-sites/icon-play-filled.svg" alt="play-icon" /></button>
+      <button class="cmp-advantage-card__btn btn">Watch now <img
+      alt="play-icon" /></button>
     </div>
   </div>
 </div></div>`;
@@ -91,48 +92,67 @@ function renderCard(templateHtml, { pictureEl, titleEl }) {
   return root;
 }
 
-
+/**
+ * @param {string} htmlString - 包含 HTML 結構的純文字字串
+ * @returns {DocumentFragment} - 包含所有解析後 DOM 節點的文件片段
+ */
+function createFragmentFromHTML(htmlString) {
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = htmlString;
+  const fragment = document.createDocumentFragment();
+  while (tempDiv.firstChild) {
+    fragment.appendChild(tempDiv.firstChild);
+  }
+  return fragment;
+}
 
 export default function decorate(block) {
   console.log('>>>> advantage-cards');
+
 
   // ----------------------------------------------------
   // get content
   // ----------------------------------------------------
 
-  const tpl = document.createElement('div');
-  tpl.innerHTML = TemplateCarousel.trim();
-  //
-  const contentEl = tpl.querySelector('.cmp-carousel__content');
-  if (!contentEl) {
-    throw new Error('Carousel content container (.cmp-carousel__content) not found.');
-  }
-
-  const cardNodes = [...block.children].map((card) =>
-    {
-      const firstDiv = card.children[0];
-      const secondDiv = card.children[1];
-      const thirdDiv = card.children[2];
-
-      const pictureEl = firstDiv?.querySelector('picture') || null;
-      const imgEl = pictureEl?.querySelector('img') || null;
-
-      const titleEl = secondDiv?.querySelector('h3') || null;
-      const descEl = secondDiv?.querySelector('p') || null;
-
-      let newCard = renderCard(TemplateCard,{ pictureEl, titleEl });
-      console.log('>>>> map', newCard);
-      return newCard;
-    }
-  );
-  //
-  console.log('>>>> advantage-cards >> cardNodes', cardNodes);
+  // const fragmentCard = createFragmentFromHTML(TemplateCard);
   // //
-  contentEl.append(...cardNodes);
-  console.log('>>>> advantage-cards >> contentEl', contentEl);
-  // console.log('>>>> advantage-cards >> tpl', tpl);
-  // block.append(cardNodes);
-  block.textContent = '';
-  block.append(tpl);
+  // const contentEl = fragmentCard.querySelector('.cmp-carousel__content');
+  // console.log('fragment', fragmentCard.toString());
+  // if (!contentEl) {
+  //   throw new Error('Carousel content container (.cmp-carousel__content) not found.');
+  // }
+  //
+  // const cardNodes = [...block.children].map((card) =>
+  //   {
+  //     const picture = block.querySelector('picture');
+  //     const subhead = block.querySelectorAll('div')[1].textContent;
+  //     const searchplaceholder = block.querySelectorAll('p')[2].textContent;
+  //     const buttontext = block.querySelectorAll('p')[3].textContent;
+  //
+  //     const firstDiv = card.children[0];
+  //     const secondDiv = card.children[1];
+  //     const thirdDiv = card.children[2];
+  //     console.log('>>>> map > firstDiv', firstDiv);
+  //
+  //     const pictureEl = firstDiv?.querySelector('picture') || null;
+  //     const imgEl = pictureEl?.querySelector('img') || null;
+  //
+  //     const titleEl = secondDiv?.querySelector('h3') || null;
+  //     const descEl = secondDiv?.querySelector('p') || null;
+  //
+  //     let newCard = renderCard(TemplateCard,{ pictureEl, titleEl });
+  //     console.log('>>>> map', newCard);
+  //     return newCard;
+  //   }
+  // );
+  // //
+  // console.log('>>>> advantage-cards >> cardNodes', cardNodes);
+  // // //
+  // contentEl.append(...cardNodes);
+  // console.log('>>>> advantage-cards >> contentEl', contentEl);
+  // // console.log('>>>> advantage-cards >> tpl', tpl);
+  // // block.append(cardNodes);
+  // // block.textContent = '';
+  // // block.append(tpl);
 
 }
