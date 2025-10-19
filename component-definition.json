@@ -77,20 +77,6 @@
           }
         },
         {
-          "title": "Section",
-          "id": "section",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/section/v1/section",
-                "template": {
-                  "model": "section"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Advantage Cards",
           "id": "advantage-cards",
           "plugins": {
