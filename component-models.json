@@ -171,6 +171,12 @@
         "value": "",
         "label": "Navigation",
         "valueType": "string"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "link",
+        "label": "Link To"
       }
     ]
   },
