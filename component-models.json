@@ -241,13 +241,6 @@
         "multi": false
       },
       {
-        "component": "reference",
-        "valueType": "string",
-        "name": "video",
-        "label": "Video",
-        "multi": false
-      },
-      {
         "component": "text",
         "valueType": "string",
         "name": "imageAlt",
@@ -260,102 +253,6 @@
         "value": "",
         "label": "Text",
         "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "category-hero",
-    "fields": [
-      {
-        "component": "text",
-        "name": "title",
-        "value": "",
-        "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "cta-title",
-        "value": "",
-        "label": "CTA Title",
-        "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "name": "cta-link",
-        "value": "",
-        "label": "CTA Link",
-        "valueType": "string"
-      },
-      {
-        "component": "custom-asset-namespace:custom-asset",
-        "configUrl": "https://1964180-msilassetpickerconf.adobeio-static.net/api/v1/web/assetpicker_config_aio/get-config",
-        "valueType": "string",
-        "name": "hero-image-desktop",
-        "label": "Hero Image Desktop",
-        "multi": false,
-        "assetType": "image"
-      },
-      {
-        "component": "custom-asset-namespace:custom-asset",
-        "configUrl": "https://1964180-msilassetpickerconf.adobeio-static.net/api/v1/web/assetpicker_config_aio/get-config",
-        "valueType": "string",
-        "name": "hero-image-mobile",
-        "label": "Hero Image Mobile",
-        "multi": false,
-        "assetType": "image"
-      }
-    ]
-  },
-  {
-    "id": "video",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "video_placeholder",
-        "label": "Placeholder Image",
-        "multi": true
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "video_location",
-        "label": "Video Content"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "video",
-        "label": "Video",
-        "multi": false
-      },
-      {
-        "component": "multiselect",
-        "name": "classes",
-        "value": "",
-        "label": "Options",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Auto Play",
-            "children": [
-              {
-                "name": "AutoPlay",
-                "value": "autoplay"
-              }
-            ]
-          },
-          {
-            "name": "Inline",
-            "children": [
-              {
-                "name": "Inline",
-                "value": "inline"
-              }
-            ]
-          }
-        ]
       }
     ]
   }
