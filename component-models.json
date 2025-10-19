@@ -152,15 +152,15 @@
         "multi": false
       },
       {
-        "component": "richtext",
-        "name": "text",
+        "component": "text",
+        "name": "title",
         "value": "",
         "label": "Text",
         "valueType": "string"
       },
       {
-        "component": "richtext",
-        "name": "text",
+        "component": "text",
+        "name": "cta",
         "value": "",
         "label": "CTA",
         "valueType": "string"
