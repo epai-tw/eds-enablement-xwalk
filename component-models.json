@@ -147,22 +147,29 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
+        "name": "media",
+        "label": "Media",
         "multi": false
       },
       {
         "component": "text",
         "name": "title",
         "value": "",
-        "label": "Text",
+        "label": "Headline",
         "valueType": "string"
       },
       {
         "component": "text",
-        "name": "cta",
+        "name": "details",
         "value": "",
-        "label": "CTA",
+        "label": "Details",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "navigation",
+        "value": "",
+        "label": "Navigation",
         "valueType": "string"
       }
     ]
