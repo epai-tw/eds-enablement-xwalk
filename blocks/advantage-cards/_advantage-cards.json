@@ -38,38 +38,36 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "image",
-          "label": "Image",
+          "name": "media",
+          "label": "Media",
           "multi": false
         },
         {
-          "component": "richtext",
-          "name": "text",
+          "component": "text",
+          "name": "title",
           "value": "",
-          "label": "Text",
+          "label": "Headline",
           "valueType": "string"
         },
         {
-          "component": "richtext",
-          "name": "text",
+          "component": "text",
+          "name": "details",
           "value": "",
-          "label": "CTA",
+          "label": "Details",
           "valueType": "string"
         },
         {
-          "component": "multiselect",
-          "name": "assetType",
-          "label": "Asset Type",
-          "options": [
-            {
-              "name": "Video",
-              "value": "video"
-            },
-            {
-              "name": "Image",
-              "value": "image"
-            }
-          ]
+          "component": "text",
+          "name": "navigation",
+          "value": "",
+          "label": "Navigation",
+          "valueType": "string"
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "link",
+          "label": "Link To"
         }
       ]
     }
