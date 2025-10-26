@@ -72,13 +72,24 @@ jobs:
           temporaryPublicStorage: true
           configPath: ./lighthouserc.json
 
-      # Step 8️⃣ - Upload Reports
+          # Step 7️⃣ - Run Lighthouse Audit (using PageSpeed Insights)
+      - name: Lighthouse Performance Audit
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          urls: |
+            https://main--eds-enablement-xwalk--epai-tw.aem.live/
+          uploadArtifacts: false  # 由我們手動上傳
+          temporaryPublicStorage: true
+          configPath: ./lighthouserc.json
+
+      # Step 8️⃣ - Upload Reports manually (safe artifact name)
       - name: Upload Security & Lighthouse Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: all-reports
+          name: security-and-lighthouse-reports
           path: |
             dependency-reports/
             ./codeql-database
-            .lighthouseci/
+            ./.lighthouseci/
+
