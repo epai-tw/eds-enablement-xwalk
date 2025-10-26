@@ -41,14 +41,14 @@ jobs:
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
+          languages: 'javascript'
           queries: security-extended,security-and-quality
 
       # Step 5️⃣ - Run CodeQL Analysis
       - name: Analyze code with CodeQL
         uses: github/codeql-action/analyze@v3
         with:
-          category: '/language:${{ matrix.language }}'
+          category: '/language:javascript'
 
       # Step 6️⃣ - Run OWASP Dependency Check
       - name: OWASP Dependency Check
