@@ -2,9 +2,9 @@ name: SAST (CodeQL)
 
 on:
   push:
-    branches: [ code-quality ]
+    branches: [ feature/code-quality]
   pull_request:
-    branches: [ code-quality ]
+    branches: [ feature/code-quality ]
   workflow_dispatch:
 
 permissions:
