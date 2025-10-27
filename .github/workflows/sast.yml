@@ -1,0 +1,42 @@
+name: SAST (CodeQL)
+
+on:
+  push:
+    branches: [ code-quality ]
+  pull_request:
+    branches: [ code-quality ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  codeql:
+    name: CodeQL Static Analysis
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ javascript ] # 依需要可擴充: [ javascript, java, python, ... ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: security-extended,security-and-quality
+
+      # JavaScript 不需要 build，若你的專案需要編譯可在此加入建置步驟
+      # - run: npm ci && npm run build
+
+      - name: Analyze
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: /language:${{ matrix.language }}
