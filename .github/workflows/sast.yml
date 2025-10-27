@@ -1,44 +1,152 @@
-name: CodeQL Analysis for Web Files
+name: SAST (CodeQL) with CSV Report
 
 on:
   push:
-    branches: [ "feature/code-quality" ]
+    branches: [ feature/code-quality ]
+  pull_request:
+    branches: [ feature/code-quality ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
 
 jobs:
-  analyze:
-    name: Run CodeQL Analysis
+  codeql:
+    name: CodeQL Static Analysis
     runs-on: ubuntu-latest
-    permissions:
-      actions: read
-      contents: read
-      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ javascript ]
 
     steps:
-      # 1. 檢出程式碼
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      # 2. 初始化 CodeQL，指定 JavaScript (涵蓋 JS、HTML、CSS)
+      - name: Set up Node.js (for CSV conversion script)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v4
+        uses: github/codeql-action/init@v3
         with:
-          languages: javascript
-          queries: security-extended
+          languages: ${{ matrix.language }}
+          queries: security-extended,security-and-quality
 
-      # 3. 建置資料庫（如果需要編譯，請在這裡加入 build 指令）
-      - name: Build CodeQL database
+      - name: Analyze
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: /language:${{ matrix.language }}
+          upload: true
+          # 將 SARIF 產出到固定目錄，便於後續轉檔
+          output: codeql-sarif
+
+      - name: Convert SARIF to CSV
+        shell: bash
         run: |
-          echo "No build step required for HTML/CSS/JS"
+          set -euo pipefail
+          mkdir -p scripts reports
 
-      # 4. 執行分析，輸出 SARIF
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v4
-        with:
-          output: results.sarif
+          cat > scripts/sarif-to-csv.js <<'JS'
+  // convert SARIF files under --input dir into a single CSV at --output
+  const fs = require('fs');
+  const path = require('path');
+  
+  function parseArgs() {
+  const args = process.argv.slice(2);
+  const out = {};
+  for (let i = 0; i < args.length; i += 2) {
+  out[args[i].replace(/^--/, '')] = args[i + 1];
+}
+  return out;
+}
 
-      # 5. 上傳 SARIF 檔案，方便下載或用 VS Code 檢視
-      - name: Upload SARIF report
-        uses: actions/upload-artifact@v4
-        with:
-          name: codeql-sarif-report
-          path: results.sarif
+  function listSarifFiles(p) {
+  const files = [];
+  if (!fs.existsSync(p)) return files;
+  const stat = fs.statSync(p);
+  if (stat.isFile() && p.endsWith('.sarif')) return [p];
+  if (stat.isDirectory()) {
+  for (const entry of fs.readdirSync(p)) {
+  files.push(...listSarifFiles(path.join(p, entry)));
+}
+}
+  return files;
+}
+
+  function csvEscape(v) {
+  if (v === null || v === undefined) return '';
+  let s = String(v).replace(/\r?\n/g, ' ').replace(/\u0000/g, '');
+  const needsQuotes = /[",\n]/.test(s) || /^\s|\s$/.test(s);
+  if (needsQuotes) s = `"${s.replace(/"/g, '""')}"`;
+  return s;
+}
+
+  function toRowsFromSarif(sarifJson) {
+  const rows = [];
+  const runs = sarifJson.runs || [];
+  for (const run of runs) {
+  const results = run.results || [];
+  const rules = (run.tool && run.tool.driver && run.tool.driver.rules) || [];
+  for (const r of results) {
+  const ruleId = r.ruleId || (typeof r.ruleIndex === 'number' && rules[r.ruleIndex]?.id) || '';
+  const msg = (r.message && (r.message.text || r.message.markdown)) || '';
+  const level = r.level || '';
+  const loc = (r.locations && r.locations[0] && r.locations[0].physicalLocation) || {};
+  const file = (loc.artifactLocation && loc.artifactLocation.uri) || '';
+  const region = loc.region || {};
+  rows.push([
+  ruleId,
+  level,
+  msg,
+  file,
+  region.startLine || '',
+  region.startColumn || '',
+  region.endLine || '',
+  region.endColumn || ''
+]);
+}
+}
+  return rows;
+}
+
+  (async () => {
+  const { input = 'codeql-sarif', output = 'reports/codeql-results.csv' } = parseArgs();
+
+  const files = listSarifFiles(input);
+  const header = ['ruleId', 'level', 'message', 'file', 'startLine', 'startColumn', 'endLine', 'endColumn'];
+  const allRows = [];
+
+  for (const f of files) {
+  try {
+  const sarif = JSON.parse(fs.readFileSync(f, 'utf8'));
+  allRows.push(...toRowsFromSarif(sarif));
+} catch (e) {
+console.error(`Failed to parse SARIF: ${f}`, e);
+}
+}
+
+  // 若沒有檔案或沒有結果，也輸出只有表頭的 CSV
+  const lines = [header, ...allRows].map(cols => cols.map(csvEscape).join(',')).join('\n');
+
+fs.mkdirSync(path.dirname(output), { recursive: true });
+  fs.writeFileSync(output, lines, 'utf8');
+
+console.log(`CSV written: ${output} (rows: ${allRows.length})`);
+})();
+  JS
+  
+  node scripts/sarif-to-csv.js --input codeql-sarif --output reports/codeql-results-${{ matrix.language }}.csv
+
+- name: Upload CSV report
+  if: always()
+  uses: actions/upload-artifact@v4
+  with:
+    name: codeql-csv-reports-${{ matrix.language }}
+    path: reports/*.csv
+    if-no-files-found: warn
