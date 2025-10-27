@@ -1,42 +1,44 @@
-name: SAST (CodeQL)
+name: CodeQL Analysis for Web Files
 
 on:
   push:
-    branches: [ feature/code-quality]
-  pull_request:
-    branches: [ feature/code-quality ]
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  security-events: write
+    branches: [ "feature/code-quality" ]
 
 jobs:
-  codeql:
-    name: CodeQL Static Analysis
+  analyze:
+    name: Run CodeQL Analysis
     runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ javascript ] # 依需要可擴充: [ javascript, java, python, ... ]
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
     steps:
+      # 1. 檢出程式碼
       - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@v3
 
+      # 2. 初始化 CodeQL，指定 JavaScript (涵蓋 JS、HTML、CSS)
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
-          languages: ${{ matrix.language }}
-          queries: security-extended,security-and-quality
+          languages: javascript
+          queries: security-extended
 
-      # JavaScript 不需要 build，若你的專案需要編譯可在此加入建置步驟
-      # - run: npm ci && npm run build
+      # 3. 建置資料庫（如果需要編譯，請在這裡加入 build 指令）
+      - name: Build CodeQL database
+        run: |
+          echo "No build step required for HTML/CSS/JS"
 
-      - name: Analyze
+      # 4. 執行分析，輸出 SARIF
+      - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
         with:
-          category: /language:${{ matrix.language }}
+          output: results.sarif
+
+      # 5. 上傳 SARIF 檔案，方便下載或用 VS Code 檢視
+      - name: Upload SARIF report
+        uses: actions/upload-artifact@v3
+        with:
+          name: codeql-sarif-report
+          path: results.sarif
