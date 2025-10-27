@@ -1,5 +1,7 @@
 // 硬編碼敏感資訊
-const API_KEY = "12345-abcde-secret-key";
+const API_KEY = '12345-abcde-secret-key';
+document.cookie = 'sessionId=abc123'; // 未設定 HttpOnly / Secure
+document.getElementById('container').innerHTML = "<script>alert('XSS');</script>";
 
 // 不安全的隨機數生成
 function generateSessionToken() {
@@ -23,7 +25,7 @@ function executeUserScript() {
 function submitForm() {
   const token = generateSessionToken();
   const comment = document.getElementById('comment').value;
-  console.log(`[illegal xxs] Submitting comment: ${ comment  } with token: ${  token}`);
+  console.log(`[illegal xxs] Submitting comment: ${ comment } with token: ${ token}`);
   displayUserComment();
   executeUserScript();
 }
