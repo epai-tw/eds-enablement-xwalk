@@ -16,11 +16,11 @@ jobs:
     steps:
       # 1. 檢出程式碼
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # 2. 初始化 CodeQL，指定 JavaScript (涵蓋 JS、HTML、CSS)
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+        uses: github/codeql-action/init@v4
         with:
           languages: javascript
           queries: security-extended
@@ -32,13 +32,13 @@ jobs:
 
       # 4. 執行分析，輸出 SARIF
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
+        uses: github/codeql-action/analyze@v4
         with:
           output: results.sarif
 
       # 5. 上傳 SARIF 檔案，方便下載或用 VS Code 檢視
       - name: Upload SARIF report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: codeql-sarif-report
           path: results.sarif
