@@ -1,7 +1,7 @@
 // eslint-disable-next-line import/extensions
 
 export default function decorate(block) {
-  const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
+  const mockupContainer = document.createRange().createContextualFragment(`<div class='container' data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
         <h2>Carousel 3D effect</h2>
@@ -48,7 +48,7 @@ export default function decorate(block) {
     const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
             <div class="cmp-advantage-card" 
-            data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
+            data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Card" data-aue-filter="advantage-card" data-block-name="advantage-card">
               <div class="cmp-advantage-card__image-wrapper">
                 ${mediaHTML}
                 <video class="cmp-advantage-card__video" playsinline controls>
