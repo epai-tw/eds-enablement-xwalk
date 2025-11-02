@@ -1,5 +1,30 @@
 // eslint-disable-next-line import/extensions
 
+function moveAttributes(from, to, attributes) {
+  console.log('moveAttributes >> ', from, to, attributes);
+  if (!attributes) {
+    // eslint-disable-next-line no-param-reassign
+    attributes = [...from.attributes].map(({ nodeName }) => nodeName);
+  }
+  attributes.forEach((attr) => {
+    const value = from.getAttribute(attr);
+    if (value) {
+      to?.setAttribute(attr, value);
+      from.removeAttribute(attr);
+    }
+  });
+}
+
+function moveInstrumentation(from, to) {
+  moveAttributes(
+    from,
+    to,
+    [...from.attributes]
+      .map(({ nodeName }) => nodeName)
+      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
+  );
+}
+
 export default function decorate(block) {
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container' data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
     <div class="carousel panelcontainer">
@@ -69,36 +94,11 @@ export default function decorate(block) {
               </div>
             </div>
           </div>`);
-    // moveInstrumentation(card, mockup);
+    moveInstrumentation(card, mockup);
 
     return mockup;
   });
 
   mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);
   block.replaceWith(mockupContainer);
-
-  function moveInstrumentation(from, to) {
-    moveAttributes(
-      from,
-      to,
-      [...from.attributes]
-        .map(({ nodeName }) => nodeName)
-        .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
-    );
-  }
-
-  function moveAttributes(from, to, attributes) {
-    if (!attributes) {
-      // eslint-disable-next-line no-param-reassign
-      attributes = [...from.attributes].map(({ nodeName }) => nodeName);
-    }
-    attributes.forEach((attr) => {
-      const value = from.getAttribute(attr);
-      if (value) {
-        to?.setAttribute(attr, value);
-        from.removeAttribute(attr);
-      }
-    });
-  }
-
 }
