@@ -83,7 +83,7 @@
       "id": "blocks",
       "components": [
         {
-          "title": "Advantage Card (!)",
+          "title": "Advantage Card (!!)",
           "id": "advantage-card",
           "plugins": {
             "xwalk": {
