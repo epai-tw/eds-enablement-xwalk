@@ -73,7 +73,7 @@ export default function decorate(block) {
               </div>
             </div>
           </div>`);
-    moveInstrumentation(card, mockup);
+    // moveInstrumentation(card, mockup);
     return mockup;
   });
 
