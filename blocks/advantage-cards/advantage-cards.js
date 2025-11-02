@@ -9,8 +9,12 @@ function moveAttributes(from, to, attributes) {
   attributes.forEach((attr) => {
     const value = from.getAttribute(attr);
     if (value) {
-      if (!to) return;
-      to?.setAttribute(attr, value);
+      if(to instanceof DocumentFragment) {
+        to?.firstElementChild.setAttribute(attr, value);
+      } else {
+        to?.setAttribute(attr, value);
+      }
+
       from.removeAttribute(attr);
     }
   });
