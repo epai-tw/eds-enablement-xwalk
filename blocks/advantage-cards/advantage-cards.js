@@ -48,6 +48,8 @@ export default function decorate(block) {
     const navigate = safeText(divs.item(3));
     const mediaHTML = card.querySelector('picture')?.innerHTML ?? '';
 
+    if (headline === '') return;
+
     const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
             <div class="cmp-advantage-card">
