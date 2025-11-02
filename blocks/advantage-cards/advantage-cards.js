@@ -1,6 +1,6 @@
 import { moveInstrumentation } from "../../scripts/scripts.js";
 import "./uifrontend/_advantage-card.js";
-import {isAuthorEnvironment} from "../../scripts/utils";
+import {isAuthorEnvironment} from "../../scripts/utils.js";
 
 export default function decorate(block) {
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
