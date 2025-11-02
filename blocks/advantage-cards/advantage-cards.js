@@ -45,7 +45,8 @@ export default function decorate(block) {
     const mediaHTML = card.querySelector('picture')?.innerHTML ?? '';
 
     if (headline === '') {
-      throw new Error('advantage card must have a headline');
+      console.log('advantage card must have a headline');
+      return;
     }
 
     const mockup = document.createRange().createContextualFragment(`
