@@ -9,6 +9,7 @@ function moveAttributes(from, to, attributes) {
   attributes.forEach((attr) => {
     const value = from.getAttribute(attr);
     if (value) {
+      if (!to) return;
       to?.setAttribute(attr, value);
       from.removeAttribute(attr);
     }
@@ -26,8 +27,7 @@ function moveInstrumentation(from, to) {
 }
 
 export default function decorate(block) {
-  const mockupContainer = document.createElement('template');
-  mockupContainer.innerHTML = `<div class='container' data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
+  const mockupContainer = document.createRange().createContextualFragment(`<div class='container' data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
         <h2>Carousel 3D effect</h2>
@@ -58,7 +58,7 @@ export default function decorate(block) {
         <ol class="cmp-carousel__indicators" role="tablist" aria-label="Choose a slide to display"></ol>
       </div>
     </div>
-  </div>`;
+  </div>`);
 
   const cardNodes = [...block.children].map((card) => {
     const safeText = (el, fallback = '') => el?.textContent?.trim() ?? fallback;
@@ -70,8 +70,8 @@ export default function decorate(block) {
     const mediaHTML = card.querySelector('picture')?.innerHTML ?? '';
 
     if (headline === '') return;
-    const tpl = document.createElement('template');
-    tpl.innerHTML = `
+
+    const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
             <div class="cmp-advantage-card" 
             data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Card" data-aue-filter="advantage-card" data-block-name="advantage-card">
@@ -94,12 +94,12 @@ export default function decorate(block) {
                 </div>
               </div>
             </div>
-          </div>`;
-    const element = tpl.content.firstElementChild;
-    moveInstrumentation(card, element);
-    return element;
+          </div>`);
+    moveInstrumentation(card, mockup);
+
+    return mockup;
   });
 
-  mockupContainer.content.firstElementChild.querySelector('.cmp-carousel__content').append(...cardNodes);
+  mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);
   block.replaceWith(mockupContainer);
 }
