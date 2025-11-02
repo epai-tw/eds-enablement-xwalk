@@ -47,8 +47,9 @@ export default function decorate(block) {
 
     const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
-            <div class="cmp-advantage-card" data-aue-type="component" data-aue-model="advantage-card" data-aue-label="Advantage Card">
-              <div class="cmp-advantage-card__image-wrapper" data-aue-prop="media" data-aue-label="Media" data-aue-type="reference" >
+            <div class="cmp-advantage-card" 
+            data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
+              <div class="cmp-advantage-card__image-wrapper">
                 ${mediaHTML}
                 <video class="cmp-advantage-card__video" playsinline controls>
                   <source
