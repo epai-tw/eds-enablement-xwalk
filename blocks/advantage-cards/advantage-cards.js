@@ -63,11 +63,11 @@ export default function decorate(block) {
               </div>
               <div class="cmp-advantage-card__overlay">
                 <div class="cmp-advantage-card__content">
-                  <h3 class="cmp-advantage-card__title">${headline}</h3>
-                  <p class="cmp-advantage-card__desc">
+                  <h3 class="cmp-advantage-card__title"  data-aue-prop="title" data-aue-label="Title" data-aue-type="text">${headline}</h3>
+                  <p class="cmp-advantage-card__desc" data-aue-prop="details" data-aue-label="Details" data-aue-type="text">
                     ${details}
                   </p>
-                  <button class="cmp-advantage-card__btn btn">${navigate}<img
+                  <button class="cmp-advantage-card__btn btn"  data-aue-prop="navigation" data-aue-label="Navigation" data-aue-type="text">${navigate}<img
                   alt="play-icon" /></button>
                 </div>
               </div>
