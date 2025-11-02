@@ -16,7 +16,8 @@ export default function decorate(block) {
         aria-roledescription="carousel"
         data-cmp-is="carousel"
         data-cmp-delay="5000"
-        data-carousel-effect="creative">
+        data-carousel-effect="creative"
+      >
         <div class="cmp-carousel__content">
         </div>
 
