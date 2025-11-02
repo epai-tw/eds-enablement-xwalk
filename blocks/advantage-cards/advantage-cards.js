@@ -1,34 +1,4 @@
-// eslint-disable-next-line import/extensions
-
-function moveAttributes(from, to, attributes) {
-  console.log('moveAttributes >> ', from, to, attributes);
-  if (!attributes) {
-    // eslint-disable-next-line no-param-reassign
-    attributes = [...from.attributes].map(({ nodeName }) => nodeName);
-  }
-  attributes.forEach((attr) => {
-    const value = from.getAttribute(attr);
-    if (value) {
-      if(to instanceof DocumentFragment) {
-        to?.firstElementChild.setAttribute(attr, value);
-      } else {
-        to?.setAttribute(attr, value);
-      }
-
-      from.removeAttribute(attr);
-    }
-  });
-}
-
-function moveInstrumentation(from, to) {
-  moveAttributes(
-    from,
-    to,
-    [...from.attributes]
-      .map(({ nodeName }) => nodeName)
-      .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
-  );
-}
+import {moveInstrumentation} from "../../scripts/scripts.js";
 
 export default function decorate(block) {
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container' data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
@@ -99,11 +69,13 @@ export default function decorate(block) {
               </div>
             </div>
           </div>`);
+
     moveInstrumentation(card, mockup);
 
     return mockup;
   });
 
   mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);
+  moveInstrumentation(block, mockupContainer);
   block.replaceWith(mockupContainer);
 }
