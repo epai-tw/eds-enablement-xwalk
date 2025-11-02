@@ -4,7 +4,7 @@ import {moveInstrumentation} from "../../scripts/scripts.js";
 import {readBlockConfig} from "../../scripts/aem.js";
 
 export default function decorate(block) {
-  const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
+  const mockupContainer = document.createRange().createContextualFragment(`<div class='container' data-aue-behavior="component" data-aue-label="Advantage Cards" data-block-name="advantage-cards">
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
         <h2>Carousel 3D effect</h2>
@@ -38,8 +38,6 @@ export default function decorate(block) {
   </div>`);
 
   const cardNodes = [...block.children].map((card) => {
-    const config = readBlockConfig(card);
-    console.log('config> ', config);
     const safeText = (el, fallback = '') => el?.textContent?.trim() ?? fallback;
 
     const divs = card.querySelectorAll('div');
@@ -53,7 +51,7 @@ export default function decorate(block) {
     const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
             <div class="cmp-advantage-card">
-              <div class="cmp-advantage-card__image-wrapper">
+              <div class="cmp-advantage-card__image-wrapper" data-aue-prop="media" data-aue-label="Media" data-aue-type="reference" >
                 ${mediaHTML}
                 <video class="cmp-advantage-card__video" playsinline controls>
                   <source
