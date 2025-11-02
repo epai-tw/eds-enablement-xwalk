@@ -1,5 +1,6 @@
 import { moveInstrumentation } from "../../scripts/scripts.js";
 import "./uifrontend/_advantage-card.js";
+import {isAuthorEnvironment} from "../../scripts/utils";
 
 export default function decorate(block) {
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
@@ -78,6 +79,8 @@ export default function decorate(block) {
   });
 
   mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);
-  moveInstrumentation(block, mockupContainer);
+  // if(isAuthorEnvironment()){
+  //   moveInstrumentation(block, mockupContainer);
+  // }
   block.replaceWith(mockupContainer);
 }
