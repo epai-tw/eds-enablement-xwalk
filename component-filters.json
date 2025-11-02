@@ -25,6 +25,12 @@
     ]
   },
   {
+    "id": "advantage-cards",
+    "components": [
+      "advantage-card"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
