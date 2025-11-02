@@ -71,11 +71,9 @@ export default function decorate(block) {
           </div>`);
 
     moveInstrumentation(card, mockup);
-
     return mockup;
   });
 
   mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);
-  moveInstrumentation(block, mockupContainer);
   block.replaceWith(mockupContainer);
 }
