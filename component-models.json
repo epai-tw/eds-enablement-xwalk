@@ -182,14 +182,7 @@
   },
   {
     "id": "advantage-cards",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "Advantage Cards",
-        "value": ""
-      }
-    ]
+    "fields": []
   },
   {
     "id": "card",

@@ -1,7 +1,10 @@
 // eslint-disable-next-line import/extensions
 
-export default function decorate(block) {
+import {moveInstrumentation} from "../../scripts/scripts.js";
+import {readBlockConfig} from "../../scripts/aem.js";
 
+export default function decorate(block) {
+debugger
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
@@ -36,10 +39,15 @@ export default function decorate(block) {
   </div>`);
 
   const cardNodes = [...block.children].map((card) => {
-    const media = card.querySelector('picture');
-    const headline = card.querySelectorAll('div')[1].textContent;
-    const details = card.querySelectorAll('div')[2].textContent;
-    const navigate = card.querySelectorAll('div')[3].textContent;
+    const config = readBlockConfig(card);
+    console.log('config> ', config);
+    const safeText = (el, fallback = '') => el?.textContent?.trim() ?? fallback;
+
+    const divs = card.querySelectorAll('div');
+    const headline = safeText(divs.item(1));
+    const details = safeText(divs.item(2));
+    const navigate = safeText(divs.item(3));
+    const media = card.querySelector('picture')?.innerHTML ?? '';
 
     const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
@@ -64,7 +72,7 @@ export default function decorate(block) {
               </div>
             </div>
           </div>`);
-
+    moveInstrumentation(card, mockup);
     return mockup;
   });
 
