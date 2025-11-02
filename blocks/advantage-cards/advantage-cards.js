@@ -4,7 +4,6 @@ import {moveInstrumentation} from "../../scripts/scripts.js";
 import {readBlockConfig} from "../../scripts/aem.js";
 
 export default function decorate(block) {
-debugger
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
@@ -47,13 +46,13 @@ debugger
     const headline = safeText(divs.item(1));
     const details = safeText(divs.item(2));
     const navigate = safeText(divs.item(3));
-    const media = card.querySelector('picture')?.innerHTML ?? '';
+    const mediaHTML = card.querySelector('picture')?.innerHTML ?? '';
 
     const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
             <div class="cmp-advantage-card">
               <div class="cmp-advantage-card__image-wrapper">
-                ${media.innerHTML}
+                ${mediaHTML}
                 <video class="cmp-advantage-card__video" playsinline controls>
                   <source
                     type="video/mp4">
