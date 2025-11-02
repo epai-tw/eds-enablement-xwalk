@@ -18,16 +18,16 @@ import {
  * @param {Element} to the element to copy attributes to
  */
 export function moveAttributes(from, to, attributes) {
-  console.log('moveAttributes>>>\n');
   if (!attributes) {
     // eslint-disable-next-line no-param-reassign
     attributes = [...from.attributes].map(({ nodeName }) => nodeName);
   }
   attributes.forEach((attr) => {
     const value = from.getAttribute(attr);
-    console.log('>>> from >>>', ` ${attr}="${value}"`);
     if (value) {
       if (to instanceof DocumentFragment) {
+        console.log('moveAttributes>>>\n');
+        console.log('>>> from >>>', ` ${attr}="${value}"`);
         console.log('>>> to >>>', ` ${to?.firstElementChild.innerHTML}`);
         to?.firstElementChild.setAttribute(attr, value);
       } else {

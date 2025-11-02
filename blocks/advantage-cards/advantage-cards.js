@@ -1,7 +1,8 @@
 import { moveInstrumentation } from "../../scripts/scripts.js";
+import "./uifrontend/_advantage-card.js";
 
 export default function decorate(block) {
-  const mockupContainer = document.createRange().createContextualFragment(`<div class='container' data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
+  const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
         <h2>Carousel 3D effect</h2>
@@ -43,12 +44,13 @@ export default function decorate(block) {
     const navigate = safeText(divs.item(3));
     const mediaHTML = card.querySelector('picture')?.innerHTML ?? '';
 
-    if (headline === '') return;
+    if (headline === '') {
+      throw new Error('advantage card must have a headline');
+    }
 
     const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
-            <div class="cmp-advantage-card" 
-            data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Card" data-aue-filter="advantage-card" data-block-name="advantage-card">
+            <div class="cmp-advantage-card">
               <div class="cmp-advantage-card__image-wrapper">
                 ${mediaHTML}
                 <video class="cmp-advantage-card__video" playsinline controls>
@@ -59,11 +61,11 @@ export default function decorate(block) {
               </div>
               <div class="cmp-advantage-card__overlay">
                 <div class="cmp-advantage-card__content">
-                  <h3 class="cmp-advantage-card__title"  data-aue-prop="title" data-aue-label="Title" data-aue-type="text">${headline}</h3>
-                  <p class="cmp-advantage-card__desc" data-aue-prop="details" data-aue-label="Details" data-aue-type="text">
+                  <h3 class="cmp-advantage-card__title">${headline}</h3>
+                  <p class="cmp-advantage-card__desc">
                     ${details}
                   </p>
-                  <button class="cmp-advantage-card__btn btn"  data-aue-prop="navigation" data-aue-label="Navigation" data-aue-type="text">${navigate}<img
+                  <button class="cmp-advantage-card__btn btn">${navigate}<img
                   alt="play-icon" /></button>
                 </div>
               </div>
@@ -75,5 +77,6 @@ export default function decorate(block) {
   });
 
   mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);
+  moveInstrumentation(block, mockupContainer);
   block.replaceWith(mockupContainer);
 }
