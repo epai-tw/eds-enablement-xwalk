@@ -1,14 +1,14 @@
 {
   "definitions": [
     {
-      "title": "Advantage Cards (!)",
+      "title": "Advantage Cards",
       "id": "advantage-cards",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Advantage Cards (!)",
+              "name": "Advantage Cards",
               "model": "advantage-cards",
               "filter": "advantage-cards"
             }
