@@ -154,7 +154,7 @@
     ]
   },
   {
-    "id": "advantage-card",
+    "id": "advantage-item",
     "fields": [
       {
         "component": "reference",
