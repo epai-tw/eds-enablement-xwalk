@@ -1,2 +1,142 @@
-.block.carousel {
+.cmp-advantage-card {
+    aspect-ratio: 25/16;
+    border-radius: 1rem;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center
+}
+
+.cmp-advantage-card__heading {
+    color: var(--color-primary-950);
+    font-family: var(--font-display);
+    font-size: 2.75rem;
+    font-weight: var(--medium);
+    letter-spacing: 0;
+    line-height: 3.25rem;
+    margin-bottom: 2rem
+}
+
+.cmp-advantage-card__image-wrapper {
+    height: 100%;
+    width: 100%
+}
+
+.cmp-advantage-card__image-wrapper .cmp-advantage-card__image, .cmp-advantage-card__image-wrapper .cmp-advantage-card__video {
+    display: block;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    outline: 0;
+    width: 100%
+}
+
+.cmp-advantage-card__image-wrapper .cmp-advantage-card__close-video {
+    background: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 48 48"><g clip-path="url(%23clip0_26713_50066)"><foreignObject width="56" height="56" x="-4" y="-4"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(%23bgblur_1_26713_50066_clip_path);height:100%;width:100%"/></foreignObject><path fill="%234d4d4d" fill-opacity=".64" d="M24 48c13.255 0 24-10.745 24-24S37.255 0 24 0 0 10.745 0 24s10.745 24 24 24" data-figma-bg-blur-radius="4"/></g><rect width="47" height="47" x=".5" y=".5" stroke="%23999999" rx="23.5"/><path stroke="%23999999" stroke-linecap="round" stroke-width="2" d="M33 15 15 33m0-18 18 18"/></svg>');
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 48px;
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    width: 48px
+}
+
+.cmp-advantage-card__image-wrapper .cmp-advantage-card__close-video:focus, .cmp-advantage-card__image-wrapper .cmp-advantage-card__close-video:focus-visible, .cmp-advantage-card__image-wrapper .cmp-advantage-card__close-video:hover {
+    background: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 48 48"><g clip-path="url(%23clip0_26713_50066)"><foreignObject width="56" height="56" x="-4" y="-4"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(2px);clip-path:url(%23bgblur_1_26713_50066_clip_path);height:100%;width:100%"/></foreignObject><path fill="%234d4d4d" fill-opacity=".64" d="M24 48c13.255 0 24-10.745 24-24S37.255 0 24 0 0 10.745 0 24s10.745 24 24 24" data-figma-bg-blur-radius="4"/></g><rect width="47" height="47" x=".5" y=".5" stroke="%23999999" rx="23.5"/><path stroke="%23fff" stroke-linecap="round" stroke-width="2" d="M33 15 15 33m0-18 18 18"/></svg>')
+}
+
+.cmp-advantage-card__image-wrapper .cmp-advantage-card__close-video:focus-visible {
+    outline-offset: 2px
+}
+
+.cmp-advantage-card__image-wrapper .cmp-advantage-card__close-video, .cmp-advantage-card__image-wrapper .cmp-advantage-card__video {
+    display: none
+}
+
+.cmp-advantage-card__overlay {
+    bottom: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    left: 0;
+    padding: 2rem;
+    position: absolute;
+    right: 0;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    background: -webkit-gradient(linear, left bottom, left top, from(#0f0f10), to(rgba(15, 15, 16, 0)));
+    background: linear-gradient(0deg, #0f0f10, rgba(15, 15, 16, 0));
+    height: 100%
+}
+
+.cmp-advantage-card__content {
+    color: var(--color-primary-950);
+    max-width: 600px;
+    text-align: left
+}
+
+.cmp-advantage-card__content .cmp-advantage-card__title {
+    font-family: var(--font-display);
+    font-size: 1.875rem;
+    font-weight: var(--medium);
+    letter-spacing: 0;
+    line-height: 2.375rem;
+    margin-bottom: .5rem
+}
+
+.cmp-advantage-card__content .cmp-advantage-card__desc {
+    color: var(--color-primary-700);
+    font-family: var(--font-text);
+    font-size: 1rem;
+    font-weight: var(--regular);
+    letter-spacing: 0;
+    line-height: 1.5rem;
+    margin-bottom: 1rem
+}
+
+.cmp-advantage-card__content .cmp-advantage-card__btn img {
+    display: block;
+    -o-object-fit: contain;
+    object-fit: contain
+}
+
+.cmp-advantage-card.is-playing .cmp-advantage-card__image, .cmp-advantage-card.is-playing .cmp-advantage-card__overlay {
+    display: none
+}
+
+.cmp-advantage-card.is-playing .cmp-advantage-card__close-video, .cmp-advantage-card.is-playing .cmp-advantage-card__video {
+    display: block
+}
+
+.cmp-advantage-card:has(.cmp-advantage-card__video:focus-visible) {
+    outline: 2px solid var(--color-focus-ring)
+}
+
+@media only screen and (max-width: 35.9375rem) {
+    .cmp-advantage-card {
+        aspect-ratio: 16/25
+    }
+
+    .cmp-advantage-card__content .cmp-advantage-card__title {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        font-weight: var(--medium);
+        letter-spacing: 0;
+        line-height: 1.75rem
+    }
+}
+
+.swiper-slide:not(.swiper-slide-active) .cmp-advantage-card .cmp-advantage-card__title {
+    opacity: .5
+}
+
+.swiper-slide:not(.swiper-slide-active) .cmp-advantage-card .cmp-advantage-card__btn, .swiper-slide:not(.swiper-slide-active) .cmp-advantage-card .cmp-advantage-card__desc {
+    display: none
+}
+
+.swiper-slide:has(.cmp-advantage-card) {
+    overflow: visible
 }

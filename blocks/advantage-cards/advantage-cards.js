@@ -1,4 +1,4 @@
-import {moveInstrumentation} from "../../scripts/scripts.js";
+import { moveInstrumentation } from "../../scripts/scripts.js";
 
 export default function decorate(block) {
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container' data-aue-type="container" data-aue-behavior="component" data-aue-label="Advantage Cards" data-aue-filter="advantage-cards" data-block-name="advantage-cards">
