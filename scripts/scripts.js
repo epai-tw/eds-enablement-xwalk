@@ -18,6 +18,7 @@ import {
  * @param {Element} to the element to copy attributes to
  */
 export function moveAttributes(from, to, attributes) {
+  console.log('moveAttributes>>>\n', from, "\n", to, "\n", attributes);
   if (!attributes) {
     // eslint-disable-next-line no-param-reassign
     attributes = [...from.attributes].map(({ nodeName }) => nodeName);
@@ -30,7 +31,6 @@ export function moveAttributes(from, to, attributes) {
       } else {
         to?.setAttribute(attr, value);
       }
-      to?.setAttribute(attr, value);
       from.removeAttribute(attr);
     }
   });
