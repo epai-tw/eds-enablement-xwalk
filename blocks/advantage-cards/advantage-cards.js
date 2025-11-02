@@ -1,10 +1,7 @@
 // eslint-disable-next-line import/extensions
 
-import {moveInstrumentation} from "../../scripts/scripts.js";
-import {readBlockConfig} from "../../scripts/aem.js";
-
 export default function decorate(block) {
-  const mockupContainer = document.createRange().createContextualFragment(`<div class='container' data-aue-behavior="component" data-aue-label="Advantage Cards" data-block-name="advantage-cards">
+  const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
         <h2>Carousel 3D effect</h2>
@@ -50,7 +47,7 @@ export default function decorate(block) {
 
     const mockup = document.createRange().createContextualFragment(`
           <div class="cmp-carousel__item">
-            <div class="cmp-advantage-card">
+            <div class="cmp-advantage-card" data-aue-type="component" data-aue-model="advantage-card" data-aue-label="Advantage Card">
               <div class="cmp-advantage-card__image-wrapper" data-aue-prop="media" data-aue-label="Media" data-aue-type="reference" >
                 ${mediaHTML}
                 <video class="cmp-advantage-card__video" playsinline controls>
@@ -72,9 +69,35 @@ export default function decorate(block) {
             </div>
           </div>`);
     // moveInstrumentation(card, mockup);
+
     return mockup;
   });
 
   mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);
   block.replaceWith(mockupContainer);
+
+  function moveInstrumentation(from, to) {
+    moveAttributes(
+      from,
+      to,
+      [...from.attributes]
+        .map(({ nodeName }) => nodeName)
+        .filter((attr) => attr.startsWith('data-aue-') || attr.startsWith('data-richtext-')),
+    );
+  }
+
+  function moveAttributes(from, to, attributes) {
+    if (!attributes) {
+      // eslint-disable-next-line no-param-reassign
+      attributes = [...from.attributes].map(({ nodeName }) => nodeName);
+    }
+    attributes.forEach((attr) => {
+      const value = from.getAttribute(attr);
+      if (value) {
+        to?.setAttribute(attr, value);
+        from.removeAttribute(attr);
+      }
+    });
+  }
+
 }
