@@ -272,7 +272,8 @@
     "fields": [
       {
         "component": "container",
-        "name": "images",
+        "name": "multicards",
+        "label": "Multi Cards",
         "multi": true,
         "fields": [
           {
