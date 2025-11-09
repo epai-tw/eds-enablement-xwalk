@@ -271,8 +271,27 @@
     "id": "multicards",
     "fields": [
       {
+        "component": "container",
+        "valueType": "list",
+        "name": "multicards",
+        "label": "Multi Cards",
+        "multi": true,
+        "fields" : [
+          {
+            "component": "reference",
+            "name": "image",
+            "label": "Image"
+          },
+          {
+            "component": "text",
+            "name": "imageAlt",
+            "label": "Alt"
+          }
+        ]
+      },
+      {
         "component": "reference",
-        "valueType": "List",
+        "valueType": "list",
         "name": "articles",
         "label": "Articles List",
         "multi": true,
