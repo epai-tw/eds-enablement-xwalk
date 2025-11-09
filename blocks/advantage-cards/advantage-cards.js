@@ -85,4 +85,7 @@ export default function decorate(block) {
     moveInstrumentation(block, mockupContainer);
   }
   block.replaceWith(mockupContainer);
+
+  // trigger block
+  document.dispatchEvent(new Event('asus-cto-DOMContentLoaded'));
 }

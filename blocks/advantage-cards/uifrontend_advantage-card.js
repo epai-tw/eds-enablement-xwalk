@@ -1,4 +1,5 @@
-document.addEventListener('click', function (event) {
+const advantageCardsWrapper = document.querySelector('.advantage-cards-wrapper');
+advantageCardsWrapper.addEventListener('click', function (event) {
   const watchNowBtn = event.target.closest('.cmp-advantage-card__btn');
   const card = watchNowBtn?.closest('.cmp-advantage-card');
   const activeSlider = watchNowBtn?.closest('.cmp-carousel');
@@ -48,45 +49,50 @@ document.addEventListener('click', function (event) {
   swiperInstance.on('slideChange', function () {
     activeSlideProgress.classList.remove('cmp-carousel__indicator--active-full');
   });
-  closeVideoBtn.addEventListener(
-    'click',
-    () => {
-      videoPlayer.pause();
-      card.classList.remove('is-playing');
-      activeSlideProgress.classList.remove('cmp-carousel__indicator--active-full');
-      swiperInstance.slideNext();
-      swiperInstance.autoplay.start();
-    },
-    { once: true },
-  );
-  closeVideoBtn.addEventListener('keydown', (evt) => {
-    if (evt.keyCode == 9) {
-      /* Handling tab key press on close icon */
-      evt.preventDefault();
-      videoPlayer.focus();
-      return false;
-    } else if (evt.keyCode == 13) {
-      /* Handling enter key press on close icon */
-      evt.preventDefault();
-      videoPlayer.pause();
-      card.classList.remove('is-playing');
-      activeSlideProgress.classList.remove('cmp-carousel__indicator--active-full');
-      swiperInstance.slideNext();
-      swiperInstance.autoplay.start();
-      return false;
-    }
-  });
-  videoPlayer.addEventListener('play', () => {
-    activeSlideProgress.classList.remove('cmp-carousel__indicator--active-full');
-    swiperInstance.autoplay.start();
-  });
+  if(closeVideoBtn){
+    closeVideoBtn.addEventListener(
+      'click',
+      () => {
+        videoPlayer.pause();
+        card.classList.remove('is-playing');
+        activeSlideProgress.classList.remove('cmp-carousel__indicator--active-full');
+        swiperInstance.slideNext();
+        swiperInstance.autoplay.start();
+      },
+      { once: true },
+    );
+    closeVideoBtn.addEventListener('keydown', (evt) => {
+      if (evt.keyCode == 9) {
+        /* Handling tab key press on close icon */
+        evt.preventDefault();
+        videoPlayer.focus();
+        return false;
+      } else if (evt.keyCode == 13) {
+        /* Handling enter key press on close icon */
+        evt.preventDefault();
+        videoPlayer.pause();
+        card.classList.remove('is-playing');
+        activeSlideProgress.classList.remove('cmp-carousel__indicator--active-full');
+        swiperInstance.slideNext();
+        swiperInstance.autoplay.start();
+        return false;
+      }
+    });
+  }
 
-  // When the video ends, reset the card and restart the swiper
-  videoPlayer.onended = () => {
-    //slide.dataset.swiperAutoplay = '';
-    //card.classList.remove('is-playing');
-    activeSlideProgress.classList.add('cmp-carousel__indicator--active-full');
-    swiperInstance.autoplay.stop();
-    videoPlayer.currentTime = 0;
-  };
+  if(closeVideoBtn ){
+    videoPlayer.addEventListener('play', () => {
+      activeSlideProgress.classList.remove('cmp-carousel__indicator--active-full');
+      swiperInstance.autoplay.start();
+    });
+
+    // When the video ends, reset the card and restart the swiper
+    videoPlayer.onended = () => {
+      //slide.dataset.swiperAutoplay = '';
+      //card.classList.remove('is-playing');
+      activeSlideProgress.classList.add('cmp-carousel__indicator--active-full');
+      swiperInstance.autoplay.stop();
+      videoPlayer.currentTime = 0;
+    };
+  }
 });
