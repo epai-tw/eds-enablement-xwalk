@@ -1,6 +1,6 @@
 import { isAuthorEnvironment, safeText } from '../../scripts/utils.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import './uifrontend/_advantage-card.js';
+import './uifrontend_advantage-card.js';
 
 export default function decorate(block) {
 
