@@ -22,6 +22,7 @@
       "fields": [
         {
           "component": "container",
+          "valueType": "List",
           "name": "multicards",
           "label": "Multi Cards",
           "multi": true,
@@ -37,6 +38,13 @@
               "label": "Alt"
             }
           ]
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
         }
       ]
     }
