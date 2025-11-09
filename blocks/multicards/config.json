@@ -1,5 +1,5 @@
 {
-  "title": "Cards Block",
+  "title": "Multi Cards",
   "description": "顯示多張卡片，每張卡片包含圖片、標題、描述與連結",
   "fields": [
     {
