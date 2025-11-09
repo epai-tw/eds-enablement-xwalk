@@ -21,25 +21,6 @@
       "id": "multicards",
       "fields": [
         {
-          "component": "container",
-          "valueType": "List",
-          "name": "multicards",
-          "label": "Multi Cards",
-          "multi": true,
-          "fields" : [
-            {
-              "component": "reference",
-              "name": "image",
-              "label": "Image"
-            },
-            {
-              "component": "text",
-              "name": "imageAlt",
-              "label": "Alt"
-            }
-          ]
-        },
-        {
           "component": "reference",
           "valueType": "List",
           "name": "articles",
