@@ -1,3 +1,5 @@
+export const safeText = (el, fallback = '') => el?.textContent?.trim() ?? fallback;
+
 export function isAuthorEnvironment() {
   if (window?.location?.origin?.includes('author')) {
     return true;
@@ -15,3 +17,4 @@ export function whatBlockIsThis(element) {
   }
   return null;
 }
+

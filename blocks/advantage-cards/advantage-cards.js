@@ -1,12 +1,13 @@
-import { isAuthorEnvironment } from '../../scripts/utils.js';
+import { isAuthorEnvironment, safeText } from '../../scripts/utils.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-// import "./uifrontend/_advantage-card.js";
+import './uifrontend/_advantage-card.js';
 
 export default function decorate(block) {
+
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
-        <h2>Carousel 3D effect</h2>
+        <h2>${block.firstElementChild.textContent.trim()}</h2>
       </div>
       <div
         class="cmp-carousel"
@@ -37,9 +38,7 @@ export default function decorate(block) {
   </div>`);
 
   const cardNodes = [];
-  [...block.children].forEach((card) => {
-    const safeText = (el, fallback = '') => el?.textContent?.trim() ?? fallback;
-
+  [...block.children].forEach((card, i) => {
     const divs = card.querySelectorAll('div');
     const headline = safeText(divs.item(1));
     const details = safeText(divs.item(2));
@@ -75,7 +74,9 @@ export default function decorate(block) {
             </div>
           </div>`);
 
-    moveInstrumentation(card, mockup);
+    if (isAuthorEnvironment()) {
+      moveInstrumentation(card, mockup);
+    }
     cardNodes.push(mockup);
   });
 

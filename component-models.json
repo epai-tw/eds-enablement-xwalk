@@ -168,7 +168,8 @@
         "name": "title",
         "value": "",
         "label": "Headline",
-        "valueType": "string"
+        "valueType": "string",
+        "required": true
       },
       {
         "component": "text",
