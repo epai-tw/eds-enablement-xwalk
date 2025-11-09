@@ -1,5 +1,5 @@
+import { isAuthorEnvironment } from '../../scripts/utils.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-// import {isAuthorEnvironment} from "../../scripts/utils.js";
 // import "./uifrontend/_advantage-card.js";
 
 export default function decorate(block) {
@@ -80,8 +80,8 @@ export default function decorate(block) {
   });
 
   mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);
-  // if(isAuthorEnvironment()){
-  //   moveInstrumentation(block, mockupContainer);
-  // }
+  if (isAuthorEnvironment()) {
+    moveInstrumentation(block, mockupContainer);
+  }
   block.replaceWith(mockupContainer);
 }
