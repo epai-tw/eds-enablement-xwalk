@@ -15,7 +15,9 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "advantage-cards",
+      "multicards"
     ]
   },
   {
