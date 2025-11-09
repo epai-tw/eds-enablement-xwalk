@@ -278,11 +278,13 @@
         "fields": [
           {
             "component": "reference",
-            "name": "image"
+            "name": "image",
+            "label": "Image"
           },
           {
             "component": "text",
-            "name": "imageAlt"
+            "name": "imageAlt",
+            "label": "Alt"
           }
         ]
       }
