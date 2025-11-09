@@ -2,6 +2,10 @@ import {createOptimizedPicture} from '../../scripts/aem.js';
 import {moveInstrumentation} from '../../scripts/scripts.js';
 
 export default function decorate(block) {
+
+  // 嘗試從 dataset 中取出 cards JSON
+  const cards = block.dataset.cards ? JSON.parse(block.dataset.cards) : [];
+  
   // console.log('jquery version------------------------------');
   // console.log('jquery >>', window.$);
   // const {$} = window;

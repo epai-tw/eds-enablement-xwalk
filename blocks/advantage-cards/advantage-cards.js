@@ -73,9 +73,9 @@ export default async function decorate(block) {
             </div>
           </div>`);
 
-    // if (isAuthorEnvironment()) {
+    if (isAuthorEnvironment()) {
       moveInstrumentation(card, mockup);
-    // }
+    }
     cardNodes.push(mockup);
   });
 

@@ -1,0 +1,36 @@
+{
+  "title": "Cards Block",
+  "description": "顯示多張卡片，每張卡片包含圖片、標題、描述與連結",
+  "fields": [
+    {
+      "name": "cards",
+      "type": "array",
+      "label": "Cards",
+      "items": {
+        "type": "object",
+        "fields": [
+          {
+            "name": "image",
+            "type": "image",
+            "label": "Image"
+          },
+          {
+            "name": "title",
+            "type": "string",
+            "label": "Title"
+          },
+          {
+            "name": "description",
+            "type": "string",
+            "label": "Description"
+          },
+          {
+            "name": "link",
+            "type": "string",
+            "label": "Link (optional)"
+          }
+        ]
+      }
+    }
+  ]
+}
