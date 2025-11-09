@@ -1,5 +1,5 @@
-import { moveInstrumentation } from "../../scripts/scripts.js";
-import {isAuthorEnvironment} from "../../scripts/utils.js";
+import { moveInstrumentation } from '../../scripts/scripts.js';
+// import {isAuthorEnvironment} from "../../scripts/utils.js";
 // import "./uifrontend/_advantage-card.js";
 
 export default function decorate(block) {
@@ -36,7 +36,8 @@ export default function decorate(block) {
     </div>
   </div>`);
 
-  const cardNodes = [...block.children].map((card) => {
+  const cardNodes = [];
+  [...block.children].forEach((card) => {
     const safeText = (el, fallback = '') => el?.textContent?.trim() ?? fallback;
 
     const divs = card.querySelectorAll('div');
@@ -74,8 +75,8 @@ export default function decorate(block) {
             </div>
           </div>`);
 
-    // moveInstrumentation(card, mockup);
-    return mockup;
+    moveInstrumentation(card, mockup);
+    cardNodes.push(mockup);
   });
 
   mockupContainer.querySelector('.cmp-carousel__content').append(...cardNodes);

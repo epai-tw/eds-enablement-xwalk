@@ -77,7 +77,7 @@
           "valueType": "string"
         },
         {
-          "component": "reference",
+          "component": "aem-content",
           "valueType": "string",
           "name": "link",
           "label": "Link To"
