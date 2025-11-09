@@ -271,7 +271,7 @@
     "id": "multicards",
     "fields": [
       {
-        "component": "container",
+        "component": "reference",
         "valueType": "List",
         "name": "articles",
         "label": "Articles List",
