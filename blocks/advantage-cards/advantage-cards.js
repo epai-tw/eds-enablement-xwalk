@@ -1,8 +1,7 @@
 import { isAuthorEnvironment, safeText } from '../../scripts/utils.js';
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import './uifrontend_advantage-card.js';
 
-export default function decorate(block) {
+export default async function decorate(block) {
 
   const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
     <div class="carousel panelcontainer">
@@ -38,7 +37,7 @@ export default function decorate(block) {
   </div>`);
 
   const cardNodes = [];
-  [...block.children].forEach((card, i) => {
+  [...block.children].forEach((card) => {
     const divs = card.querySelectorAll('div');
     const headline = safeText(divs.item(1));
     const details = safeText(divs.item(2));
@@ -87,5 +86,5 @@ export default function decorate(block) {
   block.replaceWith(mockupContainer);
 
   // trigger block
-  document.dispatchEvent(new Event('asus-cto-DOMContentLoaded'));
+  await import('./uifrontend_advantage-card.js');
 }
