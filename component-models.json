@@ -239,6 +239,25 @@
             "value": "highlight"
           }
         ]
+      },
+      {
+        "component": "multiselect",
+        "name": "motion",
+        "label": "Motion",
+        "options": [
+          {
+            "name": "Slide Up",
+            "value": "slide-up"
+          },
+          {
+            "name": "Slide Down",
+            "value": "slide-down"
+          },
+          {
+            "name": "Fade In",
+            "value": "fade-in"
+          }
+        ]
       }
     ]
   },
