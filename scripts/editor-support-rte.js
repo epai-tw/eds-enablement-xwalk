@@ -7,7 +7,6 @@
 // and any block being loaded
 
 export function decorateRichtext(container = document) {
-  console.log('>>>> editor-support-rte.js');
   function deleteInstrumentation(element) {
     delete element.dataset.richtextResource;
     delete element.dataset.richtextProp;
@@ -66,3 +65,10 @@ export function decorateRichtext(container = document) {
     }
   }
 }
+
+// in cases where the block decoration is not done in one synchronous iteration we need to listen
+// for new richtext-instrumented elements
+const observer = new MutationObserver(() => decorateRichtext());
+observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
+
+decorateRichtext();
