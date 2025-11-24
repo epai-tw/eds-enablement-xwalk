@@ -3,18 +3,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default async function decorate(block) {
 
-  await render(block);
-
-  // trigger block
-  await import('./uifrontend_carousel.js');
-  await import('./uifrontend_advantage-card.js');
-
-  document.dispatchEvent(new Event('eds-DOMContentLoaded'));
-}
-
-async function render(block) {
-
-  const mockupContainer = document.createElement(`<div class='container'>
+  const mockupContainer = document.createRange().createContextualFragment(`<div class='container'>
     <div class="carousel panelcontainer">
       <div class="section-heading content-center">
         <h2>${block.firstElementChild.textContent.trim()}</h2>
@@ -95,4 +84,10 @@ async function render(block) {
     moveInstrumentation(block, mockupContainer);
   }
   block.replaceWith(mockupContainer);
+
+  // trigger block
+  await import('./uifrontend_carousel.js');
+  await import('./uifrontend_advantage-card.js');
+
+  document.dispatchEvent(new Event('eds-DOMContentLoaded'));
 }
