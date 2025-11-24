@@ -1,0 +1,58 @@
+{
+    "definitions": [
+        {
+          "title": "Store Locator",
+          "id": "storelocator",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block",
+                "template": {
+                  "name": "Store Locator",
+                  "model": "storelocator"
+                }
+              }
+            }
+          }
+        }
+    ],
+    "models": [
+        {
+          "id": "storelocator",
+          "fields": [
+            {
+              "component": "reference",
+              "valueType": "string",
+              "name": "fileReference",
+              "label": "Background Image",
+              "multi": false
+            },{
+              "component": "text-input",
+              "name": "headline",
+              "value": "",
+              "label": "Headline",
+              "valueType": "string"
+            },{
+              "component": "text-input",
+              "name": "subhead",
+              "value": "",
+              "label": "Subhead",
+              "valueType": "string"
+            },{
+              "component": "text-input",
+              "name": "search-placeholder",
+              "value": "",
+              "label": "Search Placeholder",
+              "valueType": "string"
+            },{
+              "component": "text-input",
+              "name": "cta",
+              "value": "",
+              "label": "CTA",
+              "valueType": "string"
+            }
+          ]
+        }
+    ],
+    "filters": []
+  }
