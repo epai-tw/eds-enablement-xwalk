@@ -28,7 +28,7 @@
           "multi": false
         },
         {
-          "component": "text",
+          "component": "text-input",
           "valueType": "string",
           "name": "imageAlt",
           "label": "Alt",
