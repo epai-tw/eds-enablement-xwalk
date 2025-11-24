@@ -392,5 +392,45 @@
         "value": ["audio/*", "video/*", "image/*", "text/*", "application/pdf"]
       }
     ]
+  },
+  {
+    "id": "storelocator",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fileReference",
+        "label": "Background Image",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "name": "headline",
+        "value": "",
+        "label": "Headline",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "subhead",
+        "value": "",
+        "label": "Subhead",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "search-placeholder",
+        "value": "",
+        "label": "Search Placeholder",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "cta",
+        "value": "",
+        "label": "Click Me!",
+        "valueType": "string"
+      }
+    ]
   }
 ]
