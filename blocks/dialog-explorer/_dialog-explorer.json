@@ -22,13 +22,13 @@
       "fields": [
         {
           "component": "tab",
-          "label": "Tab 1",
+          "label": "Basic",
           "name": "tab1"
         },
         {
           "component": "text-input",
-          "label": "Text 1",
-          "name": "text1",
+          "label": "Text Input",
+          "name": "dataTextInput",
           "valueType": "string"
         },
         {
@@ -40,34 +40,50 @@
         {
           "component": "reference",
           "valueType": "string",
-          "name": "image",
-          "label": "Image",
+          "name": "dataReference",
+          "label": "Reference (Single)",
           "multi": false
         },
         {
           "component": "text",
           "valueType": "string",
-          "name": "imageAlt",
+          "name": "dataText",
           "label": "Alt",
           "value": ""
         },
         {
           "component": "richtext",
-          "name": "text",
+          "name": "dataRichtext",
           "value": "",
           "label": "Text",
           "valueType": "string"
         },
         {
           "component": "tab",
-          "label": "Tab 2",
+          "label": "Tab MultiField",
           "name": "tab2"
         },
         {
-          "component": "text-input",
-          "label": "Text 2",
-          "name": "text2",
-          "valueType": "string"
+          "component": "container",
+          "name": "test",
+          "label": "Multi Text",
+          "multi": true,
+          "fields": [
+            {
+              "component": "reference",
+              "name": "image",
+              "value": "",
+              "label": "Sample Image",
+              "valueType": "string"
+            },
+            {
+              "component": "text",
+              "name": "alt",
+              "value": "",
+              "label": "Alt Text",
+              "valueType": "string"
+            }
+          ]
         }
       ]
     }
