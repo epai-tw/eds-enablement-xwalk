@@ -12,6 +12,20 @@ import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
 console.log('>>>> editor-support.js');
+async function applyEditorTheme(event) {
+  console.log('>>>> editor-support.js >> applyEditorTheme');
+  let topDocument;
+  try {
+    topDocument = window.top.document;
+  } catch (e) {
+    // 回退到目前的 document
+    topDocument = document;
+  }
+  const $canvas = topDocument.querySelector('.is-canvas');
+  console.log('>>>> editor-support.js >> $Canvas', $Canvas);
+  debugger
+}
+
 async function applyChanges(event) {
   console.log('>>>> editor-support.js >> applyChanges');
   // redecorate default content and blocks on patches (in the properties rail)
@@ -106,6 +120,7 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
+    await applyEditorTheme(event);
     if (!applied) window.location.reload();
   }));
 }
