@@ -267,7 +267,7 @@
           {
             "component": "aem-tag",
             "label": "AEM Tag Picker",
-            "name": "dataContainer2Cq:tags",
+            "name": "cq:tags",
             "valueType": "string"
           }
         ]
