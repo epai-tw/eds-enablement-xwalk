@@ -304,32 +304,6 @@
             ]
           },
           {
-            "component": "text",
-            "name": "checkedValue",
-            "label": "When Checked, return value",
-            "valueType": "string"
-          },
-          {
-            "component": "boolean",
-            "name": "enableUncheckedValue",
-            "label": "Preserve Uncheck state value.",
-            "valueType": "boolean"
-          },
-          {
-            "component": "text",
-            "name": "default",
-            "label": "Default Value",
-            "valueType": "string"
-          }
-        ]
-      },
-      {
-        "component": "container",
-        "name": "dataContainer1Collapsible",
-        "label": "Collapsible Container (true)",
-        "collapsible": true,
-        "fields": [
-          {
             "component": "select",
             "name": "colspan",
             "label": "Column Span",
@@ -384,6 +358,34 @@
                 "value": "12"
               }
             ]
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "name": "dataContainer1Collapsible",
+        "label": "Collapsible Container (True)",
+        "collapsible": true,
+        "fields": [
+          {
+            "component": "boolean",
+            "name": "repeatable",
+            "label": "Make accordion repeatable",
+            "valueType": "boolean"
+          },
+          {
+            "component": "number",
+            "name": "minOccur",
+            "label": "Minimum repetitions",
+            "valueType": "number",
+            "description": "Minimum number of times the accordion appears on the form"
+          },
+          {
+            "component": "number",
+            "name": "maxOccur",
+            "label": "Maximum repetitions",
+            "valueType": "number",
+            "description": "Maximum number of times the accordion can appear on the form"
           }
         ]
       }
