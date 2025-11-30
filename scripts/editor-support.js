@@ -12,19 +12,38 @@ import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
 console.log('>>>> editor-support.js');
-async function applyEditorTheme(event) {
+async function applyEditorTheme() {
   console.log('>>>> editor-support.js >> applyEditorTheme');
-  let topDocument;
-  try {
-    topDocument = window.top.document;
-  } catch (e) {
-    // 回退到目前的 document
-    topDocument = document;
-  }
-  const $canvas = topDocument.querySelector('.is-canvas');
-  console.log('>>>> editor-support.js >> $Canvas', $canvas);
   debugger
+  function getTopWindowSafe() {
+    try {
+      void window.top.document;
+      return window.top;
+    } catch (e) {
+      return window; // 無法存取 top，就退回目前的 window
+    }
+  }
+
+  const topWin = getTopWindowSafe();
+  const topDoc = topWin.document;
+
+  const mainContentIframe = topDoc.querySelector('iframe[name="Main Content"]');
+
+  if (!mainContentIframe) {
+    console.warn('找不到 name="Main Content" 的 iframe');
+  } else {
+    const iframeDoc = mainContentIframe.contentWindow?.document;
+
+    if (!iframeDoc) {
+      console.warn('無法存取 iframe 的 document（可能是尚未載入或跨網域）');
+    } else {
+      const targetElement = iframeDoc.querySelector('#canvas-properties');
+      console.log('找到的元素:', targetElement);
+      debugger
+    }
+  }
 }
+await applyEditorTheme();
 
 async function applyChanges(event) {
   console.log('>>>> editor-support.js >> applyChanges');
@@ -120,7 +139,6 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    await applyEditorTheme(event);
     if (!applied) window.location.reload();
   }));
 }
