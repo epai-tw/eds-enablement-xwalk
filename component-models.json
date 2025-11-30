@@ -142,56 +142,6 @@
     ]
   },
   {
-    "id": "advantage-card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "media",
-        "label": "Media",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "name": "title",
-        "value": "",
-        "label": "Headline",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "details",
-        "value": "",
-        "label": "Details",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "name": "navigation",
-        "value": "",
-        "label": "Navigation",
-        "valueType": "string"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "link",
-        "label": "Link To"
-      }
-    ]
-  },
-  {
-    "id": "advantage-cards",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "Advantage Cards",
-        "value": ""
-      }
-    ]
-  },
-  {
     "id": "card",
     "fields": [
       {
@@ -234,13 +184,30 @@
     "fields": [
       {
         "component": "tab",
-        "label": "Tab 1",
-        "name": "tab1"
+        "label": "Basic",
+        "name": "tab1",
+        "description": "Tab Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "dataText",
+        "label": "Text",
+        "value": "",
+        "description": "Text Description"
       },
       {
         "component": "text-input",
-        "label": "Text 1",
-        "name": "text1",
+        "label": "Text Input",
+        "name": "dataTextInput",
+        "valueType": "string",
+        "description": "Text-Input Description"
+      },
+      {
+        "component": "richtext",
+        "name": "dataRichtext",
+        "value": "",
+        "label": "Text",
         "valueType": "string"
       },
       {
@@ -252,34 +219,57 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "image",
-        "label": "Image",
+        "name": "dataReference",
+        "label": "Reference (Single)",
         "multi": false
       },
       {
-        "component": "text",
+        "component": "reference",
         "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "name": "dataReference2",
+        "label": "Reference (Multi)",
+        "multi": true
       },
       {
         "component": "tab",
-        "label": "Tab 2",
+        "label": "Tab MultiField",
         "name": "tab2"
       },
       {
-        "component": "text-input",
-        "label": "Text 2",
-        "name": "text2",
-        "valueType": "string"
+        "component": "container",
+        "name": "dataContainer1",
+        "label": "Multifield 1",
+        "multi": true,
+        "fields": [
+          {
+            "component": "reference",
+            "name": "dataContainer1Reference",
+            "value": "",
+            "label": "Multifield Image",
+            "valueType": "string"
+          },
+          {
+            "component": "text",
+            "name": "dataContainer1Text",
+            "value": "",
+            "label": "Multifield Text",
+            "valueType": "string"
+          }
+        ]
+      },
+      {
+        "component": "container",
+        "name": "dataContainer2",
+        "label": "Multifield 2",
+        "multi": true,
+        "fields": [
+          {
+            "component": "aem-tag",
+            "label": "AEM Tag Picker",
+            "name": "dataContainer2Cq:tags",
+            "valueType": "string"
+          }
+        ]
       }
     ]
   },
