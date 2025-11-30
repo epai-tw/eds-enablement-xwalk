@@ -22,7 +22,7 @@ async function applyEditorTheme(event) {
     topDocument = document;
   }
   const $canvas = topDocument.querySelector('.is-canvas');
-  console.log('>>>> editor-support.js >> $Canvas', $Canvas);
+  console.log('>>>> editor-support.js >> $Canvas', $canvas);
   debugger
 }
 
