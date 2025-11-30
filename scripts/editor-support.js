@@ -12,7 +12,7 @@ import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
 console.log('>>>> editor-support.js');
-async function applyEditorTheme() {
+async function applyEditorTheme(event) {
   console.log('>>>> editor-support.js >> applyEditorTheme');
   debugger
   function getTopWindowSafe() {
@@ -43,7 +43,6 @@ async function applyEditorTheme() {
     }
   }
 }
-await applyEditorTheme();
 
 async function applyChanges(event) {
   console.log('>>>> editor-support.js >> applyChanges');
@@ -139,6 +138,7 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
+    await applyEditorTheme(event);
     if (!applied) window.location.reload();
   }));
 }
