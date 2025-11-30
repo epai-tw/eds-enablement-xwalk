@@ -15,7 +15,8 @@
       "hero",
       "cards",
       "columns",
-      "fragment"
+      "fragment",
+      "dialog-explorer"
     ]
   },
   {
@@ -49,13 +50,6 @@
       "image",
       "button",
       "title"
-    ]
-  },
-  "dialog-explorer",
-  {
-    "id": "section",
-    "components": [
-      "dialog-explorer"
     ]
   }
 ]
