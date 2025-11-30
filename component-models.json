@@ -367,6 +367,7 @@
         "name": "dataContainer1Collapsible",
         "label": "Collapsible Container (True)",
         "collapsible": true,
+        "description": "Collapsible Container Description <br> Collapsible Container Description <br> Collapsible Container Description",
         "fields": [
           {
             "component": "boolean",
@@ -389,6 +390,39 @@
             "description": "Maximum number of times the accordion can appear on the form"
           }
         ]
+      },
+      {
+        "component": "container",
+        "name": "dataTab3Container3",
+        "label": "Collapsible Container (True)",
+        "collapsible": true,
+        "description": "Collapsible Container Description <br> Collapsible Container Description <br> Collapsible Container Description",
+        "fields": [
+          {
+            "component": "number",
+            "name": "maxOccur",
+            "label": "Maximum repetitions",
+            "valueType": "number",
+            "description": "Maximum number of times the accordion can appear on the form"
+          }
+        ]
+      },
+      {
+        "component": "tab",
+        "label": "Dynamic Regex",
+        "name": "tab3"
+      },
+      {
+        "component": "text",
+        "name": "dataTab3Text1Regexp",
+        "label": "Name",
+        "valueType": "string",
+        "required": true,
+        "valueFormat": "regexp",
+        "validation": {
+          "regExp": "^[^$].*",
+          "customErrorMsg": "Name cannot start with $"
+        }
       }
     ]
   },
