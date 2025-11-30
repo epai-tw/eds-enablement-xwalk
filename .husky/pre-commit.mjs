@@ -1,5 +1,4 @@
 import { exec } from "node:child_process";
-echo "Running pre-commit hook..."
 console.log('Running pre-commit hook...');
 
 const run = (cmd) => new Promise((resolve, reject) => exec(
