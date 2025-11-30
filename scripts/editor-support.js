@@ -12,9 +12,8 @@ import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
 console.log('>>>> editor-support.js');
-async function applyEditorTheme(event) {
+async function applyEditorTheme() {
   console.log('>>>> editor-support.js >> applyEditorTheme');
-  debugger
   function getTopWindowSafe() {
     try {
       void window.top.document;
@@ -38,8 +37,14 @@ async function applyEditorTheme(event) {
       console.warn('無法存取 iframe 的 document（可能是尚未載入或跨網域）');
     } else {
       const targetElement = iframeDoc.querySelector('#canvas-properties');
-      console.log('找到的元素:', targetElement);
-      debugger
+      const labels = targetElement.querySelectorAll('.is-field label');
+
+      labels.forEach((label, index) => {
+        console.log(`label #${index}:`, label.textContent.trim());
+        label.style.color = 'red';
+        label.style.fontSize = '24px';
+        label.style.marginTop = '12px';
+      });
     }
   }
 }
@@ -138,7 +143,6 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    await applyEditorTheme(event);
     if (!applied) window.location.reload();
   }));
 }
@@ -150,5 +154,8 @@ attachEventListners(document.querySelector('main'));
 decorateRichtext();
 // in cases where the block decoration is not done in one synchronous iteration we need to listen
 // for new richtext-instrumented elements. this happens for example when using experimentation.
-const observer = new MutationObserver(() => decorateRichtext());
+const observer = new MutationObserver(() => {
+  decorateRichtext();
+  applyEditorTheme();
+});
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
