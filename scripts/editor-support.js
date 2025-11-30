@@ -37,13 +37,16 @@ async function applyEditorTheme() {
       console.warn('無法存取 iframe 的 document（可能是尚未載入或跨網域）');
     } else {
       const targetElement = iframeDoc.querySelector('#canvas-properties');
+      targetElement.querySelectorAll('.is-field').forEach((field, index) => {
+        field.style.border = '1px solid #dce6d5';
+        field.style.marginBottom = '10px';
+        field.style.padding = '0px 10px';
+      });
       const labels = targetElement.querySelectorAll('.is-field label');
 
       labels.forEach((label, index) => {
         console.log(`label #${index}:`, label.textContent.trim());
-        label.style.color = 'red';
         label.style.fontSize = '24px';
-        label.style.marginTop = '12px';
       });
     }
   }
@@ -154,8 +157,8 @@ attachEventListners(document.querySelector('main'));
 decorateRichtext();
 // in cases where the block decoration is not done in one synchronous iteration we need to listen
 // for new richtext-instrumented elements. this happens for example when using experimentation.
-const observer = new MutationObserver(() => {
+const observer = new MutationObserver(async () => {
   decorateRichtext();
-  applyEditorTheme();
+  await applyEditorTheme();
 });
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
