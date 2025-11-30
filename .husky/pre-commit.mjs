@@ -16,7 +16,8 @@ const modifiedFiles = changeset.split('\n').filter(Boolean);
 const modifledPartials = modifiedFiles.filter((file) => file.match(/(^|\/)_.*.json/));
 console.log('modifledPartials >>>', { modifledPartials});
 if (modifledPartials.length > 0) {
-  const output = await run('npm run build:json');
+  const output = await run('npm run build:json  --silent');
   console.log("output >>>", output);
-  await run('git add component-models.json component-definition.json component-filters.json');
+    process.exit(1); // 故意失敗，確保有被執行
+    await run('git add component-models.json component-definition.json component-filters.json');
 }
