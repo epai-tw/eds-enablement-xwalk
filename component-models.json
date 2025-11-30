@@ -279,7 +279,7 @@
       },
       {
         "component": "container",
-        "name": "dataContainer1CollapsibleFalse",
+        "name": "dataTab3Container1",
         "label": "Collapsible Container (false)",
         "collapsible": false,
         "description": "Collapsible Container Description \n Collapsible Container Description \n Collapsible Container Description",
@@ -364,7 +364,7 @@
       },
       {
         "component": "container",
-        "name": "dataContainer1Collapsible",
+        "name": "dataTab3Container2",
         "label": "Collapsible Container (True)",
         "collapsible": true,
         "description": "Collapsible Container Description <br> Collapsible Container Description <br> Collapsible Container Description",
@@ -410,15 +410,16 @@
       {
         "component": "tab",
         "label": "Dynamic Regex",
-        "name": "tab3"
+        "name": "tab4"
       },
       {
         "component": "text",
-        "name": "dataTab3Text1Regexp",
+        "name": "dataTab4Text1",
         "label": "Name",
         "valueType": "string",
         "required": true,
         "valueFormat": "regexp",
+        "description": "Name cannot start with $",
         "validation": {
           "regExp": "^[^$].*",
           "customErrorMsg": "Name cannot start with $"
