@@ -1,4 +1,6 @@
 import { exec } from "node:child_process";
+echo "Running pre-commit hook..."
+console.log('Running pre-commit hook...');
 
 const run = (cmd) => new Promise((resolve, reject) => exec(
   cmd,
@@ -13,9 +15,9 @@ const modifiedFiles = changeset.split('\n').filter(Boolean);
 
 // check if there are any model files staged
 const modifledPartials = modifiedFiles.filter((file) => file.match(/(^|\/)_.*.json/));
-console.log('modifledPartials >', { modifledPartials});
+console.log('modifledPartials >>>', { modifledPartials});
 if (modifledPartials.length > 0) {
   const output = await run('npm run build:json');
-  console.log(output);
+  console.log("output >>>", output);
   await run('git add component-models.json component-definition.json component-filters.json');
 }
