@@ -1,4 +1,7 @@
 /* add global styles that can be loaded post LCP here */
-#canvas-properties{
+#canvas-properties {
+    background-color: blue;
+}
+.is-canvas {
     background-color: red;
 }
