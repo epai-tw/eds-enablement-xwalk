@@ -50,5 +50,12 @@
       "button",
       "title"
     ]
+  },
+  "dialog-explorer",
+  {
+    "id": "section",
+    "components": [
+      "dialog-explorer"
+    ]
   }
 ]

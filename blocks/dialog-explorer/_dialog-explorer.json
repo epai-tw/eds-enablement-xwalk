@@ -72,6 +72,12 @@
     }
   ],
   "filters": [
-
+    "dialog-explorer",
+    {
+      "id": "section",
+      "components": [
+        "dialog-explorer"
+      ]
+    }
   ]
 }
