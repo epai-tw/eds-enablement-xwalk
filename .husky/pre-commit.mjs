@@ -1,4 +1,5 @@
 import { exec } from "node:child_process";
+console.log('Running pre-commit hook...');
 
 const run = (cmd) => new Promise((resolve, reject) => exec(
   cmd,
@@ -18,3 +19,4 @@ if (modifledPartials.length > 0) {
   console.log(output);
   await run('git add component-models.json component-definition.json component-filters.json');
 }
+console.log('Ending pre-commit hook...');
