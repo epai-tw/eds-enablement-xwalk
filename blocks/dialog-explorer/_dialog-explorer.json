@@ -71,7 +71,7 @@
         },
         {
           "component": "tab",
-          "label": "Tab MultiField",
+          "label": "MultiField",
           "name": "tab2"
         },
         {
@@ -112,7 +112,7 @@
         },
         {
           "component": "tab",
-          "label": "Tab Container",
+          "label": "Container",
           "name": "tab3"
         },
         {
@@ -245,23 +245,47 @@
             }
           ]
         },
-
         {
           "component": "tab",
           "label": "Dynamic Regex",
           "name": "tab4"
-        },{
+        },
+        {
           "component": "text",
           "name": "dataTab4Text1",
           "label": "Name",
           "valueType": "string",
-          "required": true,
           "valueFormat": "regexp",
-          "description": "Name cannot start with $",
+          "description": "Please Input Text start with $",
           "validation": {
             "regExp": "^[^$].*",
             "customErrorMsg": "Name cannot start with $"
           }
+        },{
+          "component": "tab",
+          "label": "Validation",
+          "name": "tab5"
+        },
+        {
+          "component": "text",
+          "name": "dataTab5Text1",
+          "label": "Name",
+          "valueType": "string",
+          "required": true,
+          "valueFormat": "regexp",
+          "validation": {
+            "regExp": "^[^$].*",
+            "customErrorMsg": "Name cannot start with $"
+          }
+        },
+        {
+          "component": "date-time",
+          "name": "minimumDate",
+          "label": "Minimum date",
+          "valueType": "date",
+          "description": "Minimum date allowed in the field",
+          "valueFormat": "YYYY-MM-DD[T]HH:mm:ss.000-00:00",
+          "required": true
         }
       ]
     }

@@ -11,6 +11,7 @@ import {
 import { decorateRichtext } from './editor-support-rte.js';
 import { decorateMain } from './scripts.js';
 
+console.log('>>>> editor-support.js');
 async function applyChanges(event) {
   console.log('>>>> editor-support.js >> applyChanges');
   // redecorate default content and blocks on patches (in the properties rail)

@@ -5,9 +5,10 @@
 // group editable texts in single wrappers if applicable.
 // this script should execute after script.js but before the the universal editor cors script
 // and any block being loaded
+console.log('>>>> editor-support-rte.js');
 
 export function decorateRichtext(container = document) {
-  console.log('>>>> editor-support-rte.js');
+  console.log('>>>> editor-support-rte.js >> decorateRichtext');
   function deleteInstrumentation(element) {
     delete element.dataset.richtextResource;
     delete element.dataset.richtextProp;
