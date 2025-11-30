@@ -15,7 +15,7 @@ const modifiedFiles = changeset.split('\n').filter(Boolean);
 // check if there are any model files staged
 const modifledPartials = modifiedFiles.filter((file) => file.match(/(^|\/)_.*.json/));
 if (modifledPartials.length > 0) {
-  const output = await run('npm run build:json --silent');
+  const output = await run('npm run build:json');
   console.log(output);
   await run('git add component-models.json component-definition.json component-filters.json');
 }
