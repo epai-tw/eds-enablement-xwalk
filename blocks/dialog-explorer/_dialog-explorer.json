@@ -120,6 +120,7 @@
           "name": "dataContainer1CollapsibleFalse",
           "label": "Collapsible Container (false)",
           "collapsible": false,
+          "description": "Collapsible Container Description \n Collapsible Container Description \n Collapsible Container Description",
           "fields": [
             {
               "component": "select",
