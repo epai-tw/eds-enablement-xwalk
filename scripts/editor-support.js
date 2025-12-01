@@ -13,13 +13,12 @@ import { decorateMain } from './scripts.js';
 
 console.log('>>>> editor-support.js');
 async function applyEditorTheme() {
-  console.log('>>>> editor-support.js >> applyEditorTheme');
   function getTopWindowSafe() {
     try {
       void window.top.document;
       return window.top;
     } catch (e) {
-      return window; // 無法存取 top，就退回目前的 window
+      return window;
     }
   }
 
@@ -29,12 +28,12 @@ async function applyEditorTheme() {
   const mainContentIframe = topDoc.querySelector('iframe[name="Main Content"]');
 
   if (!mainContentIframe) {
-    console.warn('找不到 name="Main Content" 的 iframe');
+    console.warn('cannot find iframe');
   } else {
     const iframeDoc = mainContentIframe.contentWindow?.document;
 
     if (!iframeDoc) {
-      console.warn('無法存取 iframe 的 document（可能是尚未載入或跨網域）');
+      console.warn('cannot access to iframe');
     } else {
       const targetElement = iframeDoc.querySelector('#canvas-properties');
       targetElement.querySelectorAll('.is-field').forEach((field, index) => {
@@ -146,6 +145,7 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
+    await applyEditorTheme(); // TODO: move to aue initiate state
     if (!applied) window.location.reload();
   }));
 }
@@ -159,6 +159,5 @@ decorateRichtext();
 // for new richtext-instrumented elements. this happens for example when using experimentation.
 const observer = new MutationObserver(async () => {
   decorateRichtext();
-  await applyEditorTheme();
 });
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });

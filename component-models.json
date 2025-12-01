@@ -448,6 +448,20 @@
         "valueType": "date",
         "description": "Minimum date allowed in the field",
         "valueFormat": "YYYY-MM-DD[T]HH:mm:ss.000-00:00"
+      },
+      {
+        "component": "number",
+        "valueType": "number",
+        "name": "field1",
+        "label": "Number Field",
+        "description": "This is a number field.",
+        "required": true,
+        "placeholder": null,
+        "validation": {
+          "numberMin": 0,
+          "numberMax": 88,
+          "customErrorMsg": "You also need 1.21 gigawatts."
+        }
       }
     ]
   },
