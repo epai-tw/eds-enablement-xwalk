@@ -145,7 +145,7 @@ function attachEventListners(main) {
   ].forEach((eventType) => main?.addEventListener(eventType, async (event) => {
     event.stopPropagation();
     const applied = await applyChanges(event);
-    await applyEditorTheme(); // TODO: move to aue initiate state
+    // await applyEditorTheme(); // TODO: move to aue initiate state
     if (!applied) window.location.reload();
   }));
 }

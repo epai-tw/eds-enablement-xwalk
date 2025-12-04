@@ -469,6 +469,26 @@
         "name": "tab6"
       },
       {
+        "component": "boolean",
+        "name": "enableUncheckedValue",
+        "label": "Preserve Uncheck state value.",
+        "valueType": "boolean"
+      },
+      {
+        "component": "text",
+        "name": "uncheckedValue",
+        "label": "When Unchecked, return value",
+        "valueType": "string",
+        "condition": {
+          "===": [
+            {
+              "var": "enableUncheckedValue"
+            },
+            true
+          ]
+        }
+      },
+      {
         "component": "container",
         "name": "dataTab6Container1",
         "label": "Repeat Panel",
