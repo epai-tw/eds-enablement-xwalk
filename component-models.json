@@ -470,7 +470,7 @@
       },
       {
         "component": "boolean",
-        "name": "enableUncheckedValue",
+        "name": "ataTab6EnableUncheckedValue",
         "label": "Preserve Uncheck state value.",
         "valueType": "boolean"
       },
@@ -482,7 +482,7 @@
         "condition": {
           "===": [
             {
-              "var": "enableUncheckedValue"
+              "var": "ataTab6EnableUncheckedValue"
             },
             true
           ]
@@ -514,113 +514,8 @@
                 true
               ]
             }
-          },
-          {
-            "component": "number",
-            "name": "dataTab6MaxOccur",
-            "label": "Maximum repetitions",
-            "valueType": "number",
-            "placeholder": "No Limit",
-            "description": "Maximum number of times the panel can appear on the form. No value indicates no limit.",
-            "condition": {
-              "and": [
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Repeatable"
-                    },
-                    true
-                  ]
-                },
-                {
-                  "!==": [
-                    {
-                      "var": "dataTab6Variant"
-                    },
-                    "noButtons"
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "component": "select",
-            "name": "dataTab6Variant",
-            "label": "Variant",
-            "options": [
-              {
-                "name": "No Actions",
-                "value": "noButtons"
-              },
-              {
-                "name": "Add & Remove Buttons",
-                "value": "addRemoveButtons"
-              }
-            ],
-            "value": "addRemoveButtons",
-            "condition": {
-              "===": [
-                {
-                  "var": "dataTab6Repeatable"
-                },
-                true
-              ]
-            }
-          },
-          {
-            "component": "text",
-            "name": "dataTab6RepeatAddButtonLabel",
-            "label": "Add Button Label",
-            "valueType": "string",
-            "value": "Add",
-            "condition": {
-              "and": [
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Variant"
-                    },
-                    "addRemoveButtons"
-                  ]
-                },
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Repeatable"
-                    },
-                    true
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "component": "text",
-            "name": "dataTab6RepeatDeleteButtonLabel",
-            "label": "Delete Button Label",
-            "valueType": "string",
-            "value": "Delete",
-            "condition": {
-              "and": [
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Variant"
-                    },
-                    "addRemoveButtons"
-                  ]
-                },
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Repeatable"
-                    },
-                    true
-                  ]
-                }
-              ]
-            }
           }
+
         ]
       }
     ]
