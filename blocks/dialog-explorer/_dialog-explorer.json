@@ -352,7 +352,7 @@
                   {
                     "!==": [
                       {
-                        "var": "variant"
+                        "var": "dataTab6Variant"
                       },
                       "noButtons"
                     ]
@@ -413,7 +413,7 @@
             },
             {
               "component": "text",
-              "name": "repeatDeleteButtonLabel",
+              "name": "dataTab6RepeatDeleteButtonLabel",
               "label": "Delete Button Label",
               "valueType": "string",
               "value": "Delete",
