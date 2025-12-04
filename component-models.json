@@ -489,138 +489,139 @@
         }
       },
       {
+        "component": "boolean",
+        "name": "dataTab6Repeatable",
+        "label": "Make panel repeatable",
+        "valueType": "boolean"
+      },
+      {
+        "component": "number",
+        "name": "dataTab6MinOccur",
+        "label": "Minimum repetitions",
+        "valueType": "number",
+        "description": "Minimum number of times the panel appears on the form",
+        "condition": {
+          "===": [
+            {
+              "var": "dataTab6Repeatable"
+            },
+            true
+          ]
+        }
+      },
+      {
+        "component": "number",
+        "name": "dataTab6MaxOccur",
+        "label": "Maximum repetitions",
+        "valueType": "number",
+        "placeholder": "No Limit",
+        "description": "Maximum number of times the panel can appear on the form. No value indicates no limit.",
+        "condition": {
+          "and": [
+            {
+              "===": [
+                {
+                  "var": "dataTab6Repeatable"
+                },
+                true
+              ]
+            },
+            {
+              "!==": [
+                {
+                  "var": "dataTab6Variant"
+                },
+                "noButtons"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "select",
+        "name": "dataTab6Variant",
+        "label": "Variant",
+        "options": [
+          {
+            "name": "No Actions",
+            "value": "noButtons"
+          },
+          {
+            "name": "Add & Remove Buttons",
+            "value": "addRemoveButtons"
+          }
+        ],
+        "value": "addRemoveButtons",
+        "condition": {
+          "===": [
+            {
+              "var": "dataTab6Repeatable"
+            },
+            true
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "name": "dataTab6RepeatAddButtonLabel",
+        "label": "Add Button Label",
+        "valueType": "string",
+        "value": "Add",
+        "condition": {
+          "and": [
+            {
+              "===": [
+                {
+                  "var": "dataTab6Variant"
+                },
+                "addRemoveButtons"
+              ]
+            },
+            {
+              "===": [
+                {
+                  "var": "dataTab6Repeatable"
+                },
+                true
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "name": "dataTab6RepeatDeleteButtonLabel",
+        "label": "Delete Button Label",
+        "valueType": "string",
+        "value": "Delete",
+        "condition": {
+          "and": [
+            {
+              "===": [
+                {
+                  "var": "dataTab6Variant"
+                },
+                "addRemoveButtons"
+              ]
+            },
+            {
+              "===": [
+                {
+                  "var": "dataTab6Repeatable"
+                },
+                true
+              ]
+            }
+          ]
+        }
+      },
+      {
         "component": "container",
         "name": "dataTab6Container1",
         "label": "Repeat Panel",
-        "collapsible": false,
+        "collapsible": true,
         "fields": [
-          {
-            "component": "boolean",
-            "name": "dataTab6Repeatable",
-            "label": "Make panel repeatable",
-            "valueType": "boolean"
-          },
-          {
-            "component": "number",
-            "name": "dataTab6MinOccur",
-            "label": "Minimum repetitions",
-            "valueType": "number",
-            "description": "Minimum number of times the panel appears on the form",
-            "condition": {
-              "===": [
-                {
-                  "var": "dataTab6Repeatable"
-                },
-                true
-              ]
-            }
-          },
-          {
-            "component": "number",
-            "name": "dataTab6MaxOccur",
-            "label": "Maximum repetitions",
-            "valueType": "number",
-            "placeholder": "No Limit",
-            "description": "Maximum number of times the panel can appear on the form. No value indicates no limit.",
-            "condition": {
-              "and": [
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Repeatable"
-                    },
-                    true
-                  ]
-                },
-                {
-                  "!==": [
-                    {
-                      "var": "dataTab6Variant"
-                    },
-                    "noButtons"
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "component": "select",
-            "name": "dataTab6Variant",
-            "label": "Variant",
-            "options": [
-              {
-                "name": "No Actions",
-                "value": "noButtons"
-              },
-              {
-                "name": "Add & Remove Buttons",
-                "value": "addRemoveButtons"
-              }
-            ],
-            "value": "addRemoveButtons",
-            "condition": {
-              "===": [
-                {
-                  "var": "dataTab6Repeatable"
-                },
-                true
-              ]
-            }
-          },
-          {
-            "component": "text",
-            "name": "dataTab6RepeatAddButtonLabel",
-            "label": "Add Button Label",
-            "valueType": "string",
-            "value": "Add",
-            "condition": {
-              "and": [
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Variant"
-                    },
-                    "addRemoveButtons"
-                  ]
-                },
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Repeatable"
-                    },
-                    true
-                  ]
-                }
-              ]
-            }
-          },
-          {
-            "component": "text",
-            "name": "dataTab6RepeatDeleteButtonLabel",
-            "label": "Delete Button Label",
-            "valueType": "string",
-            "value": "Delete",
-            "condition": {
-              "and": [
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Variant"
-                    },
-                    "addRemoveButtons"
-                  ]
-                },
-                {
-                  "===": [
-                    {
-                      "var": "dataTab6Repeatable"
-                    },
-                    true
-                  ]
-                }
-              ]
-            }
-          }
+
         ]
       }
     ]
