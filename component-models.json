@@ -496,7 +496,7 @@
         "fields": [
           {
             "component": "boolean",
-            "name": "dataTab6Repeatable",
+            "name": "dataRepeatable",
             "label": "Make panel repeatable",
             "valueType": "boolean"
           },
@@ -509,13 +509,12 @@
             "condition": {
               "===": [
                 {
-                  "var": "dataTab6Repeatable"
+                  "var": "dataRepeatable"
                 },
                 true
               ]
             }
           }
-
         ]
       }
     ]
