@@ -489,32 +489,33 @@
         }
       },
       {
+        "component": "boolean",
+        "name": "dataTab6Repeatable",
+        "label": "Make panel repeatable",
+        "valueType": "boolean"
+      },
+      {
+        "component": "number",
+        "name": "dataTab6MinOccur",
+        "label": "Minimum repetitions",
+        "valueType": "number",
+        "description": "Minimum number of times the panel appears on the form",
+        "condition": {
+          "===": [
+            {
+              "var": "dataTab6Repeatable"
+            },
+            true
+          ]
+        }
+      },
+      {
         "component": "container",
         "name": "dataTab6Container1",
         "label": "Repeat Panel",
         "collapsible": true,
         "fields": [
-          {
-            "component": "boolean",
-            "name": "dataRepeatable",
-            "label": "Make panel repeatable",
-            "valueType": "boolean"
-          },
-          {
-            "component": "number",
-            "name": "dataTab6MinOccur",
-            "label": "Minimum repetitions",
-            "valueType": "number",
-            "description": "Minimum number of times the panel appears on the form",
-            "condition": {
-              "===": [
-                {
-                  "var": "dataRepeatable"
-                },
-                true
-              ]
-            }
-          }
+
         ]
       }
     ]
