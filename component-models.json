@@ -394,7 +394,7 @@
       {
         "component": "container",
         "name": "dataTab3Container3",
-        "label": "Collapsible Container (True)",
+        "label": "Advanced Configuration",
         "collapsible": true,
         "description": "Collapsible Container Description <br> Collapsible Container Description <br> Collapsible Container Description",
         "fields": [
@@ -614,15 +614,92 @@
             }
           ]
         }
+      },{
+        "component": "tab",
+        "label": "Feature Item",
+        "name": "tab7"
       },
       {
-        "component": "container",
-        "name": "dataTab6Container1",
-        "label": "Repeat Panel",
-        "collapsible": true,
-        "fields": [
-
+        "component": "select",
+        "name": "dataTab7Select1",
+        "label": "Feature Num",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "5",
+            "value": "5"
+          },
+          {
+            "name": "6",
+            "value": "6"
+          },
+          {
+            "name": "7",
+            "value": "7"
+          },
+          {
+            "name": "8",
+            "value": "8"
+          },
+          {
+            "name": "9",
+            "value": "9"
+          }
         ]
+      },
+      {
+        "component": "text",
+        "name": "dataTab7Text1",
+        "label": "Top Text 1",
+        "valueType": "string",
+        "value": "topText",
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "dataTab7Select1"
+                },
+                "1"
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "component": "text",
+        "name": "dataTab7Text1",
+        "label": "Top Text 1",
+        "valueType": "string",
+        "value": "topText",
+        "condition": {
+          "or": [
+            {
+              "===": [
+                {
+                  "var": "dataTab7Select1"
+                },
+                "2"
+              ]
+            }
+          ]
+        }
       }
     ]
   },
