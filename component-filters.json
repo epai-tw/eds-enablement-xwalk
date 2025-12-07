@@ -17,7 +17,8 @@
       "columns",
       "fragment",
       "dialog-explorer",
-      "id12_container_2cols"
+      "id12_container_2cols",
+      "id12_container"
     ]
   },
   {
@@ -39,6 +40,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "id12_container",
+    "components": [
+      "id12_container_item"
     ]
   },
   {
