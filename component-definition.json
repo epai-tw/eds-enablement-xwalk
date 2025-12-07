@@ -194,10 +194,9 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
+                "resourceType": "core/franklin/components/columns/v1/columns/column",
                 "template": {
-                  "name": "Container Column (ID: 12)",
-                  "model": "id12_container_item"
+                  "name": "Container Column (ID: 12)"
                 }
               }
             }

@@ -50,8 +50,7 @@
   {
     "id": "id12_container_item",
     "components": [
-      "text",
-      "image"
+      "hero"
     ]
   }
 ]
