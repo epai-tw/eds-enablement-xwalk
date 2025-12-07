@@ -15,20 +15,6 @@
           }
         }
       }
-    },
-    {
-      "title": "Container Column (ID: 12)",
-      "id": "id12_container_item",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/columns/v1/columns/column",
-            "template": {
-              "name": "Container Column (ID: 12)"
-            }
-          }
-        }
-      }
     }
   ],
   "models": [
@@ -316,11 +302,11 @@
     {
       "id": "id12_container",
       "components": [
-        "id12_container_item"
+        "column"
       ]
     },
     {
-      "id": "id12_container_item",
+      "id": "column",
       "components": [
         "hero"
       ]

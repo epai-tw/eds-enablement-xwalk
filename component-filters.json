@@ -44,11 +44,11 @@
   {
     "id": "id12_container",
     "components": [
-      "id12_container_item"
+      "column"
     ]
   },
   {
-    "id": "id12_container_item",
+    "id": "column",
     "components": [
       "hero"
     ]
