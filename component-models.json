@@ -933,7 +933,9 @@
             "component": "boolean",
             "name": "id12_layout_mobile_reverse",
             "label": "Reverse",
-            "valueType": "boolean"
+            "valueType": "boolean",
+            "description": "上下對調",
+            "value": false
           }
         ]
       },
