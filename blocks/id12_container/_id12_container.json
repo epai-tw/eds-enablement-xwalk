@@ -304,8 +304,7 @@
     {
       "id": "id12_container",
       "components": [
-        "column",
-        "hero"
+        "column"
       ]
     },
     {
@@ -315,7 +314,8 @@
         "image",
         "button",
         "title",
-        "hero"
+        "hero",
+        "reward"
       ]
     }
   ]
