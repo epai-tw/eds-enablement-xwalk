@@ -47,18 +47,5 @@
     "components": [
       "id12_container_item"
     ]
-  },
-  {
-    "id": "id12_container_2cols",
-    "components": [
-      "id12_container_2cols_item"
-    ]
-  },
-  {
-    "id": "id12_container_2cols_item",
-    "components": [
-      "text",
-      "image"
-    ]
   }
 ]

@@ -8,7 +8,8 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Container",
+              "name": "Container (ID: 12)",
+              "model": "id12_container",
               "filter": "id12_container_item"
             }
           }
@@ -23,7 +24,7 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Container Column",
+              "name": "Container Column (ID: 12)",
               "model": "id12_container_item"
             }
           }
@@ -32,6 +33,174 @@
     }
   ],
   "models": [
+    {
+      "id": "id12_container",
+      "fields": [
+        {
+          "component": "tab",
+          "label": "Layout",
+          "name": "id12_layout"
+        },
+        {
+          "component": "select",
+          "name": "id12_layout_desktop",
+          "label": "Desktop Layout",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Variant 1",
+              "value": "1"
+            },
+            {
+              "name": "Variant 2",
+              "value": "2"
+            },
+            {
+              "name": "Variant 3",
+              "value": "3"
+            },
+            {
+              "name": "Variant 4",
+              "value": "4"
+            },
+            {
+              "name": "Variant 5",
+              "value": "5"
+            }
+          ]
+        },
+        {
+          "component": "tab",
+          "label": "Col 1 Settings",
+          "name": "id12_col1"
+        },
+        {
+          "component": "select",
+          "name": "id12_col1_alignment_desktop",
+          "label": "Alignment - Desktop",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            },
+            {
+              "name": "Center",
+              "value": "center"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "id12_col1_alignment_tablet",
+          "label": "Alignment - Tablet",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            },
+            {
+              "name": "Center",
+              "value": "center"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "id12_col1_alignment_mobile",
+          "label": "Alignment - Mobile",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            },
+            {
+              "name": "Center",
+              "value": "center"
+            }
+          ]
+        },
+        {
+          "component": "tab",
+          "label": "Col 2 Settings",
+          "name": "id12_col2"
+        },
+        {
+          "component": "select",
+          "name": "id12_col2_alignment_desktop",
+          "label": "Alignment - Desktop",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            },
+            {
+              "name": "Center",
+              "value": "center"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "id12_col2_alignment_tablet",
+          "label": "Alignment - Tablet",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            },
+            {
+              "name": "Center",
+              "value": "center"
+            }
+          ]
+        },
+        {
+          "component": "select",
+          "name": "id12_col2_alignment_mobile",
+          "label": "Alignment - Mobile",
+          "valueType": "string",
+          "options": [
+            {
+              "name": "Left",
+              "value": "left"
+            },
+            {
+              "name": "Right",
+              "value": "right"
+            },
+            {
+              "name": "Center",
+              "value": "center"
+            }
+          ]
+        }
+      ]
+    },
     {
       "id": "id12_container_item",
       "fields": [
