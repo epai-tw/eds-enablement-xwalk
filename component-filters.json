@@ -17,7 +17,8 @@
       "columns",
       "fragment",
       "dialog-explorer",
-      "id12_container"
+      "id12_container",
+      "reward"
     ]
   },
   {
@@ -46,7 +47,8 @@
     "id": "id12_container",
     "components": [
       "column",
-      "hero"
+      "hero",
+      "reward"
     ]
   }
 ]
