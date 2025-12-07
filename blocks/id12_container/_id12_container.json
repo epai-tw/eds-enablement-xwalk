@@ -302,12 +302,7 @@
     {
       "id": "id12_container",
       "components": [
-        "column"
-      ]
-    },
-    {
-      "id": "column",
-      "components": [
+        "columns",
         "hero"
       ]
     }
