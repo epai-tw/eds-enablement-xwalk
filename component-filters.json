@@ -39,5 +39,20 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "id12_container_2cols",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "id12_container_2cols",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
+    ]
   }
 ]

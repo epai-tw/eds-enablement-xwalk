@@ -431,6 +431,18 @@
       },
       {
         "component": "text",
+        "name": "dataTab5Text2",
+        "label": "Name",
+        "valueType": "string",
+        "required": true,
+        "valueFormat": "regexp",
+        "validation": {
+          "regExp": "^(?!\\$)[A-Za-z0-9_]+$",
+          "customErrorMsg": "Name must only contain letters, numbers, or underscores and cannot start with $"
+        }
+      },
+      {
+        "component": "text",
         "name": "dataTab5Text1",
         "label": "Name",
         "valueType": "string",
@@ -609,31 +621,6 @@
         "name": "tab7"
       },
       {
-        "component": "text",
-        "name": "name",
-        "label": "Name",
-        "valueType": "string",
-        "required": true,
-        "valueFormat": "regexp",
-        "validation": {
-          "regExp": "^(?!\\$)[A-Za-z0-9_]+$",
-          "customErrorMsg": "Name must only contain letters, numbers, or underscores and cannot start with $"
-        }
-      },
-      {
-        "component": "text",
-        "name": "jcr:title",
-        "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "boolean",
-        "name": "visible",
-        "label": "Show Component",
-        "valueType": "boolean",
-        "value": true
-      },
-      {
         "component": "boolean",
         "name": "enabled",
         "label": "Enable Component",
@@ -696,31 +683,6 @@
             "value": "12"
           }
         ]
-      },
-      {
-        "component": "text",
-        "name": "name",
-        "label": "Name",
-        "valueType": "string",
-        "required": true,
-        "valueFormat": "regexp",
-        "validation": {
-          "regExp": "^(?!\\$)[A-Za-z0-9_]+$",
-          "customErrorMsg": "Name must only contain letters, numbers, or underscores and cannot start with $"
-        }
-      },
-      {
-        "component": "text",
-        "name": "jcr:title",
-        "label": "Title",
-        "valueType": "string"
-      },
-      {
-        "component": "boolean",
-        "name": "visible",
-        "label": "Show Component",
-        "valueType": "boolean",
-        "value": true
       },
       {
         "component": "boolean",

@@ -171,6 +171,21 @@
               }
             }
           }
+        },
+        {
+          "title": "Container",
+          "id": "id12_container_2cols",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/columns",
+                "template": {
+                  "columns": "2",
+                  "rows": "1"
+                }
+              }
+            }
+          }
         }
       ]
     }

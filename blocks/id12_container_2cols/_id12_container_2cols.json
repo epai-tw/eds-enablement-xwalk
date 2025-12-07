@@ -1,0 +1,38 @@
+{
+  "definitions": [
+    {
+      "title": "Container",
+      "id": "id12_container_2cols",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "columns": "2",
+              "rows": "1"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+  ],
+  "filters": [
+    {
+      "id": "id12_container_2cols",
+      "components": [
+        "column"
+      ]
+    },
+    {
+      "id": "id12_container_2cols",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title"
+      ]
+    }
+  ]
+}
