@@ -42,70 +42,139 @@
           "name": "id12_layout"
         },
         {
-          "component": "select",
-          "name": "id12_layout_desktop_variant",
-          "label": "Desktop Layout Variant",
-          "valueType": "string",
-          "options": [
+          "component": "container",
+          "name": "id12_layout_desktop",
+          "label": "Desktop Layout ",
+          "collapsible": true,
+          "description": "Desktop Layout",
+          "fields": [
             {
-              "name": "Variant 1",
-              "value": "1"
+              "component": "select",
+              "name": "id12_layout_desktop_variant",
+              "label": "Variant",
+              "valueType": "string",
+              "options": [
+                {
+                  "name": "Variant 1",
+                  "value": "1"
+                },
+                {
+                  "name": "Variant 2",
+                  "value": "2"
+                },
+                {
+                  "name": "Variant 3",
+                  "value": "3"
+                },
+                {
+                  "name": "Variant 4",
+                  "value": "4"
+                },
+                {
+                  "name": "Variant 5",
+                  "value": "5"
+                }
+              ]
             },
             {
-              "name": "Variant 2",
-              "value": "2"
-            },
-            {
-              "name": "Variant 3",
-              "value": "3"
-            },
-            {
-              "name": "Variant 4",
-              "value": "4"
-            },
-            {
-              "name": "Variant 5",
-              "value": "5"
+              "component": "select",
+              "name": "id12_layout_desktop_2colspan",
+              "label": "2 Cols Span",
+              "valueType": "string",
+              "options": [
+                {
+                  "name": "7:6",
+                  "value": "1"
+                },
+                {
+                  "name": "8:6",
+                  "value": "2"
+                },
+                {
+                  "name": "9:6",
+                  "value": "3"
+                },
+                {
+                  "name": "100vw:6",
+                  "value": "4"
+                }
+              ]
             }
           ]
         },
         {
-          "component": "select",
-          "name": "id12_layout_desktop_2colspan",
-          "label": "Desktop Layout 2 Cols Span",
-          "valueType": "string",
-          "options": [
+          "component": "container",
+          "name": "id12_layout_tablet",
+          "label": "Tablet Layout ",
+          "collapsible": true,
+          "description": "Tablet Layout",
+          "fields": [
             {
-              "name": "7:6",
-              "value": "1"
+              "component": "select",
+              "name": "id12_layout_tablet_variant",
+              "label": "Variant",
+              "valueType": "string",
+              "options": [
+                {
+                  "name": "Variant 1",
+                  "value": "1"
+                },
+                {
+                  "name": "Variant 2",
+                  "value": "2"
+                },
+                {
+                  "name": "Variant 3",
+                  "value": "3"
+                },
+                {
+                  "name": "Variant 4",
+                  "value": "4"
+                },
+                {
+                  "name": "Variant 5",
+                  "value": "5"
+                }
+              ]
             },
             {
-              "name": "8:6",
-              "value": "2"
-            },
-            {
-              "name": "9:6",
-              "value": "3"
-            },
-            {
-              "name": "100vw:6",
-              "value": "4"
+              "component": "select",
+              "name": "id12_layout_tablet_2colspan",
+              "label": "2 Cols Span",
+              "valueType": "string",
+              "options": [
+                {
+                  "name": "7:6",
+                  "value": "1"
+                },
+                {
+                  "name": "8:6",
+                  "value": "2"
+                },
+                {
+                  "name": "9:6",
+                  "value": "3"
+                },
+                {
+                  "name": "100vw:6",
+                  "value": "4"
+                }
+              ]
             }
           ]
         },
         {
-          "component": "select",
-          "name": "id12_layout_mobile_reverse",
-          "label": "Mobile Layout Reverse",
-          "valueType": "string",
-          "options": [
+          "component": "container",
+          "name": "id12_layout_mobile",
+          "label": "Mobile Layout ",
+          "collapsible": true,
+          "description": "Mobile Layout",
+          "fields": [
             {
-              "name": "YES",
-              "value": "yes"
-            },
-            {
-              "name": "NO",
-              "value": "no"
+              "component": "boolean",
+              "name": "id12_layout_mobile_reverse",
+              "label": "Reverse",
+              "valueType": "boolean"
             }
           ]
         },
