@@ -804,8 +804,8 @@
         "component": "container",
         "name": "id12_layout_desktop",
         "label": "Desktop Layout ",
-        "collapsible": false,
-        "description": "Desktop Layout",
+        "collapsible": true,
+        "description": " ",
         "fields": [
           {
             "component": "select",
@@ -865,8 +865,8 @@
         "component": "container",
         "name": "id12_layout_tablet",
         "label": "Tablet Layout ",
-        "collapsible": false,
-        "description": "----------------------------",
+        "collapsible": true,
+        "description": " ",
         "fields": [
           {
             "component": "select",
@@ -927,7 +927,7 @@
         "name": "id12_layout_mobile",
         "label": "Mobile Layout ",
         "collapsible": true,
-        "description": "Mobile Layout",
+        "description": " ",
         "fields": [
           {
             "component": "boolean",
