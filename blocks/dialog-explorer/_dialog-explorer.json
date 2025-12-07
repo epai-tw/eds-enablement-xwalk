@@ -439,6 +439,17 @@
               }
             }
           ]
+        },
+        {
+          "component": "tab",
+          "label": "Includes",
+          "name": "tab7"
+        },
+        {
+          "...": "./common/_basic-fields.json#/fields"
+        },
+        {
+          "...": "./common/_basic-input-placeholder-fields.json#/fields"
         }
       ]
     }

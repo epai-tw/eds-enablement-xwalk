@@ -1,0 +1,13 @@
+{
+    "fields": [
+        {
+            "...": "./_basic-fields.json#/fields"
+        },
+        {
+            "component": "text",
+            "name": "placeholder",
+            "label": "Placeholder text",
+            "valueType": "string"
+        }
+    ]
+}
