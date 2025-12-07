@@ -45,7 +45,7 @@
   {
     "id": "id12_container",
     "components": [
-      "columns",
+      "column",
       "hero"
     ]
   }
