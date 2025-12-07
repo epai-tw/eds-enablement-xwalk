@@ -338,6 +338,13 @@
       "components": [
         "id12_container_item"
       ]
+    },
+    {
+      "id": "id12_container_item",
+      "components": [
+        "text",
+        "image"
+      ]
     }
   ]
 }
