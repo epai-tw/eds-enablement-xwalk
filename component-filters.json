@@ -14,7 +14,6 @@
       "title",
       "hero",
       "cards",
-      "columns",
       "fragment",
       "dialog-explorer",
       "id12_container",
@@ -47,8 +46,17 @@
     "id": "id12_container",
     "components": [
       "column",
-      "hero",
-      "reward"
+      "hero"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title",
+      "hero"
     ]
   }
 ]

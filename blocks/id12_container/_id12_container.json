@@ -12,7 +12,7 @@
               "model": "id12_container",
               "columns": "2",
               "rows": "1",
-              "classes": ["container-id-12"]
+              "classes": ["asus-container-id-12"]
             }
           }
         }
@@ -305,8 +305,17 @@
       "id": "id12_container",
       "components": [
         "column",
-        "hero",
-        "reward"
+        "hero"
+      ]
+    },
+    {
+      "id": "column",
+      "components": [
+        "text",
+        "image",
+        "button",
+        "title",
+        "hero"
       ]
     }
   ]
