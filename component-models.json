@@ -138,6 +138,18 @@
             "value": "highlight"
           }
         ]
+      },
+      {
+        "component": "text",
+        "name": "section_id",
+        "label": "Section ID",
+        "valueType": "string",
+        "required": true,
+        "valueFormat": "regexp",
+        "validation": {
+          "regExp": "^(?!\\$)[A-Za-z0-9_]+$",
+          "customErrorMsg": "ID must only contain letters, numbers, or underscores"
+        }
       }
     ]
   },
