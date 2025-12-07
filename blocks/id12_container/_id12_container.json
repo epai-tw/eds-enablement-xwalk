@@ -11,7 +11,8 @@
               "name": "Container (ID: 12)",
               "model": "id12_container",
               "columns": "2",
-              "rows": "1"
+              "rows": "1",
+              "classes": ["container-id-12"]
             }
           }
         }
