@@ -44,16 +44,14 @@
   {
     "id": "id12_container_2cols",
     "components": [
-      "column"
+      "id12_container_2cols_item"
     ]
   },
   {
-    "id": "id12_container_2cols",
+    "id": "id12_container_2cols_item",
     "components": [
       "text",
-      "image",
-      "button",
-      "title"
+      "image"
     ]
   }
 ]

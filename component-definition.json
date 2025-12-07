@@ -186,6 +186,17 @@
               }
             }
           }
+        },
+        {
+          "title": "Container Column",
+          "id": "id12_container_2cols_item",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/columns/v1/column"
+              }
+            }
+          }
         }
       ]
     }
