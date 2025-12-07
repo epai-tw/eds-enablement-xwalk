@@ -45,7 +45,7 @@
           "component": "container",
           "name": "id12_layout_desktop",
           "label": "Desktop Layout ",
-          "collapsible": true,
+          "collapsible": false,
           "description": "Desktop Layout",
           "fields": [
             {
@@ -106,8 +106,8 @@
           "component": "container",
           "name": "id12_layout_tablet",
           "label": "Tablet Layout ",
-          "collapsible": true,
-          "description": "Tablet Layout",
+          "collapsible": false,
+          "description": "----------------------------",
           "fields": [
             {
               "component": "select",
