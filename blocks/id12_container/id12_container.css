@@ -1,27 +1,207 @@
-.cards > ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  grid-gap: 24px;
+* {
+    box-sizing: border-box;
 }
 
-.cards > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
 }
 
-.cards .cards-card-body {
-  margin: 16px;
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.cards .cards-card-image {
-  line-height: 0;
+h1 {
+    margin: 0 0 10px 0;
+    color: #1a1a1a;
 }
 
-.cards > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.subtitle {
+    color: #666;
+    margin: 0 0 30px 0;
+}
+
+/* 預設選擇區 */
+.preset-section {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.preset-section h3 {
+    margin: 0 0 15px 0;
+}
+
+.preset-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.preset-btn {
+    padding: 10px 20px;
+    background: white;
+    color: #333;
+    border: 2px solid #2563eb;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.preset-btn:hover {
+    background: #eff6ff;
+}
+
+.preset-btn.active {
+    background: #2563eb;
+    color: white;
+    font-weight: bold;
+}
+
+/* 控制面板 */
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: #f9fafb;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.control-group label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.control-group select,
+.control-group input[type="range"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.control-group input[type="range"] {
+    padding: 0;
+}
+
+/* 預覽區域 */
+.preview-wrapper {
+    padding: 40px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.preview-label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 12px;
+    color: #666;
+    background: #f3f4f6;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* FlexContainer 核心樣式 */
+.flex-container {
+    position: relative;
+    width: 100%;
+}
+
+.flex-container--split {
+    display: flex;
+}
+
+.flex-container--overlay {
+    position: relative;
+}
+
+.flex-column {
+    display: flex;
+    align-items: flex-start;
+}
+
+.flex-column--center {
+    align-items: center;
+}
+
+.flex-column--bottom {
+    align-items: flex-end;
+}
+
+.flex-column__inner {
+    width: 100%;
+}
+
+/* 示例內容樣式 */
+.demo-box {
+    padding: 60px 40px;
+    border-radius: 8px;
+    color: white;
+    text-align: center;
+}
+
+.demo-box--left {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.demo-box--right {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.demo-box h2 {
+    margin: 0 0 10px 0;
+}
+
+.demo-box p {
+    margin: 0;
+    opacity: 0.9;
+}
+
+.demo-info {
+    margin-top: 20px;
+    font-size: 12px;
+    opacity: 0.7;
+    font-family: monospace;
+}
+
+/* 程式碼展示 */
+.code-display {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 8px;
+    color: #e2e8f0;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    overflow: auto;
+}
+
+.code-comment {
+    color: #94a3b8;
+    margin-bottom: 10px;
+}
+
+.code-display pre {
+    margin: 0;
+    white-space: pre-wrap;
 }
