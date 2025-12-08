@@ -185,7 +185,8 @@
                   "columns": "2",
                   "rows": "1",
                   "classes": [
-                    "cto-container-id-12"
+                    "id-12-container",
+                    "asus-l4"
                   ]
                 }
               }

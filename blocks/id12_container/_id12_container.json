@@ -12,7 +12,7 @@
               "model": "id12_container",
               "columns": "2",
               "rows": "1",
-              "classes": ["cto-container-id-12"]
+              "classes": ["id-12-container", "asus-l4"]
             }
           }
         }
