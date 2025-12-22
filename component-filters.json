@@ -17,7 +17,8 @@
       "cards",
       "fragment",
       "dialog-explorer",
-      "id12_container"
+      "id12_container",
+      "tabs-container"
     ]
   },
   {
@@ -57,6 +58,19 @@
       "title",
       "hero",
       "reward"
+    ]
+  },
+  {
+    "id": "tabs-container",
+    "components": [
+      "tiny-carousel",
+      "tiny-carousel-item"
+    ]
+  },
+  {
+    "id": "tiny-carousel",
+    "components": [
+      "tiny-carousel-item"
     ]
   }
 ]
