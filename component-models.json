@@ -189,11 +189,11 @@
         "value": "",
         "label": "Rows",
         "condition": {
-          "===": [
+          "!==": [
             {
               "var": "containerStyle"
             },
-            "default"
+            "tab"
           ]
         }
       },
