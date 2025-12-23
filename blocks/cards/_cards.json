@@ -56,7 +56,8 @@
     {
       "id": "cards",
       "components": [
-        "card"
+        "card",
+        "id12_container"
       ]
     }
   ]
