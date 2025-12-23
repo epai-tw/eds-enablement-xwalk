@@ -198,7 +198,7 @@
         }
       },
       {
-        "component": "multiselect",
+        "component": "select",
         "name": "containerStyle",
         "label": "Container Style",
         "options": [
