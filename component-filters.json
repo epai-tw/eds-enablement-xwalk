@@ -31,15 +31,6 @@
     ]
   },
   {
-    "id": "card",
-    "components": [
-      "card",
-      "id12_container",
-      "columns",
-      "column"
-    ]
-  },
-  {
     "id": "columns",
     "components": [
       "column"

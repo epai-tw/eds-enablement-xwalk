@@ -33,6 +33,21 @@
           "name": "rows",
           "value": "",
           "label": "Rows"
+        },
+        {
+          "component": "multiselect",
+          "name": "style",
+          "label": "Container Style",
+          "options": [
+            {
+              "name": "Default",
+              "value": "default"
+            },
+            {
+              "name": "Tab",
+              "value": "tab"
+            }
+          ]
         }
       ]
     }
