@@ -53,7 +53,8 @@
         "title",
         "hero",
         "id12_container",
-        "columns"
+        "columns",
+        "cards"
       ]
     }
   ]
