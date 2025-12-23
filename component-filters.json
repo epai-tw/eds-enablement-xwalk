@@ -30,8 +30,7 @@
   {
     "id": "columns",
     "components": [
-      "column",
-      "id12_container"
+      "column"
     ]
   },
   {
@@ -41,7 +40,8 @@
       "image",
       "button",
       "title",
-      "hero"
+      "hero",
+      "id12_container"
     ]
   },
   {
