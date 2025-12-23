@@ -321,7 +321,7 @@
           "component": "container",
           "name": "dataTab6Container1",
           "label": "Repeat Panel",
-          "collapsible": true,
+          "collapsible": false,
           "fields": [
             {
               "component": "boolean",

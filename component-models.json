@@ -187,11 +187,19 @@
         "valueType": "number",
         "name": "rows",
         "value": "",
-        "label": "Rows"
+        "label": "Rows",
+        "condition": {
+          "===": [
+            {
+              "var": "containerStyle"
+            },
+            "default"
+          ]
+        }
       },
       {
         "component": "multiselect",
-        "name": "style",
+        "name": "containerStyle",
         "label": "Container Style",
         "options": [
           {
@@ -511,7 +519,7 @@
         "component": "container",
         "name": "dataTab6Container1",
         "label": "Repeat Panel",
-        "collapsible": true,
+        "collapsible": false,
         "fields": [
           {
             "component": "boolean",
