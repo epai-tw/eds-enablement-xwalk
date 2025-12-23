@@ -315,7 +315,10 @@
         "button",
         "title",
         "hero",
-        "reward"
+        "reward",
+        "id12_container",
+        "columns",
+        "cards"
       ]
     }
   ]
