@@ -30,7 +30,8 @@
   {
     "id": "columns",
     "components": [
-      "column"
+      "column",
+      "id12_container"
     ]
   },
   {
