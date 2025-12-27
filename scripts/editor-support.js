@@ -117,3 +117,11 @@ decorateRichtext();
 // for new richtext-instrumented elements. this happens for example when using experimentation.
 const observer = new MutationObserver(() => decorateRichtext());
 observer.observe(document, { attributeFilter: ['data-richtext-prop'], subtree: true });
+
+function startup() {
+  // eslint-disable-next-line no-console
+  console.log('Universal Editor is ready. Startup function triggered.');
+  // TODO: Add actual startup logic here
+}
+
+document.addEventListener('aem-editor-ready', startup);
