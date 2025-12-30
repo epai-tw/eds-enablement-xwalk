@@ -180,6 +180,82 @@
     ]
   },
   {
+    "id": "container",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "columns",
+        "value": "2",
+        "label": "Columns"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "variant",
+        "value": "1",
+        "label": "Variant",
+        "options": [
+          {
+            "name": "Split Layout",
+            "value": "1"
+          },
+          {
+            "name": "Overlay 2 cols",
+            "value": "2"
+          },
+          {
+            "name": "Overlay 3 cols",
+            "value": "3"
+          },
+          {
+            "name": "Overlay 4 cols",
+            "value": "4"
+          },
+          {
+            "name": "Overlay 12 cols",
+            "value": "5"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "colSpan",
+        "value": "6:6",
+        "label": "Column Span (e.g., 6:6, 4:8)"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "reverse",
+        "value": false,
+        "label": "Reverse Order"
+      },
+      {
+        "component": "select",
+        "valueType": "string",
+        "name": "verticalAlignment",
+        "value": "top",
+        "label": "Vertical Alignment",
+        "options": [
+          {
+            "name": "Top",
+            "value": "top"
+          },
+          {
+            "name": "Center",
+            "value": "center"
+          },
+          {
+            "name": "Bottom",
+            "value": "bottom"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "fragment",
     "fields": [
       {
@@ -205,92 +281,6 @@
         "name": "imageAlt",
         "label": "Alt",
         "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "quote",
-    "fields": [
-      {
-        "component": "richtext",
-        "name": "quote",
-        "value": "",
-        "label": "Quote",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "author",
-        "label": "Author",
-        "value": ""
-      },
-      {
-        "component": "select",
-        "name": "classes",
-        "value": "",
-        "label": "Background Color",
-        "description": "The quote background color",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Red",
-            "value": "bg-red"
-          },
-          {
-            "name": "Green",
-            "value": "bg-green"
-          },
-          {
-            "name": "Blue",
-            "value": "bg-blue"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "carousel",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "simple-card",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
       },
       {
         "component": "richtext",

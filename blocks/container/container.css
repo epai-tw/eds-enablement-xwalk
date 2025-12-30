@@ -1,0 +1,264 @@
+/* Container Block Styles */
+
+/* Base container styles */
+.container {
+  width: 100%;
+}
+
+.container-wrapper {
+  display: grid;
+  width: 100%;
+  gap: 24px;
+}
+
+.container-column {
+  width: 100%;
+}
+
+/* ========================================
+   SPLIT LAYOUT (Variant 1)
+   ======================================== */
+
+/* Desktop - Split Layout */
+@media (min-width: 1025px) {
+  .split-layout {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  /* Column span classes for desktop */
+  .split-layout .col-span-3 { grid-column: span 3; }
+  .split-layout .col-span-4 { grid-column: span 4; }
+  .split-layout .col-span-5 { grid-column: span 5; }
+  .split-layout .col-span-6 { grid-column: span 6; }
+  .split-layout .col-span-7 { grid-column: span 7; }
+  .split-layout .col-span-8 { grid-column: span 8; }
+  .split-layout .col-span-9 { grid-column: span 9; }
+
+  /* Reverse order on desktop */
+  .split-layout.reverse .column-1 {
+    order: 2;
+  }
+  .split-layout.reverse .column-2 {
+    order: 1;
+  }
+}
+
+/* Tablet - Split Layout */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .split-layout {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  /* Tablet column spans - override desktop if needed */
+  .split-layout .col-span-5 { grid-column: span 5; }
+  .split-layout .col-span-6 { grid-column: span 6; }
+  .split-layout .col-span-7 { grid-column: span 7; }
+
+  /* Reverse order on tablet */
+  .split-layout.reverse .column-1 {
+    order: 2;
+  }
+  .split-layout.reverse .column-2 {
+    order: 1;
+  }
+}
+
+/* Mobile - Split Layout (Stacked) */
+@media (max-width: 767px) {
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .split-layout .container-column {
+    grid-column: span 1;
+  }
+}
+
+/* ========================================
+   OVERLAY LAYOUT (Variants 2-5)
+   ======================================== */
+
+/* Base overlay layout */
+.overlay-layout {
+  position: relative;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto;
+}
+
+.overlay-layout .column-background {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  z-index: 1;
+}
+
+.overlay-layout .column-foreground {
+  grid-row: 1;
+  z-index: 2;
+  position: relative;
+}
+
+/* Desktop - Overlay Layout */
+@media (min-width: 1025px) {
+  /* Variant 2 - 2 column width foreground */
+  .overlay-layout.variant-2 .column-foreground.width-2 {
+    grid-column: span 2;
+  }
+
+  /* Variant 3 - 3 column width foreground */
+  .overlay-layout.variant-3 .column-foreground.width-3 {
+    grid-column: span 3;
+  }
+
+  /* Variant 4 - 4 column width foreground */
+  .overlay-layout.variant-4 .column-foreground.width-4 {
+    grid-column: span 4;
+  }
+
+  /* Variant 5 - 12 column width foreground (full width) */
+  .overlay-layout.variant-5 .column-foreground.width-12 {
+    grid-column: span 12;
+  }
+
+  /* Column span positioning for overlay */
+  .overlay-layout[data-col-span="7:6"] .column-foreground {
+    grid-column: 1 / span 6;
+  }
+  .overlay-layout[data-col-span="8:6"] .column-foreground {
+    grid-column: 1 / span 6;
+  }
+  .overlay-layout[data-col-span="9:6"] .column-foreground {
+    grid-column: 1 / span 6;
+  }
+  .overlay-layout[data-col-span="10:0"] .column-foreground {
+    grid-column: 1 / span 10;
+  }
+  .overlay-layout[data-col-span="6:7"] .column-foreground {
+    grid-column: 7 / span 6;
+  }
+  .overlay-layout[data-col-span="6:8"] .column-foreground {
+    grid-column: 7 / span 6;
+  }
+  .overlay-layout[data-col-span="6:9"] .column-foreground {
+    grid-column: 7 / span 6;
+  }
+  .overlay-layout[data-col-span="6:10"] .column-foreground {
+    grid-column: 3 / span 6;
+  }
+
+  /* Reverse order on desktop */
+  .overlay-layout.reverse .column-background {
+    order: 2;
+  }
+  .overlay-layout.reverse .column-foreground {
+    order: 1;
+  }
+}
+
+/* Tablet - Overlay Layout */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Variant 2 - 2 column width on tablet */
+  .overlay-layout.variant-2 .column-foreground,
+  .overlay-layout.variant-3 .column-foreground {
+    grid-column: span 5;
+  }
+
+  /* Reverse order on tablet */
+  .overlay-layout.reverse .column-background {
+    order: 2;
+  }
+  .overlay-layout.reverse .column-foreground {
+    order: 1;
+  }
+}
+
+/* Mobile - Overlay Layout (Stacked) */
+@media (max-width: 767px) {
+  .overlay-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .overlay-layout .column-background {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .overlay-layout .column-foreground {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* ========================================
+   VERTICAL ALIGNMENT
+   ======================================== */
+
+/* Top alignment (default) */
+.container-wrapper[data-vertical-align="top"] {
+  align-items: start;
+}
+
+/* Center alignment */
+.container-wrapper[data-vertical-align="center"] {
+  align-items: center;
+}
+
+/* Bottom alignment */
+.container-wrapper[data-vertical-align="bottom"] {
+  align-items: end;
+}
+
+/* ========================================
+   CONTAINER SETTINGS
+   ======================================== */
+
+/* Width settings */
+.container-column.width-fixed {
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* Alignment settings */
+.container-column.align-left {
+  margin-right: auto;
+}
+
+.container-column.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-column.align-right {
+  margin-left: auto;
+}
+
+/* Clipping */
+.container-column[style*="overflow: hidden"] {
+  overflow: hidden;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Ensure children inherit full width if needed */
+.container-column > * {
+  max-width: 100%;
+}
+
+/* Padding for column content */
+.container-column {
+  padding: 16px;
+}
+
+@media (min-width: 768px) {
+  .container-column {
+    padding: 24px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container-column {
+    padding: 32px;
+  }
+}
