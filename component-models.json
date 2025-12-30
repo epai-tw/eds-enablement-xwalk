@@ -320,13 +320,6 @@
             "multi": true,
             "fields": [
               {
-                "component": "reference",
-                "name": "dataContainer3ChildReference",
-                "value": "",
-                "label": "Multifield Image",
-                "valueType": "string"
-              },
-              {
                 "component": "text",
                 "name": "dataContainer3ChildText",
                 "value": "",
@@ -334,13 +327,6 @@
                 "valueType": "string"
               }
             ]
-          },
-          {
-            "component": "text",
-            "name": "dataContainer3ParentText",
-            "value": "",
-            "label": "Multifield Text",
-            "valueType": "string"
           }
         ]
       },
