@@ -112,26 +112,26 @@
         },
         {
           "component": "container",
-          "name": "dataContainer1",
+          "name": "dataContainer3",
           "label": "Multifield in Multifield Parent",
           "multi": true,
           "fields": [
             {
               "component": "container",
-              "name": "dataContainer1",
+              "name": "dataContainer3Child",
               "label": "Multifield in Multifield Child",
               "multi": true,
               "fields": [
                 {
                   "component": "reference",
-                  "name": "dataContainer1Reference",
+                  "name": "dataContainer3ChildReference",
                   "value": "",
                   "label": "Multifield Image",
                   "valueType": "string"
                 },
                 {
                   "component": "text",
-                  "name": "dataContainer1Text",
+                  "name": "dataContainer3ChildText",
                   "value": "",
                   "label": "Multifield Text",
                   "valueType": "string"
@@ -140,7 +140,7 @@
             },
             {
               "component": "text",
-              "name": "dataContainer1Text",
+              "name": "dataContainer3ParentText",
               "value": "",
               "label": "Multifield Text",
               "valueType": "string"
