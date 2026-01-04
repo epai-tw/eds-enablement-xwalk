@@ -3,7 +3,9 @@
     "/content/eds-enablement-xwalk/:/",
     "/content/eds-enablement-xwalk/configuration:/.helix/config.json",
     "/content/eds-enablement-xwalk/metadata:/metadata.json",
-    "/content/eds-enablement-xwalk/language-master/en/placeholders:/placeholders.json"
+    "/content/eds-enablement-xwalk/components:/components",
+    "/content/eds-enablement-xwalk/components/:/components/",
+    "/components/:/",
   ],
   "includes": [
     "/content/eds-enablement-xwalk/"
